@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ptlergo/AppStore/issues"
   },
-  "homepage": "https://github.com/ptlergo/AppStore#readme"
+  "homepage": "https://github.com/ptlergo/AppStore#readme",
+  "dependencies": {
+    "express": "4.14.0"
+  }
 }
