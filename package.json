@@ -1,0 +1,19 @@
+{
+  "name": "appstore",
+  "version": "1.0.0",
+  "description": "app store",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptlergo/AppStore.git"
+  },
+  "author": "Patrick Funom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ptlergo/AppStore/issues"
+  },
+  "homepage": "https://github.com/ptlergo/AppStore#readme"
+}
