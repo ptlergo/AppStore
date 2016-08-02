@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-//using body-parser grab data from POST
+// Using body-parser grab data from POST
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -15,8 +15,8 @@ router.get('/', (req, res) => {
 });
 
 
-//router registration with /api prefix
+// Router registration with /api prefix
 app.use('/api', router);
 
 app.listen(port);
-  console.log('server active on ', port);
+console.log('server active on ', port);
