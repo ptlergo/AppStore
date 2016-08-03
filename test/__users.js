@@ -6,7 +6,7 @@ describe('User Routes', () => {
   let user;
 
   beforeEach(() => {
-    server = require('../src/server.js');
+    server = require('../src/server');
   });
 
   afterEach(() => {
