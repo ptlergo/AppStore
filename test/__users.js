@@ -33,11 +33,11 @@ describe('User Routes', () => {
   // Test for a single user
   it('GET /api/v1/users/:id returns an user obj with a id and name property', (done) => {
     request(server)
-      .get('/api/v1/users/' + this.user.id)
+      .get(`/api/v1/users/${this.user.id}`)
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect((res) => {
-        const user = res.body;
+        user = res.body;
         expect(user).to.have.property('id');
         expect(user).to.have.property('name');
       })
