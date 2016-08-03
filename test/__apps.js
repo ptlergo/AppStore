@@ -41,13 +41,12 @@ describe('App Routes', () => {
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect((res) => {
-        const app = res.body;
-        expect(app).to.have.property('id')
-        expect(app).to.have.property('title')
-        expect(app).to.have.property('description')
-        expect(app).to.have.property('releaseDate')
+        app = res.body;
+        expect(app).to.have.property('id');
+        expect(app).to.have.property('title');
+        expect(app).to.have.property('description');
+        expect(app).to.have.property('releaseDate');
       })
-      .end(done)
-  });
-
+      .end(done);
+    });
 });
