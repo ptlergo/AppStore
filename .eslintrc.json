@@ -1,4 +1,12 @@
-
 {
-  "extends": "airbnb"
+	"env": {
+		"node": true,
+		"mocha": true
+	},
+	"extends": "airbnb",
+	"globals": {
+		"describe": true,
+		"it": true,
+		"null": true
+	}
 }
