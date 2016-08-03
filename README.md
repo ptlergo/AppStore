@@ -2,12 +2,13 @@
 App Store API using RESTful architecture.
 
 ##INSTALL
+*Install all package dependencies*
 ```
 npm install
 ```
 
 ##ENDPOINTS
-All Users, and Apps routes.
+*All Users, and Apps routes.*
 
 ###/api/v1/apps
 Display All Apps Info
@@ -20,3 +21,8 @@ Display Single User Info
 
 
 ##RUN
+*Default port is '3000' [http://localhost:3000](http://localhost:3000)*
+
+```
+node src/server.js
+```
