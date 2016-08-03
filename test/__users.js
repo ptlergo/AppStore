@@ -23,11 +23,11 @@ describe('User Routes', () => {
         const users = res.body;
 
         // Save one single user from the list to test on in later tests
-        this.user = users[0]
+        this.user = users[0];
 
         expect(users.length).to.be.above(0)
       })
-      .end(done)
+      .end(done);
   });
 
   // Test for a single user
@@ -38,10 +38,9 @@ describe('User Routes', () => {
       .expect('Content-Type', /json/)
       .expect((res) => {
         const user = res.body;
-        expect(user).to.have.property('id')
-        expect(user).to.have.property('name')
+        expect(user).to.have.property('id');
+        expect(user).to.have.property('name');
       })
-      .end(done)
+      .end(done);
   });
-
 });
