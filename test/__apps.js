@@ -1,14 +1,17 @@
 const expect = require('chai').expect;
 const request = require('supertest');
 
+// Unit Test for APP Routes
 describe('App Routes', () => {
   const server;
   const app;
 
+  // open server at each stub
   beforeEach(() => {
     server = require('../src/server');
   });
 
+  // close server after each stub done
   afterEach(() => {
     server.close();
   });
