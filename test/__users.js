@@ -25,7 +25,7 @@ describe('User Routes', () => {
         // Save one single user from the list to test on in later tests
         this.user = users[0];
 
-        expect(users.length).to.be.above(0)
+        expect(users.length).to.be.above(0);
       })
       .end(done);
   });
