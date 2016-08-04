@@ -9,15 +9,12 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000;
 
-const router = express.Router();
-
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ hello: 'world' });
 });
 
 
 // Router registration with /api prefix
-app.use('/api/', router);
 
 exports.server = app.listen(port, () => {
   console.log('server active on ', port);
