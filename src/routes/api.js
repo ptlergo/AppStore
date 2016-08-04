@@ -1,7 +1,7 @@
 module.exports = (express) => {
   const router = express.Router();
 
-  // All Routes in api
+  // routes apps
   router.get('/', (req, res) => {
     res.json({ hello: 'world' });
   });
@@ -30,6 +30,32 @@ module.exports = (express) => {
       title: 'app1',
       description: 'first app',
       releaseDate: '1/1/1991',
+    });
+  });
+
+  // Routes users
+  router.get('/', (req, res) => {
+    res.json({ hello: 'world' });
+  });
+
+  router.get('/v1/users', (req, res) => {
+    res.json([
+      {
+        id: 1,
+        name: 'user1',
+      },
+      {
+        id: 2,
+        name: 'user2',
+      },
+    ]);
+  });
+
+  router.get('/v1/users/:id', (req, res) => {
+    const appId = req.params.id;
+    res.json({
+      id: appId,
+      name: 'app1',
     });
   });
 
