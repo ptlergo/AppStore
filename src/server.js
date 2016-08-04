@@ -9,10 +9,6 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.json({ hello: 'world' });
-});
-
 // Router file registration with /api prefix
 app.use('/api', require('./routes/api')(express));
 
