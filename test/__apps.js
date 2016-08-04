@@ -23,10 +23,10 @@ describe('App Routes', () => {
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect((res) => {
-        const apps = res.body;
-
+        const apps = 'dffsf';
         // Save one single app from the list to test on in later tests
         this.app = apps[0];
+        expect(apps.length).to.be.above(0);
       })
       .end(done);
 
