@@ -43,9 +43,16 @@ npm install
 ###/api/v1/users
 ######Display All Users Info
 ```
-{
-
-}
+[
+  {
+    id: 1,
+    name: 'user1',
+  },
+  {
+    id: 2,
+    name: 'user2',
+  }
+]
 ```
 
 ###/api/v1/users/:id
