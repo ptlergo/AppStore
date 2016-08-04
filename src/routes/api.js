@@ -7,11 +7,17 @@ module.exports = (express) => {
   });
 
   router.get('/v1/apps', (req, res) => {
-    res.json([{}, {}]);
+    res.json([
+      {
+        id: 1,
+        title: 'app1',
+      },
+      { id: 2 },
+    ]);
   });
 
   router.get('/v1/apps/:id', (req, res) => {
-    res.json({ hello: req.params.id });
+    res.json({ id: req.params.id });
   });
 
   return router;
