@@ -34,11 +34,6 @@ module.exports = (express) => {
     });
   });
 
-  // Routes users
-  router.get('/', (req, res) => {
-    res.json({ hello: 'world' });
-  });
-
   // GET all users
   router.get('/v1/users', (req, res) => {
     res.json([
@@ -57,7 +52,7 @@ module.exports = (express) => {
   router.get('/v1/users/:id', (req, res) => {
     res.json({
       id: 1,
-      name: 'app1',
+      name: 'user1',
     });
   });
 
