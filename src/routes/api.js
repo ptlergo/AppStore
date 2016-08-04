@@ -1,11 +1,12 @@
 module.exports = (express) => {
   const router = express.Router();
 
-  // routes apps
+  // Routes apps
   router.get('/', (req, res) => {
     res.json({ hello: 'world' });
   });
 
+  // GET all apps
   router.get('/v1/apps', (req, res) => {
     res.json([
       {
@@ -23,6 +24,7 @@ module.exports = (express) => {
     ]);
   });
 
+  // GET app of 'id'
   router.get('/v1/apps/:id', (req, res) => {
     res.json({
       id: 1,
@@ -37,6 +39,7 @@ module.exports = (express) => {
     res.json({ hello: 'world' });
   });
 
+  // GET all users
   router.get('/v1/users', (req, res) => {
     res.json([
       {
@@ -50,6 +53,7 @@ module.exports = (express) => {
     ]);
   });
 
+  // GET user of id
   router.get('/v1/users/:id', (req, res) => {
     res.json({
       id: 1,
