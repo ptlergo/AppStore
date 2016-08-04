@@ -14,7 +14,7 @@ describe('User Routes', () => {
   });
 
   // Test for Multiple Users
-  it('GET /api/v1/users returns multiple users', (done) => {
+  it('should list all users on /api/v1/users GET', (done) => {
     request(server)
       .get('/api/v1/users')
       .set('Accept', 'application/json')
