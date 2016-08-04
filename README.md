@@ -59,7 +59,8 @@ npm install
 ######Display Single User Info
 ```
 {
-
+  id: 1,
+  name: 'user1',
 }
 ```
 
