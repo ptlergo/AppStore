@@ -24,8 +24,9 @@ describe('App Routes', () => {
       .expect('Content-Type', /json/)
       .expect((res) => {
         const apps = res.body;
-        console.log(apps);
 
+        // Save one single app from the list to test on in later tests
+        this.app = apps[0];
       })
       .end(done);
 
