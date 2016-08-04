@@ -8,12 +8,18 @@ describe('App Routes', () => {
 
   // Open server at each stub
   beforeEach(() => {
-    server = require('../src/server');
+    server = require('../src/server')();
   });
 
   // Close server after each stub done
-  afterEach(() => {
-    server.close();
+  afterEach((done) => {
+    server.close(done);
+  });
+
+  it('should display home route on / GET', (done) => {
+    request(server)
+      .get('/')
+      .expect(200, done);
   });
 
   // Test route of all apps

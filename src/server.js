@@ -17,7 +17,8 @@ router.get('/', (req, res) => {
 
 
 // Router registration with /api prefix
-app.use('/api', router);
+app.use('/api/', router);
 
-app.listen(port);
-console.log('server active on ', port);
+exports.server = app.listen(port, () => {
+  console.log('server active on ', port);
+});
