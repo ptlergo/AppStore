@@ -8,18 +8,12 @@ describe('App Routes', () => {
 
   // Open server at each stub
   beforeEach(() => {
-    server = require('../src/server')();
+    server = require('../src/server');
   });
 
   // Close server after each stub done
-  afterEach((done) => {
-    server.close(done);
-  });
-
-  it('should display home route on / GET', (done) => {
-    request(server)
-      .get('/')
-      .expect(200, done);
+  afterEach(() => {
+    server.close();
   });
 
   // Test route of all apps
@@ -30,13 +24,11 @@ describe('App Routes', () => {
       .expect('Content-Type', /json/)
       .expect((res) => {
         const apps = res.body;
+        console.log(apps);
 
-        // Save one single app from the list to test on in later tests
-        this.app = apps[0];
-
-        expect(apps.length).to.be.above(0);
       })
       .end(done);
+
   });
 
   // Test for a single app
