@@ -24,9 +24,8 @@ module.exports = (express) => {
   });
 
   router.get('/v1/apps/:id', (req, res) => {
-    const appId = req.params.id;
     res.json({
-      id: appId,
+      id: 1,
       title: 'app1',
       description: 'first app',
       releaseDate: '1/1/1991',
@@ -52,9 +51,8 @@ module.exports = (express) => {
   });
 
   router.get('/v1/users/:id', (req, res) => {
-    const userId = req.params.id;
     res.json({
-      id: userId,
+      id: 1,
       name: 'app1',
     });
   });
