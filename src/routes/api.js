@@ -52,9 +52,9 @@ module.exports = (express) => {
   });
 
   router.get('/v1/users/:id', (req, res) => {
-    const appId = req.params.id;
+    const userId = req.params.id;
     res.json({
-      id: appId,
+      id: userId,
       name: 'app1',
     });
   });
