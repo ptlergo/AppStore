@@ -1,6 +1,5 @@
 module.exports = (express) => {
   const router = express.Router();
-  const apps = require('./apps');
 
   // Routes apps
   router.get('/', (req, res) => {
@@ -9,6 +8,7 @@ module.exports = (express) => {
 
   // individual routes
   router.use('/api/v1/', require('./apps')(express));
+  router.use('/api/v1/', require('./users')(express));
 
   // GET all users
   router.get('/users', (req, res) => {

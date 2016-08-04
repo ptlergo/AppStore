@@ -10,10 +10,9 @@ npm install
 ##ENDPOINTS
 *All Users, and Apps routes.*
 
-###/api/v1/apps
-######Display All Apps Info
-```
-[
+| METHOD | URL | RESPONSE |
+|---|---|---|---|
+|GET|/api/v1/apps|[
   {
     id: 1,
     title: "app1",
@@ -26,24 +25,14 @@ npm install
     description: "2nd app",
     releaseDate: "2016-08-04T16:52:49+00:00",
   }
-]
-```
-
-###/api/v1/apps/:id
-######Display Single App Info
-```
-{
+]|
+|GET|/api/v1/apps/:id|{
   id: 1,
   title: "app1",
   description: "first app",
   releaseDate: "2016-08-04T16:52:49+00:00"
-}
-```
-
-###/api/v1/users
-######Display All Users Info
-```
-[
+}|
+|GET|/api/v1/users|[
   {
     id: 1,
     name: "user1",
@@ -52,17 +41,11 @@ npm install
     id: 2,
     name: "user2",
   }
-]
-```
-
-###/api/v1/users/:id
-######Display Single User Info
-```
-{
+]|
+|GET|/api/v1/users/:id|{
   id: 1,
   name: "user1",
-}
-```
+}|
 
 ##RUN
 *Default port is '3000' [http://localhost:3000](http://localhost:3000)*
