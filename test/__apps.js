@@ -34,7 +34,7 @@ describe('App Routes', () => {
   });
 
   // Test for a single app
-  it('should list app obj with id, title, description, & releaseDate  /api/v1/apps/:id GET',
+  it('should list app obj with id, title, description, & releaseDate on /api/v1/apps/:id GET',
     (done) => {
       request(server)
       .get(`/api/v1/apps/${this.app.id}`)
