@@ -17,7 +17,7 @@ describe('App Routes', () => {
   });
 
   // Test route of all apps
-  it('GET /api/v1/apps returns all apps', (done) => {
+  it('should list all apps on /api/v1/apps GET', (done) => {
     request(server)
       .get('/api/v1/apps')
       .set('Accept', 'application/json')
