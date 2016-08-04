@@ -13,9 +13,20 @@ npm install
 ###/api/v1/apps
 ######Display All Apps Info
 ```
-{
-
-}
+[
+  {
+    id: 1,
+    title: 'app1',
+    description: 'first app',
+    releaseDate: '1/1/1991',
+  },
+  {
+    id: 2,
+    title: 'app2',
+    description: '2nd app',
+    releaseDate: '1/1/1991',
+  }
+]
 ```
 
 ###/api/v1/apps/:id
