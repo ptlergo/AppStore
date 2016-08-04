@@ -16,15 +16,15 @@ npm install
 [
   {
     id: 1,
-    title: 'app1',
-    description: 'first app',
-    releaseDate: '1/1/1991',
+    title: "app1",
+    description: "first app",
+    releaseDate: "2016-08-04T16:52:49+00:00",
   },
   {
     id: 2,
-    title: 'app2',
-    description: '2nd app',
-    releaseDate: '1/1/1991',
+    title: "app2",
+    description: "2nd app",
+    releaseDate: "2016-08-04T16:52:49+00:00",
   }
 ]
 ```
@@ -36,7 +36,7 @@ npm install
   id: 1,
   title: "app1",
   description: "first app",
-  releaseDate: "1/1/1991"
+  releaseDate: "2016-08-04T16:52:49+00:00"
 }
 ```
 
@@ -46,11 +46,11 @@ npm install
 [
   {
     id: 1,
-    name: 'user1',
+    name: "user1",
   },
   {
     id: 2,
-    name: 'user2',
+    name: "user2",
   }
 ]
 ```
@@ -60,7 +60,7 @@ npm install
 ```
 {
   id: 1,
-  name: 'user1',
+  name: "user1",
 }
 ```
 
