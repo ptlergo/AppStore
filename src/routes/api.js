@@ -13,13 +13,13 @@ module.exports = (express) => {
         id: 1,
         title: 'app1',
         description: 'first app',
-        releaseDate: '1/1/1991',
+        releaseDate: '2016-08-04T16:52:49+00:00',
       },
       {
         id: 2,
         title: 'app2',
         description: '2nd app',
-        releaseDate: '1/1/1991',
+        releaseDate: '2016-08-04T16:52:49+00:00',
       },
     ]);
   });
@@ -30,7 +30,7 @@ module.exports = (express) => {
       id: 1,
       title: 'app1',
       description: 'first app',
-      releaseDate: '1/1/1991',
+      releaseDate: '2016-08-04T16:52:49+00:00',
     });
   });
 
