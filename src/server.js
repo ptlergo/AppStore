@@ -13,8 +13,8 @@ app.get('/', (req, res) => {
   res.json({ hello: 'world' });
 });
 
-
-// Router registration with /api prefix
+// Router file registration with /api prefix
+app.use('/api', require('./routes/api')(express));
 
 exports.server = app.listen(port, () => {
   console.log('server active on ', port);
