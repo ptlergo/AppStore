@@ -7,7 +7,7 @@ module.exports = (express) => {
   });
 
   router.get('/v1/apps', (req, res) => {
-    res.json({ hello: 'all apps' });
+    res.json([{}, {}]);
   });
 
   router.get('/v1/apps/:id', (req, res) => {
