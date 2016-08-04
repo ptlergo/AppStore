@@ -33,7 +33,10 @@ npm install
 ######Display Single App Info
 ```
 {
-
+  id: 1,
+  title: "app1",
+  description: "first app",
+  releaseDate: "1/1/1991"
 }
 ```
 
