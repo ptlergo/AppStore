@@ -7,6 +7,8 @@ module.exports = (express) => {
     res.json({ hello: 'world' });
   });
 
+  // individual routes
+  router.use('/api/v1/', require('./apps')(express));
 
   // GET all users
   router.get('/users', (req, res) => {

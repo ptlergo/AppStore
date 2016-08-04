@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
 // Router file registration with ''/api' prefix. pass in express to file.
-app.use('/api/v1', require('./routes/api')(express));
+app.use('/', require('./routes')(express));
 
 exports.server = app.listen(port, () => {
   console.log('server active on ', port);

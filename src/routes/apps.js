@@ -1,4 +1,5 @@
-module.exports = (router) => {
+module.exports = (express) => {
+  const router = express.Router();
   // GET all apps
   router.get('/apps', (req, res) => {
     res.json([
@@ -26,4 +27,6 @@ module.exports = (router) => {
       releaseDate: '2016-08-04T16:52:49+00:00',
     });
   });
+
+  return router;
 };
