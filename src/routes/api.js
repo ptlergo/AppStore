@@ -7,7 +7,7 @@ module.exports = (express) => {
   });
 
   // GET all apps
-  router.get('/v1/apps', (req, res) => {
+  router.get('/apps', (req, res) => {
     res.json([
       {
         id: 1,
@@ -25,7 +25,7 @@ module.exports = (express) => {
   });
 
   // GET app of 'id'
-  router.get('/v1/apps/:id', (req, res) => {
+  router.get('/apps/:id', (req, res) => {
     res.json({
       id: 1,
       title: 'app1',
@@ -35,7 +35,7 @@ module.exports = (express) => {
   });
 
   // GET all users
-  router.get('/v1/users', (req, res) => {
+  router.get('/users', (req, res) => {
     res.json([
       {
         id: 1,
@@ -49,7 +49,7 @@ module.exports = (express) => {
   });
 
   // GET user of id
-  router.get('/v1/users/:id', (req, res) => {
+  router.get('/users/:id', (req, res) => {
     res.json({
       id: 1,
       name: 'user1',
