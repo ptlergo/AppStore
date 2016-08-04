@@ -6,5 +6,13 @@ module.exports = (express) => {
     res.json({ hello: 'world' });
   });
 
+  router.get('/v1/apps', (req, res) => {
+    res.json({ hello: 'all apps' });
+  });
+
+  router.get('/v1/apps/:id', (req, res) => {
+    res.json({ hello: req.params.id });
+  });
+
   return router;
 };
