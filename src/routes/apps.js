@@ -1,6 +1,4 @@
-module.exports = (express) => {
-  const router = express.Router();
-
+module.exports = (router) => {
   // GET all apps
   router.get('/apps', (req, res) => {
     res.json([
