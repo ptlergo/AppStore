@@ -40,6 +40,7 @@ describe('User Routes', () => {
         user = res.body;
         expect(user).to.have.property('id');
         expect(user).to.have.property('name');
+        expect(user).to.have.property('age');
       })
       .end(done);
   });
