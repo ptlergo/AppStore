@@ -34,7 +34,7 @@ describe('Arts Routes', () => {
 
   it('should list art obj with id, title, and srcLink property on /api/v1/arts/:id GET', (done) => {
     request(server)
-    .get(`/api/v1/users/${this.art.id}`)
+    .get(`/api/v1/arts/${this.art.id}`)
     .set('Accept', 'application/json')
     .expect('Content-Type', /json/)
     .expect((res) => {
