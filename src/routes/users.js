@@ -2,7 +2,7 @@ module.exports = (express) => {
   const router = express.Router();
 
 // GET all users
-  router.get('/api/v1/users', (req, res) => {
+  router.get('/users', (req, res) => {
     res.json([
       {
         id: 1,
