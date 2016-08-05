@@ -1,8 +1,9 @@
 module.exports = (express) => {
-  const router = express.Router;
+  const router = express.Router();
 
-  router.get('/arts', (req, res) => {
-    res.json({ h: 'art!' });
+  // Routes apps
+  router.get('/', (req, res) => {
+    res.json({ work: 'it works works works works works' });
   });
 
   return router;

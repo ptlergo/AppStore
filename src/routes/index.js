@@ -7,9 +7,9 @@ module.exports = (express) => {
   });
 
   // individual routes
+  router.use('/api/v1/', require('./arts')(express));
   router.use('/api/v1/', require('./apps')(express));
   router.use('/api/v1/', require('./users')(express));
-  router.use('/api/v1/', require('./arts')(express));
 
   return router;
 };
