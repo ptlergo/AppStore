@@ -3,6 +3,7 @@ const request = require('supertest');
 
 describe('Arts Routes', () => {
   let server;
+  let art;
 
   beforeEach(() => {
     // Open server before each stub
@@ -21,8 +22,12 @@ describe('Arts Routes', () => {
     .expect('Content-Type', /json/)
     .expect((res) => {
       const arts = res.body;
+
+      // save into array
+      this.art = arts[0];
+
       // Expect json object to be array
-      expect(arts).to.be.above(0);
+      expect(arts.length).to.be.above(0);
     })
     .end(done);
   });
