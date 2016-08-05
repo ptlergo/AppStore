@@ -1,8 +1,8 @@
 module.exports = (express) => {
-const router = express.Router();
+  const router = express.Router();
 
 // GET all users
-  router.get('/users', (req, res) => {
+  router.get('/api/v1/users', (req, res) => {
     res.json([
       {
         id: 1,
