@@ -12,6 +12,9 @@ const port = process.env.PORT || 3000;
 // Router file registration with ''/api' prefix. pass in express to file.
 app.use('/api/v1', require('./routes/api')(express));
 
-exports.server = app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log('server active on ', port);
 });
+
+
+module.exports = server;

@@ -3,7 +3,7 @@ module.exports = (express) => {
 
   // Routes apps
   router.get('/', (req, res) => {
-    res.json({ hello: 'world' });
+    res.json({ work: 'it works works works works works' });
   });
 
   // GET all apps
