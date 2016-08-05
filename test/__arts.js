@@ -7,7 +7,7 @@ describe('Arts Routes', () => {
 
   beforeEach(() => {
     // Open server before each stub
-    server =require('../src/server');
+    server = require('../src/server');
   });
 
   afterEach(() => {
