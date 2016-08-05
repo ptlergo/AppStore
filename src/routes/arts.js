@@ -1,7 +1,7 @@
 module.exports = (express) => {
   const router = express.Router();
 
-  // Routes apps
+  // Routes arts
   router.get('/arts', (req, res) => {
     res.json([
       {
