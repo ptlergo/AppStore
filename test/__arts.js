@@ -19,8 +19,10 @@ describe('Arts Routes', () => {
     .get('/api/v1/arts')
     .set('Accept', 'application/json')
     .expect('Content-Type', /json/)
-    .expect(() => {
-      expect(1).to.be.above(0);
+    .expect((res) => {
+      const arts = res.body;
+      // Expect json object to be array
+      expect(arts).to.be.above(0);
     })
     .end(done);
   });
