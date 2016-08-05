@@ -15,7 +15,7 @@ describe('Arts Routes', () => {
     server.close();
   });
 
-  it('should be an art asset', (done) => {
+  it('should list all arts on /api/v1/arts GET', (done) => {
     request(server)
     .get('/api/v1/arts')
     .set('Accept', 'application/json')
@@ -32,7 +32,7 @@ describe('Arts Routes', () => {
     .end(done);
   });
 
-  it('should be an art asset', (done) => {
+  it('should list art obj with id, title, and srcLink property on /api/v1/arts/:id GET', (done) => {
     done();
   });
 });
