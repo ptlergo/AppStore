@@ -12,17 +12,6 @@ npm install
 npm i -g mocha
 ```
 
-POST /api/v1/users
-Create a User
-GET /api/v1/users
-Display all Users
-GET /api/v1/users/:id
-Display User based upon id
-POST /api/v1/users/:id
-Update User based upon id
-DELETE  /api/v1/users/:id
-Delete User based upon id
-
 ##ENDPOINTS
 *All Users, and Apps routes.*
 
