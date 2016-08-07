@@ -12,16 +12,6 @@ const connection = new Sequelize('appstore2', 'root', '', {
   },
 });
 
-// Test connection
-connection
-  .authenticate()
-  .then((err) => {
-    console.log('Connection to database successful');
-  })
-  .catch((err) => {
-    console.log('connection to database fail', err);
-  });
-
 // Define extensiveable App model
 const App = connection.define('app', {
   title: {
@@ -32,7 +22,7 @@ const App = connection.define('app', {
   },
   description: {
     type: Sequelize.STRING,
-    defaultValue: 'description',
+    defaultValue: 'description of app',
   },
   releaseDate: {
     type: Sequelize.STRING,
@@ -40,7 +30,7 @@ const App = connection.define('app', {
 
 });
 
-connection.sync({
-  force: true,
-  logging: console.log,
-});
+// Sync database. Promise to log any errors to console
+connection.sync()
+  .then(() => { console.log('sequelize sync successful'); })
+  .catch((error) => { console.log(error); });
