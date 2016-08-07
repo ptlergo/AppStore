@@ -40,11 +40,11 @@ npm i -g mocha
 
 | HTTP VERB | URL | DESCRIPTION | RESPONSE |
 |---|---|---|---|
-|GET|/api/v1/arts/|[{ id: 1, title: "art1", srcLink: "http://i.imgur.com/5e5Ihb6.jpg", }, { id: 2, title: "art2", srcLink: "http://i.imgur.com/QQ3O6PO.jpg", }]|
-|GET|/api/v1/arts/:id|{ id: 1, title: "art1", srcLink: "http://i.imgur.com/5e5Ihb6.jpg", }|
-|POST|/api/v1/arts/||
-|POST|/api/v1/arts/:id||
-|DELETE|/api/v1/arts/:id||
+|GET|/api/v1/arts/|Get all art assets|[{ id: 1, title: "art1", srcLink: "http://i.imgur.com/5e5Ihb6.jpg", }, { id: 2, title: "art2", srcLink: "http://i.imgur.com/QQ3O6PO.jpg", }]|
+|GET|/api/v1/arts/:id|Get a single art asset|{ id: 1, title: "art1", srcLink: "http://i.imgur.com/5e5Ihb6.jpg", }|
+|POST|/api/v1/arts/|Create an art asset||
+|POST|/api/v1/arts/:id|Update an art asset||
+|DELETE|/api/v1/arts/:id|Delete an art asset||
 
 ##DATABASE
 ```
