@@ -32,12 +32,7 @@ module.exports = (express) => {
   // POST app
   router.route('/apps/:id')
     .post((req, res) => {
-      res.json({
-        id: 1,
-        title: 'app1 new post',
-        description: 'first app post',
-        releaseDate: '2019-08-04T16:52:49+00:00',
-      });
+      const appId = req.params.id;
     });
 
   return router;
