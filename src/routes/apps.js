@@ -1,5 +1,8 @@
 module.exports = (express) => {
   const router = express.Router();
+  const App = require('../models/app');
+
+  console.log('current obj details', App);
 
   // CREATE new app
   router.route('/apps')
