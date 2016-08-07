@@ -8,10 +8,10 @@ module.exports = (express) => {
   });
   // Routes apps
   router.get('/', (req, res) => {
-    res.json({ hello: 'home route' });
+    res.json({ msg: 'home route' });
   });
 
-  // individual routes
+  // Register individual route files
   router.use('/api/v1/', require('./arts')(express));
   router.use('/api/v1/', require('./apps')(express));
   router.use('/api/v1/', require('./users')(express));
