@@ -26,12 +26,7 @@ module.exports = (express) => {
 
   // GET app of 'id'
   router.get('/apps/:id', (req, res) => {
-    res.json({
-      id: 1,
-      title: 'app1',
-      description: 'first app',
-      releaseDate: '2016-08-04T16:52:49+00:00',
-    });
+
   });
 
   return router;
