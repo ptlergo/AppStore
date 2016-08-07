@@ -16,27 +16,28 @@ const connection = new Sequelize('appstore2', 'root', '', {
 connection
   .authenticate()
   .then((err) => {
-    console.log('Conncetion to database successful');
+    console.log('Connection to database successful');
   })
   .catch((err) => {
     console.log('connection to database fail', err);
   });
 
-// Define App model
+// Define extensiveable App model
 const App = connection.define('app', {
-  title: Sequelize.STRING,
-  description: Sequelize.TEXT,
-  releaseDate: Sequelize.STRING,
+  title: {
+    // Only one unique title and no empty title fields specified
+    type: Sequelize.STRING,
+    unique: true,
+    allowNull: false,
+  },
+  description: {
+    type: Sequelize.STRING,
+    defaultValue: 'description',
+  },
+  releaseDate: {
+    type: Sequelize.STRING,
+  },
 
-});
-
-// Test model insert
-connection.sync().then(() => {
-  App.create({
-    title: 'app created from schema',
-    description: 'this app was created as test for sequelize',
-    releaseDate: '11/06/whatever',
-  });
 });
 
 connection.sync();
