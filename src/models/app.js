@@ -10,14 +10,12 @@ const connection = new Sequelize('appstore2', 'root', '', {
     min: 0,
     idle: 10000,
   },
-
-
 });
 
 // Test connection
 connection
   .authenticate()
-  .then(() => {
+  .then((err) => {
     console.log('Conncetion to database successful');
   })
   .catch((err) => {
@@ -33,4 +31,3 @@ const App = connection.define('app', {
 });
 
 connection.sync();
-console.log('app schema built');
