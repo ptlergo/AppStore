@@ -46,6 +46,11 @@ npm i -g mocha
 |POST|/api/v1/arts/:id||
 |DELETE|/api/v1/arts/:id||
 
+##DATABASE
+```
+mysql.server start
+```
+
 ##RUN SERVER
 *Default port is '3000' [http://localhost:3000](http://localhost:3000)*
 
