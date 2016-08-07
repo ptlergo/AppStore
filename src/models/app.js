@@ -36,19 +36,13 @@ const App = connection.define('app', {
       len: {
         args: [5, 255],
         msg: 'Enter a release date with at least 5 characters but less than 255',
-      }
+      },
     },
   },
 
-});
+});// End of App model
 
 // Sync database. Promise to log any errors to console
 connection.sync()
   .then(() => { console.log('sequelize sync successful'); })
-  .then(() => {
-    return App.create({
-      title: 'title test 2',
-      releaseDate: 'aug 12',
-    });
-  })
   .catch((error) => { console.log(error); });
