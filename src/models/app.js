@@ -30,4 +30,13 @@ const App = connection.define('app', {
 
 });
 
+// Test model insert
+connection.sync().then(() => {
+  App.create({
+    title: 'app created from schema',
+    description: 'this app was created as test for sequelize',
+    releaseDate: '11/06/whatever',
+  });
+});
+
 connection.sync();
