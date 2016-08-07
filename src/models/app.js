@@ -19,6 +19,12 @@ const App = connection.define('app', {
     type: Sequelize.STRING,
     unique: true,
     allowNull: false,
+    validate: {
+      len: {
+        args: [2, 255],
+        msg: 'Enter a title with at least 2 characters but less than 255',
+      },
+    },
   },
   description: {
     type: Sequelize.STRING,
@@ -26,6 +32,12 @@ const App = connection.define('app', {
   },
   releaseDate: {
     type: Sequelize.STRING,
+    validate: {
+      len: {
+        args: [5, 255],
+        msg: 'Enter a release date with at least 5 characters but less than 255',
+      }
+    },
   },
 
 });
@@ -33,4 +45,10 @@ const App = connection.define('app', {
 // Sync database. Promise to log any errors to console
 connection.sync()
   .then(() => { console.log('sequelize sync successful'); })
+  .then(() => {
+    return App.create({
+      title: 'title test 2',
+      releaseDate: 'aug 12',
+    });
+  })
   .catch((error) => { console.log(error); });
