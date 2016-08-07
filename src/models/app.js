@@ -40,4 +40,7 @@ const App = connection.define('app', {
 
 });
 
-connection.sync();
+connection.sync({
+  force: true,
+  logging: console.log,
+});
