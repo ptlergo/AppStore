@@ -30,11 +30,11 @@ npm i -g mocha
 
 | HTTP VERB | URL | DESCRIPTION | RESPONSE |
 |---|---|---|---|
-|GET|/api/v1/users|[{ id: 1, name: "user1", age: "18"}, { id: 2, name: "user2", age: "50", }]|
-|GET|/api/v1/users/:id|{ id: 1, name: "user1", age: "18", }|
-|POST|/api/v1/users/||
-|POST|/api/v1/users/:id||
-|DELETE|/api/v1/users/:id||
+|GET|/api/v1/users|Get all users|[{ id: 1, name: "user1", age: "18"}, { id: 2, name: "user2", age: "50", }]|
+|GET|/api/v1/users/:id|Get a single user|{ id: 1, name: "user1", age: "18", }|
+|POST|/api/v1/users/|Create a user||
+|POST|/api/v1/users/:id|Update a user||
+|DELETE|/api/v1/users/:id|Delete a user||
 
 ###Routes for art assets
 
