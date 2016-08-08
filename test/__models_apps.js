@@ -67,13 +67,10 @@ describe('App Model', () => {
   it('should Update an App', (done) => {
     // Load in exisiting app info
     const updateApp = this.tempApp;
-    console.log(updateApp);
     // Generate a new app info
     updateApp.title = faker.name.title();
     updateApp.description = faker.company.catchPhraseDescriptor();
     updateApp.releaseDate = faker.phone.phoneNumber();
-    console.log('new', updateApp);
-
     // Call app model for updating
     App.update(updateApp,
       (err) => {
@@ -82,10 +79,29 @@ describe('App Model', () => {
       (app) => {
         // Save the returned data for later use in tests
         this.tempApp = app;
-        // Expect the app in database to match the fakeApp initially provided
+        // Expect the app in database to match the updated app info
         expect(app.title).to.be.equal(updateApp.title);
         expect(app.description).to.be.equal(updateApp.description);
         expect(app.releaseDate).to.be.equal(updateApp.releaseDate);
+        done();
+      }
+    );
+  });
+
+  // Remove an App
+  it('should Remove an App', (done) => {
+    // Load in existing app info
+    const removeApp = this.tempApp;
+    removeApp.force = true;
+
+    // Call app model for deleteing
+    App.remove(removeApp,
+      (err) => {
+        throw new Error(err);
+      },
+      (response) => {
+        // If successfully removed a 1 should be returned
+        expect(response).to.be.equal(1);
         done();
       }
     );
