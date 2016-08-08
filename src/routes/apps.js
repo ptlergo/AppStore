@@ -5,19 +5,18 @@ module.exports = (express) => {
   console.log(app);
 
   // CREATE new app
-  router.route('/apps')
-    .post((req, res, next) => {
+  router.post('/apps', (req, res) => {
       // Dirty data from user save as payload
-      const payload = req.body;
-      app.create(payload, (err) => {
-        res.status(500).json(err);
-      }), (data) => {
-        res.status(200).json(data);
-      };
-      // debug log
-      console.log(payload);
-      next();
+    const payload = req.body;
+    app.create(payload, (err) => {
+      res.status(500).json(err);
     });
+    (data) => {
+      res.status(200).json(data);
+    };
+    // debug log
+    console.log(payload);
+  });
 
   // GET all apps
   router.get('/apps', (req, res) => {
