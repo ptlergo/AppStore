@@ -1,4 +1,5 @@
 const expect = require('chai').expect;
+const assert = require('chai').assert;
 const request = require('supertest');
 
 // Unit Test for APP Routes
@@ -28,6 +29,19 @@ describe('App Routes', () => {
         // Save one single app from the list to test on in later tests
         this.app = apps[0];
         expect(apps.length).to.be.above(0);
+      })
+      .end(done);
+  });
+
+  // Test route of all apps for one user
+  it('should list all apps on /api/v1/users/:id/apps GET', (done) => {
+    request(server)
+      .get(`/api/v1/users/${this.app.id}/apps`)
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect((res) => {
+        const userApps = res.body;
+        assert.isArray(userApps.users);
       })
       .end(done);
   });
