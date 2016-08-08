@@ -11,9 +11,10 @@ const connection = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proce
     min: 0,
     idle: 10000,
   },
+  logging: false,
 });
 
-// Define extensiveable App model
+// Define extensiveable App table
 const App = connection.define('app', {
   title: {
     // Only one unique title and no empty title fields specified
@@ -40,11 +41,17 @@ const App = connection.define('app', {
       },
     },
   },
-});// End of App model
+});// End of App table
+
+// Define extensiveable User table
+
+// Define extensiveable Art table
 
 // Sync database. Promise to log any errors to console
 connection.sync()
   .then(() => { console.log('sequelize sync successful'); })
   .catch((error) => { console.log(error); });
 
-module.exports = App;
+exports.connection = connection;
+
+exports.app = app;
