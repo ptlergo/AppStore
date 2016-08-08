@@ -30,9 +30,9 @@ module.exports = (express) => {
   });
 
   // READ app of specific user 'id'
-  router.get('/users/:id/apps', (req, res) => {
+  router.get('/users/:appid/apps', (req, res) => {
     const appInfo = req.body;
-    appInfo.id = req.params.id;
+    appInfo.id = req.params.appid;
 
     app.one(appInfo, (err) => {
       res.status(500).json(err);
