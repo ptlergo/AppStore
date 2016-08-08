@@ -27,8 +27,22 @@ exports.find = (payload, err, success) => {
   }).then(success).catch(err);
 };
 
+// UPDATE single from database
+exports.update = (payload, err, success) => {
+  // Use sequelize method find
+  db.app.update({
+    where: {
+      id: payload.id,
+    },
+  })
+  // Promise to take current data and update it with new user data
+  .then((existingData) => {
+    existingData.updateAttributes(payload).then(success).catch(err);
+  }).catch(err);
+};
+
 // DELETE single from database
-exports.destroy = (payload, err, success) => {
+exports.delete = (payload, err, success) => {
   // Use sequelize method find
   db.app.destroy({
     where: {
