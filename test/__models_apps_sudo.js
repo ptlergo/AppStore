@@ -62,4 +62,32 @@ describe('App Model', () => {
       }
     );
   });
+
+  // Update an App
+  it('should Update an App', (done) => {
+    // Load in exisiting app info
+    const updateApp = this.tempApp;
+    console.log(updateApp);
+    // Generate a new app info
+    updateApp.title = faker.name.title();
+    updateApp.description = faker.company.catchPhraseDescriptor();
+    updateApp.releaseDate = faker.phone.phoneNumber();
+    console.log('new', updateApp);
+
+    // Call app model for updating
+    App.update(updateApp,
+      (err) => {
+        throw new Error(err);
+      },
+      (app) => {
+        // Save the returned data for later use in tests
+        this.tempApp = app;
+        // Expect the app in database to match the fakeApp initially provided
+        expect(app.title).to.be.equal(updateApp.title);
+        expect(app.description).to.be.equal(updateApp.description);
+        expect(app.releaseDate).to.be.equal(updateApp.releaseDate);
+        done();
+      }
+    );
+  });
 });// END of App Model describe
