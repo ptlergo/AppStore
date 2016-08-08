@@ -1,12 +1,9 @@
 const expect = require('chai').expect;
-const request = require('supertest');
 const faker = require('faker');
 const App = require('../src/models/app');
 
 describe('App Model', () => {
   let server;
-  let testApps;
-  let tempApp;
 
   // Open server at each stub
   beforeEach(() => {
@@ -33,7 +30,7 @@ describe('App Model', () => {
   });
 
   // Add an App
-  it('Adds a new App', (done) => {
+  it('should Add a new App', (done) => {
     // Generate a fake App with a random title
     const fakeApp = { title: faker.name.firstName() };
 
@@ -54,7 +51,7 @@ describe('App Model', () => {
   });
 
   // Find an App
-  it('Find an App', (done) => {
+  it('should Find an App', (done) => {
     // Generate a fake App with a random title
     const targetApp = this.testApps[0];
 
@@ -72,7 +69,7 @@ describe('App Model', () => {
   });
 
   // Update an App
-  it('Update an App', (done) => {
+  it('should Update an App', (done) => {
     // Load in the info for an existing app
     const updateApp = this.tempApp;
 
@@ -95,7 +92,7 @@ describe('App Model', () => {
   });
 
   // Remove an App
-  it('Remove an App', (done) => {
+  it('should Remove an App', (done) => {
     // Load in the info for an existing app
     const removeApp = this.tempApp;
     removeApp.force = true;

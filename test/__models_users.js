@@ -1,12 +1,9 @@
 const expect = require('chai').expect;
-const request = require('supertest');
 const faker = require('faker');
 const User = require('../src/models/user');
 
 describe('User Model', () => {
   let server;
-  let testUsers;
-  let tempUser;
 
   // Open server at each stub
   beforeEach(() => {
@@ -42,12 +39,12 @@ describe('User Model', () => {
       (err) => {
         throw new Error(err);
       },
-      (User) => {
+      (user) => {
         // Save the returned data for later use in tests
-        this.tempUser = User.dataValues;
+        this.tempUser = user.dataValues;
 
         // User.title returned from model should match User.title supplied
-        expect(User.name).to.be.equal(fakeUser.name);
+        expect(user.name).to.be.equal(fakeUser.name);
         done();
       }
     );
@@ -65,7 +62,7 @@ describe('User Model', () => {
       },
       (user) => {
         // User.title returned from model should match User.title supplied
-        expect(User.name).to.be.equal(targetUser.name);
+        expect(user.name).to.be.equal(targetUser.name);
         done();
       }
     );
@@ -88,7 +85,7 @@ describe('User Model', () => {
         // Save the returned data for later use in tests
         this.tempUser = User;
         // User.name returned from model should match user.name supplied
-        expect(User.name).to.be.equal(updateUser.name);
+        expect(user.name).to.be.equal(updateUser.name);
         done();
       }
     );
