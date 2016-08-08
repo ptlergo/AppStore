@@ -2,7 +2,15 @@ module.exports = (express) => {
   const router = express.Router();
   const app = require('../models/app');
 
-  console.log(app);
+  // GET all apps
+  router.get('/apps', (req, res) => {
+    app.findAll((err) => {
+      res.status(500).json(err);
+    });
+    (data) => {
+      res.status(200).json(data);
+    };
+  });
 
   // CREATE new app
   router.post('/apps', (req, res) => {
@@ -16,12 +24,6 @@ module.exports = (express) => {
     };
     // debug log
     console.log(payload);
-  });
-
-  // GET all apps
-  router.get('/apps', (req, res) => {
-    const appstuff = req.body;
-    res.json(appstuff);
   });
 
   // GET app of 'id'
