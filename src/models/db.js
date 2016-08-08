@@ -77,7 +77,7 @@ App.hasMany(User, {
 
 // Sync database. Promise to log any errors to console
 connection.sync()
-  .then(() => { console.log('sequelize sync successful'); })
+  .then(() => {})
   .catch((error) => { console.log(error); });
 
 exports.connection = connection;
