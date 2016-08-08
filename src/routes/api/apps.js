@@ -28,8 +28,10 @@ module.exports = (express) => {
 
   // READ app of 'id'
   router.get('/apps/:id', (req, res) => {
-    req.body.id = req.params.id;
-    app.find(req.body, (err) => {
+    const appinfo = req.body;
+    appinfo.id = req.params.id;
+
+    app.find(appinfo, (err) => {
       res.status(500).json(err);
     },
     (data) => {
@@ -39,8 +41,10 @@ module.exports = (express) => {
 
   // DELETE app of 'id'
   router.delete('/apps/:id', (req, res) => {
-    req.body.id = req.params.id;
-    app.destroy(req.body, (err) => {
+    const appinfo = req.body;
+    appinfo.id = req.params.id;
+
+    app.destroy(appinfo, (err) => {
       res.status(500).json(err);
     },
     (data) => {
