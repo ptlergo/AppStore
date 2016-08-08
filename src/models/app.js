@@ -1,9 +1,9 @@
 const db = require('./db');
 
 // CREATE into database
-exports.add = (payload, err, success) => {
+exports.add = (obj, errorCallback, successCallBack) => {
   // Use sequelize method create
-  db.app.create(payload).then(success).catch(err);
+  db.app.create(obj).then(successCallBack).catch(errorCallback);
 };
 
 // READ all from database
