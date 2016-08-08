@@ -1,14 +1,15 @@
+const app = require('../../models/app');
+
 module.exports = (express) => {
   const router = express.Router();
-  const app = require('../../models/app');
-
   // GET all apps
   router.get('/apps', (req, res) => {
     app.findAll((err) => {
       res.status(500).json(err);
-    }),(data) => {
+    },
+    (data) => {
       res.status(200).json(data);
-    };
+    });
   });
 
   // CREATE new app
@@ -17,10 +18,10 @@ module.exports = (express) => {
     const payload = req.body;
     app.create(payload, (err) => {
       res.status(500).json(err);
-    });
+    },
     (data) => {
       res.status(200).json(data);
-    };
+    });
     // debug log
     console.log(payload);
   });
@@ -30,10 +31,10 @@ module.exports = (express) => {
     req.body.id = req.params.id;
     app.find(req.body, (err) => {
       res.status(500).json(err);
-    });
+    },
     (data) => {
       res.status(200).json(data);
-    };
+    });
   });
 
   return router;
