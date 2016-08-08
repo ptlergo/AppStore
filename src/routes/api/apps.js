@@ -12,6 +12,45 @@ module.exports = (express) => {
     });
   });
 
+  // READ app of 'id'
+  router.get('/apps/:id', (req, res) => {
+    const appInfo = req.body;
+    appInfo.id = req.params.id;
+
+    app.find(appInfo, (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data);
+    });
+  });
+
+  // DELETE app of 'id'
+  router.delete('/apps/:id', (req, res) => {
+    const appInfo = req.body;
+    appInfo.id = req.params.id;
+
+    app.destroy(appInfo, (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data);
+    });
+  });
+
+  // UPDATE app of 'id'
+  router.post('/apps/:id', (req, res) => {
+    const appInfo = req.body;
+    appInfo.id = req.params.id;
+
+    app.update(appInfo, (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data);
+    });
+  });
+
   // CREATE new app
   router.post('/apps', (req, res) => {
       // Dirty data from user save as payload
@@ -24,32 +63,6 @@ module.exports = (express) => {
     });
     // debug log
     console.log(payload);
-  });
-
-  // READ app of 'id'
-  router.get('/apps/:id', (req, res) => {
-    const appinfo = req.body;
-    appinfo.id = req.params.id;
-
-    app.find(appinfo, (err) => {
-      res.status(500).json(err);
-    },
-    (data) => {
-      res.status(200).json(data);
-    });
-  });
-
-  // DELETE app of 'id'
-  router.delete('/apps/:id', (req, res) => {
-    const appinfo = req.body;
-    appinfo.id = req.params.id;
-
-    app.destroy(appinfo, (err) => {
-      res.status(500).json(err);
-    },
-    (data) => {
-      res.status(200).json(data);
-    });
   });
 
   return router;

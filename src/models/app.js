@@ -30,7 +30,7 @@ exports.find = (payload, err, success) => {
 // UPDATE single from database
 exports.update = (payload, err, success) => {
   // Use sequelize method find
-  db.app.update({
+  db.app.find({
     where: {
       id: payload.id,
     },
