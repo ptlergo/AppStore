@@ -4,13 +4,8 @@ const App = require('../src/models/app');
 
 describe('App Model', () => {
   let server;
-  // Generate a fake App with a random title
-  const tempApp = {
-    title: faker.name.title(),
-    description: faker.company.catchPhraseDescriptor(),
-    releaseDate: faker.date.recent(),
-  };
-  console.log('tempApp', tempApp);
+  let testApps;
+
   // Open server at each stub
   beforeEach(() => {
     server = require('../src/server');
@@ -35,21 +30,28 @@ describe('App Model', () => {
     );
   });
 
-  // // Add an App
-  // it('should Add a new App', (done) => {
-  //   // Call app model for adding
-  //   App.add(testApps,
-  //     (err) => {
-  //       throw new Error(err);
-  //     },
-  //     (app) => {
-  //       // Save the returned data for later use in tests
-  //       this.tempApp = app.dataValues;
-  //
-  //       // App.title returned from model should match app.title supplied
-  //       expect(app.title).to.be.equal(testApps.name);
-  //       done();
-  //     }
-  //   );
-  // });
+  // Add an App
+  it('should Add a new App', (done) => {
+    // Call app model for adding
+    // Generate a fake App with a random title
+    const fakeApp = {
+      title: faker.name.title(),
+      description: faker.company.catchPhraseDescriptor(),
+      releaseDate: faker.phone.phoneNumber(),
+    };
+    App.add(fakeApp,
+    (err) => {
+      throw new Error(err);
+    },
+    (app) => {
+      // Save the returned data for later use in testApps
+      this.tempApp = app.dataValues;
+      // Expect the app in database to match the fakeApp initially provided
+      expect(app.title).to.be.equal(fakeApp.title);
+      expect(app.description).to.be.equal(fakeApp.description);
+      expect(app.releaseDate).to.be.equal(fakeApp.releaseDate);
+      done();
+    }
+  );
+  });
 });// END of App Model describe
