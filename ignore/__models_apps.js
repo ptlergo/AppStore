@@ -21,19 +21,19 @@ describe('App Model', () => {
 
   // Add an App
   it('should Add a new App', (done) => {
-    // Call app model for adding
-    // Generate a fake App with a random title
+    // Generate a fake App
     const fakeApp = {
       title: faker.name.title(),
       description: faker.company.catchPhraseDescriptor(),
       releaseDate: faker.phone.phoneNumber(),
     };
+    // Call app model for adding
     App.add(fakeApp,
     (err) => {
       throw new Error(err);
     },
     (app) => {
-      // Save the returned data for later use in testApps
+      // Save the returned data for later use in test
       this.tempApp = app.dataValues;
       // Expect the app in database to match the fakeApp initially provided
       expect(app.title).to.be.equal(fakeApp.title);
