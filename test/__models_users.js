@@ -4,6 +4,8 @@ const User = require('../src/models/user');
 
 describe('User Model', () => {
   let server;
+  let testUsers;
+  let tempUser;
 
   // Open server at each stub
   beforeEach(() => {
@@ -32,7 +34,7 @@ describe('User Model', () => {
   // Add an User
   it('should Add a new User', (done) => {
     // Generate a fake User with a random title
-    const fakeUser = { title: faker.name.firstName() };
+    const fakeUser = { name: 'faker.name.firstName()' };
 
     // Call User model for adding
     User.add(fakeUser,
@@ -51,7 +53,7 @@ describe('User Model', () => {
   });
 
   // Find an User
-  it('Find an User', (done) => {
+  it('should Find a User', (done) => {
     // Generate a fake User with a random title
     const targetUser = this.testUsers[0];
 
@@ -83,7 +85,7 @@ describe('User Model', () => {
       },
       (user) => {
         // Save the returned data for later use in tests
-        this.tempUser = User;
+        this.tempUser = user;
         // User.name returned from model should match user.name supplied
         expect(user.name).to.be.equal(updateUser.name);
         done();

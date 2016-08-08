@@ -4,6 +4,8 @@ const App = require('../src/models/app');
 
 describe('App Model', () => {
   let server;
+  let testApps;
+  let tempApp;
 
   // Open server at each stub
   beforeEach(() => {
@@ -32,7 +34,7 @@ describe('App Model', () => {
   // Add an App
   it('should Add a new App', (done) => {
     // Generate a fake App with a random title
-    const fakeApp = { title: faker.name.firstName() };
+    const fakeApp = { title: faker.title.lastName() };
 
     // Call app model for adding
     App.add(fakeApp,
@@ -74,7 +76,7 @@ describe('App Model', () => {
     const updateApp = this.tempApp;
 
     // Generate a new title for hte app
-    updateApp.title = 'Not A Real Name';
+    updateApp.title = 'Not A Real Title';
 
     // Call app model for updating
     App.update(updateApp,
