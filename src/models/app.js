@@ -42,7 +42,7 @@ exports.update = (payload, err, success) => {
 };
 
 // DELETE single from database
-exports.delete = (payload, err, success) => {
+exports.destroy = (payload, err, success) => {
   // Use sequelize method find
   db.app.destroy({
     where: {

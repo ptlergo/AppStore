@@ -37,5 +37,16 @@ module.exports = (express) => {
     });
   });
 
+  // DELETE app of 'id'
+  router.delete('/apps/:id', (req, res) => {
+    req.body.id = req.params.id;
+    app.destroy(req.body, (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data);
+    });
+  });
+
   return router;
 };
