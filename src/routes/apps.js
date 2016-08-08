@@ -1,21 +1,22 @@
 module.exports = (express) => {
   const router = express.Router();
-  const App = require('../models/app');
+  const app = require('../models/app');
 
-  console.log(App);
+  console.log(app);
 
   // CREATE new app
   router.route('/apps')
-    .post((req) => {
-      const obj = req.body;
-      const appnew = {
-        id: obj.id,
-        title: obj.title,
-        description: obj.description,
-        releaseDate: obj.releaseDate,
+    .post((req, res, next) => {
+      // Dirty data from user save as payload
+      const payload = req.body;
+      app.create(payload, (err) => {
+        res.status(500).json(err);
+      }), (data) => {
+        res.status(200).json(data);
       };
       // debug log
-      console.log(appnew);
+      console.log(payload);
+      next();
     });
 
   // GET all apps

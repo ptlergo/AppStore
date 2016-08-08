@@ -54,4 +54,4 @@ connection.sync()
 
 exports.connection = connection;
 
-exports.app = app;
+exports.app = App;
