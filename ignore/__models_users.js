@@ -35,6 +35,7 @@ describe('User Model', () => {
   it('should Add a new User', (done) => {
     // Generate a fake User with a random title
     const fakeUser = { name: 'faker.name.firstName()' };
+    const fakeAge = { age: 'faker.random.number()' };
 
     // Call User model for adding
     User.add(fakeUser,
