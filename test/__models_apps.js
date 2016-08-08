@@ -8,8 +8,18 @@ describe('App Model', () => {
   let testApps;
   let tempApp;
 
+  // Open server at each stub
+  beforeEach(() => {
+    server = require('../src/server');
+  });
+
+  // Close server after each stub done
+  afterEach(() => {
+    server.close();
+  });
+
   // Test for all Apps
-  it('Gets All', (done) => {
+  it('should GET All apps', (done) => {
     App.all(
       (err) => {
         throw new Error(err);

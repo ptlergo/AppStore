@@ -4,7 +4,7 @@ module.exports = (express) => {
   const router = express.Router();
   // READ all apps
   router.get('/apps', (req, res) => {
-    app.findAll((err) => {
+    app.all((err) => {
       res.status(500).json(err);
     },
     (data) => {
@@ -17,7 +17,7 @@ module.exports = (express) => {
     const appInfo = req.body;
     appInfo.id = req.params.id;
 
-    app.find(appInfo, (err) => {
+    app.one(appInfo, (err) => {
       res.status(500).json(err);
     },
     (data) => {
@@ -30,7 +30,7 @@ module.exports = (express) => {
     const appInfo = req.body;
     appInfo.id = req.params.id;
 
-    app.destroy(appInfo, (err) => {
+    app.remove(appInfo, (err) => {
       res.status(500).json(err);
     },
     (data) => {
@@ -55,7 +55,7 @@ module.exports = (express) => {
   router.post('/apps', (req, res) => {
       // Dirty data from user save as payload
     const payload = req.body;
-    app.create(payload, (err) => {
+    app.add(payload, (err) => {
       res.status(500).json(err);
     },
     (data) => {

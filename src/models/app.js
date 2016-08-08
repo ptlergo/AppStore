@@ -1,19 +1,19 @@
 const db = require('./db');
 
 // CREATE into database
-exports.create = (payload, err, success) => {
+exports.add = (payload, err, success) => {
   // Use sequelize method create
   db.app.create(payload).then(success).catch(err);
 };
 
 // READ all from database
-exports.findAll = (err, success) => {
+exports.all = (err, success) => {
   // Use sequelize method findAll
   db.app.findAll().then(success).catch(err);
 };
 
 // READ single from database
-exports.find = (payload, err, success) => {
+exports.one = (payload, err, success) => {
   // Use sequelize method find
   db.app.find({
     where: {
@@ -42,7 +42,7 @@ exports.update = (payload, err, success) => {
 };
 
 // DELETE single from database
-exports.destroy = (payload, err, success) => {
+exports.remove = (payload, err, success) => {
   // Use sequelize method find
   db.app.destroy({
     where: {
