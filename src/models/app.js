@@ -27,14 +27,6 @@ exports.one = (id, errorCallback, successCallBack) => {
   }).then(successCallBack).catch(errorCallback);
 };// END of one
 
-exports.userApps = (id, errorCallback, successCallBack) => {
-  db.app.findAll({
-    where: {
-      appid: id.appid,
-    },
-  }).then(successCallBack).catch(errorCallback);
-};// END of one user apps
-
 // UPDATE single from database
 exports.update = (obj, errorCallback, successCallBack) => {
   // Use sequelize method find
