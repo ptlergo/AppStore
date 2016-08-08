@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000;
 
-// Router file registration with ''/api' prefix. pass in express to file.
+// Load all routes in routes folder
 app.use('/', require('./routes')(express));
 
 const server = app.listen(port, () => {

@@ -12,9 +12,9 @@ module.exports = (express) => {
   });
 
   // Register individual route files
-  router.use('/api/v1/', require('./arts')(express));
-  router.use('/api/v1/', require('./apps')(express));
-  router.use('/api/v1/', require('./users')(express));
+  router.use('/api/v1/', require('./api/apps')(express));
+  router.use('/api/v1/', require('./api/arts')(express));
+  router.use('/api/v1/', require('./api/users')(express));
 
   return router;
 };
