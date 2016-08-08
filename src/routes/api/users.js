@@ -1,29 +1,68 @@
+const user = require('../../models/user');
+
 module.exports = (express) => {
   const router = express.Router();
-
-// GET all users
+  // READ all users
   router.get('/users', (req, res) => {
-    res.json([
-      {
-        id: 1,
-        name: 'user1',
-        age: '18',
-      },
-      {
-        id: 2,
-        name: 'user2',
-        age: '50',
-      },
-    ]);
+    user.all((err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data);
+    });
   });
 
-  // GET user of id
+  // READ user of 'id'
   router.get('/users/:id', (req, res) => {
-    res.json({
-      id: 1,
-      name: 'user1',
-      age: '18',
+    const userInfo = req.body;
+    userInfo.id = req.params.id;
+
+    user.one(userInfo, (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data);
     });
+  });
+
+  // DELETE user of 'id'
+  router.delete('/users/:id', (req, res) => {
+    const userInfo = req.body;
+    userInfo.id = req.params.id;
+
+    user.remove(userInfo, (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data);
+    });
+  });
+
+  // UPDATE user of 'id'
+  router.post('/users/:id', (req, res) => {
+    const userInfo = req.body;
+    userInfo.id = req.params.id;
+
+    user.update(userInfo, (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data);
+    });
+  });
+
+  // CREATE new user
+  router.post('/users', (req, res) => {
+      // Dirty data from user save as payload
+    const payload = req.body;
+    user.add(payload, (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data);
+    });
+    // debug log
+    console.log(payload);
   });
 
   return router;

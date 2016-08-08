@@ -14,6 +14,31 @@ const connection = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proce
   logging: false,
 });
 
+// Define extensiveable User table
+const User = connection.define('user', {
+  name: {
+    // Only one unique title and no empty title fields specified
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      len: {
+        args: [1, 255],
+        msg: 'Enter a name with at least 1 characters but less than 255',
+      },
+    },
+  },
+  age: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    validate: {
+      len: {
+        args: [1, 255],
+        msg: 'Enter a nummeric age',
+      },
+    },
+  },
+});// End of User table
+
 // Define extensiveable App table
 const App = connection.define('app', {
   title: {
@@ -43,7 +68,10 @@ const App = connection.define('app', {
   },
 });// End of App table
 
-// Define extensiveable User table
+// Table join for a user that will have multiple apps
+App.hasMany(User, {
+  foreignKey: 'appId',
+});
 
 // Define extensiveable Art table
 
@@ -55,3 +83,4 @@ connection.sync()
 exports.connection = connection;
 
 exports.app = App;
+exports.user = User;
