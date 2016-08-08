@@ -2,7 +2,7 @@ const app = require('../../models/app');
 
 module.exports = (express) => {
   const router = express.Router();
-  // GET all apps
+  // READ all apps
   router.get('/apps', (req, res) => {
     app.findAll((err) => {
       res.status(500).json(err);
@@ -26,7 +26,7 @@ module.exports = (express) => {
     console.log(payload);
   });
 
-  // GET app of 'id'
+  // READ app of 'id'
   router.get('/apps/:id', (req, res) => {
     req.body.id = req.params.id;
     app.find(req.body, (err) => {
