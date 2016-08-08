@@ -2,14 +2,18 @@ const app = require('../../models/app');
 
 module.exports = (express) => {
   const router = express.Router();
-  // READ all apps
-  router.get('/apps', (req, res) => {
-    app.all((err) => {
+  // CREATE new app
+  router.post('/apps', (req, res) => {
+      // Dirty data from user save as payload
+    const payload = req.body;
+    app.add(payload, (err) => {
       res.status(500).json(err);
     },
     (data) => {
       res.status(200).json(data);
     });
+    // debug log
+    console.log(payload);
   });
 
   // READ app of 'id'
@@ -25,12 +29,22 @@ module.exports = (express) => {
     });
   });
 
-  // DELETE app of 'id'
-  router.delete('/apps/:id', (req, res) => {
+  // READ app of specific user 'id'
+  router.get('/users/:id/apps', (req, res) => {
     const appInfo = req.body;
     appInfo.id = req.params.id;
 
-    app.remove(appInfo, (err) => {
+    app.one(appInfo, (err) => {
+      res.status(500).json(err);
+    },
+    (data) => {
+      res.status(200).json(data);
+    });
+  });
+
+  // READ all apps
+  router.get('/apps', (req, res) => {
+    app.all((err) => {
       res.status(500).json(err);
     },
     (data) => {
@@ -51,18 +65,17 @@ module.exports = (express) => {
     });
   });
 
-  // CREATE new app
-  router.post('/apps', (req, res) => {
-      // Dirty data from user save as payload
-    const payload = req.body;
-    app.add(payload, (err) => {
+  // DELETE app of 'id'
+  router.delete('/apps/:id', (req, res) => {
+    const appInfo = req.body;
+    appInfo.id = req.params.id;
+
+    app.remove(appInfo, (err) => {
       res.status(500).json(err);
     },
     (data) => {
       res.status(200).json(data);
     });
-    // debug log
-    console.log(payload);
   });
 
   return router;
