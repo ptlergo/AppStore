@@ -3,18 +3,7 @@ const faker = require('faker');
 const App = require('../src/models/app');
 
 describe('App Model', () => {
-  let server;
   let testApps;
-
-  // Open server at each stub
-  beforeEach(() => {
-    server = require('../src/server');
-  });
-
-  // Close server after each stub done
-  afterEach(() => {
-    server.close();
-  });
 
   // Test for all Apps
   it('should GET All apps', (done) => {
@@ -53,5 +42,24 @@ describe('App Model', () => {
       done();
     }
   );
+  });
+
+  // Find an App
+  it('should Find an App', (done) => {
+    // Generate a fake App with a random title
+    const targetApp = this.testApps[0];
+    // Call app model for finding an app in database
+    App.one(targetApp,
+      (err) => {
+        throw new Error(err);
+      },
+      (app) => {
+        // App.title returned from model should match app.title supplied
+        expect(app.title).to.be.equal(targetApp.title);
+        expect(app.description).to.be.equal(targetApp.description);
+        expect(app.releaseDate).to.be.equal(targetApp.releaseDate);
+        done();
+      }
+    );
   });
 });// END of App Model describe
