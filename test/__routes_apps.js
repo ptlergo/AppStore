@@ -15,6 +15,7 @@ describe('App Routes', () => {
     server = require('../src/server');
     // Create an app with temp. details
     const fakeApp = {
+      id: faker.random.number(),
       title: faker.name.title(),
       description: faker.company.catchPhraseDescriptor(),
       releaseDate: faker.phone.phoneNumber(),
@@ -37,8 +38,13 @@ describe('App Routes', () => {
 
     App.remove(testApp,
       (err) => {
+        throw new Error(err);
+      },
+      (data) => {
+        expect(data).to.be.equal(1);
+        done();
       }
-  );
+    );
   });
 
   // Test route of all apps
@@ -51,7 +57,7 @@ describe('App Routes', () => {
         const apps = res.body;
 
         // Save one single app from the list to test on in later tests
-        this.app = apps[0];
+        this.app = testApp;
         expect(apps.length).to.be.above(0);
       })
       .end(done);
