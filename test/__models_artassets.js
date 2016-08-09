@@ -5,7 +5,7 @@ const ArtAsset = require('../src/models/artasset');
 
 describe('Art Assets Model', () => {
   let testArtAsset;
-
+  let tempArtAsset;
   // Test for all art assets
   it('should GET all art assets', (done) => {
     ArtAsset.all(
@@ -21,12 +21,19 @@ describe('Art Assets Model', () => {
 
   it('should Add an art assets', (done) => {
     // Generate fake art assets
-    const fakeArt = {
-      title: faker.random.bs_noun(),
+    const fakeArtAsset = {
+      title: faker.random.number(),
       srcLink: faker.image.imageUrl(),
     };
-    ArtAsset.add()
-    done();
+    ArtAsset.add(fakeArtAsset,
+      (err) => {
+        throw new Error(err);
+      },
+      (artasset) => {
+        this.tempArtAsset = artasset.dataValues;
+        done();
+      }
+    );
   });
 
   it('should GET a single art asset', (done) => {

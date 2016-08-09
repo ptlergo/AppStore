@@ -4,6 +4,7 @@ const User = require('../src/models/user');
 
 describe('User Model', () => {
   let testUsers;
+  let tempUser;
 
   // Test for all Apps
   it('should GET All users', (done) => {
