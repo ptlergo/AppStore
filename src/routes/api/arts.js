@@ -32,7 +32,17 @@ module.exports = (express) => {
 
   // Route READ a single art asset
   router.get('/artassets/:id', (req, res) => {
-
+    const artId = req.body;
+    artId.id = req.params.id;
+    // Find one art asset
+    ArtAsset.one(
+      (err) => {
+        res.status(500).json(err);
+      },
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
   });
 
   // Route UPDATE single art asset

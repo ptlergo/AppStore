@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const request = require('supertest');
 
-describe('Art assets Routes', () => {
+describe('Art Assets Routes', () => {
   let server;
   let artasset;
 
