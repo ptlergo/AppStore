@@ -11,9 +11,8 @@ module.exports = (express) => {
     },
     (data) => {
       res.status(200).json(data);
-    });
-    // debug log
-    console.log(payload);
+    }
+    );
   });
 
   // READ app of 'id'
@@ -24,9 +23,10 @@ module.exports = (express) => {
     app.one(appInfo, (err) => {
       res.status(500).json(err);
     },
-    (data) => {
-      res.status(200).json(data);
-    });
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
   });
 
   // READ app of specific user 'id'
@@ -37,9 +37,10 @@ module.exports = (express) => {
     app.one(appInfo, (err) => {
       res.status(500).json(err);
     },
-    (data) => {
-      res.status(200).json(data);
-    });
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
   });
 
   // READ all apps
@@ -47,9 +48,10 @@ module.exports = (express) => {
     app.all((err) => {
       res.status(500).json(err);
     },
-    (data) => {
-      res.status(200).json(data);
-    });
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
   });
 
   // UPDATE app of 'id'
@@ -60,9 +62,10 @@ module.exports = (express) => {
     app.update(appInfo, (err) => {
       res.status(500).json(err);
     },
-    (data) => {
-      res.status(200).json(data);
-    });
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
   });
 
   // DELETE app of 'id'
@@ -73,9 +76,10 @@ module.exports = (express) => {
     app.remove(appInfo, (err) => {
       res.status(500).json(err);
     },
-    (data) => {
-      res.status(200).json(data);
-    });
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
   });
 
   return router;

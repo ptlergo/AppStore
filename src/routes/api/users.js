@@ -7,9 +7,10 @@ module.exports = (express) => {
     user.all((err) => {
       res.status(500).json(err);
     },
-    (data) => {
-      res.status(200).json(data);
-    });
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
   });
 
   // READ user of 'id'
@@ -20,9 +21,10 @@ module.exports = (express) => {
     user.one(userInfo, (err) => {
       res.status(500).json(err);
     },
-    (data) => {
-      res.status(200).json(data);
-    });
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
   });
 
   // DELETE user of 'id'
@@ -33,9 +35,10 @@ module.exports = (express) => {
     user.remove(userInfo, (err) => {
       res.status(500).json(err);
     },
-    (data) => {
-      res.status(200).json(data);
-    });
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
   });
 
   // UPDATE user of 'id'
@@ -46,9 +49,10 @@ module.exports = (express) => {
     user.update(userInfo, (err) => {
       res.status(500).json(err);
     },
-    (data) => {
-      res.status(200).json(data);
-    });
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
   });
 
   // CREATE new user
@@ -58,9 +62,10 @@ module.exports = (express) => {
     user.add(payload, (err) => {
       res.status(500).json(err);
     },
-    (data) => {
-      res.status(200).json(data);
-    });
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
     // debug log
     console.log(payload);
   });
