@@ -20,6 +20,12 @@ describe('Art Assets Model', () => {
   });
 
   it('should Add an art assets', (done) => {
+    // Generate fake art assets
+    const fakeArt = {
+      title: faker.random.bs_noun(),
+      srcLink: faker.image.imageUrl(),
+    };
+    ArtAsset.add()
     done();
   });
 
