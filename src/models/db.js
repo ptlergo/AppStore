@@ -97,6 +97,11 @@ App.hasMany(User, {
   foreignKey: 'appId',
 });
 
+// Table join for an app that will have multiple art assets
+ArtAsset.hasMany(App, {
+  foreignKey: 'artId',
+});
+
 // Define extensiveable Art table
 
 // Sync database. Promise to log any errors to console
@@ -108,3 +113,4 @@ exports.connection = connection;
 
 exports.app = App;
 exports.user = User;
+exports.artasset = ArtAsset;
