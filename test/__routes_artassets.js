@@ -1,9 +1,9 @@
 const expect = require('chai').expect;
 const request = require('supertest');
 
-describe('Arts Routes', () => {
+describe('Art assets Routes', () => {
   let server;
-  let art;
+  let artasset;
 
   beforeEach(() => {
     // Open server before each stub
@@ -15,33 +15,33 @@ describe('Arts Routes', () => {
     server.close();
   });
 
-  it('should list all arts on /api/v1/arts GET', (done) => {
+  it('should list all art assets on /api/v1/artassets GET', (done) => {
     request(server)
-    .get('/api/v1/arts')
+    .get('/api/v1/artassets')
     .set('Accept', 'application/json')
     .expect('Content-Type', /json/)
     .expect((res) => {
-      const arts = res.body;
+      const artassets = res.body;
 
       // save into array
-      this.art = arts[0];
+      this.artasset = artassets[0];
 
       // Expect json object to be array
-      expect(arts.length).to.be.above(0);
+      expect(artassets.length).to.be.above(0);
     })
     .end(done);
   });
 
-  it('should list art obj with id, title, and srcLink property on /api/v1/arts/:id GET', (done) => {
+  it('should list art asset obj with id, title, & srcLink on /api/v1/arts/:id GET', (done) => {
     request(server)
-    .get(`/api/v1/arts/${this.art.id}`)
+    .get(`/api/v1/artassets/${this.artasset.id}`)
     .set('Accept', 'application/json')
     .expect('Content-Type', /json/)
     .expect((res) => {
-      art = res.body;
-      expect(art).to.have.property('id');
-      expect(art).to.have.property('title');
-      expect(art).to.have.property('srcLink');
+      artasset = res.body;
+      expect(artasset).to.have.property('id');
+      expect(artasset).to.have.property('title');
+      expect(artasset).to.have.property('srcLink');
     })
     .end(done);
   });

@@ -2,7 +2,7 @@ module.exports = (express) => {
   const router = express.Router();
 
   // Route all art assets
-  router.get('/arts', (req, res) => {
+  router.get('/artassets', (req, res) => {
     res.json([
       {
         id: 1,
@@ -18,7 +18,7 @@ module.exports = (express) => {
   });
 
   // Route single art asset
-  router.get('/arts/:id', (req, res) => {
+  router.get('/artassets/:id', (req, res) => {
     res.json({
       id: 1,
       title: 'art1',
