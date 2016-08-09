@@ -4,9 +4,10 @@ module.exports = (express) => {
   const router = express.Router();
   // READ all users
   router.get('/users', (req, res) => {
-    user.all((err) => {
-      res.status(500).json(err);
-    },
+    user.all(
+      (err) => {
+        res.status(500).json(err);
+      },
       (data) => {
         res.status(200).json(data);
       }
@@ -18,9 +19,10 @@ module.exports = (express) => {
     const userInfo = req.body;
     userInfo.id = req.params.id;
 
-    user.one(userInfo, (err) => {
-      res.status(500).json(err);
-    },
+    user.one(userInfo,
+      (err) => {
+        res.status(500).json(err);
+      },
       (data) => {
         res.status(200).json(data);
       }
@@ -32,9 +34,10 @@ module.exports = (express) => {
     const userInfo = req.body;
     userInfo.id = req.params.id;
 
-    user.remove(userInfo, (err) => {
-      res.status(500).json(err);
-    },
+    user.remove(userInfo,
+      (err) => {
+        res.status(500).json(err);
+      },
       (data) => {
         res.status(200).json(data);
       }
@@ -46,9 +49,10 @@ module.exports = (express) => {
     const userInfo = req.body;
     userInfo.id = req.params.id;
 
-    user.update(userInfo, (err) => {
-      res.status(500).json(err);
-    },
+    user.update(userInfo,
+        (err) => {
+          res.status(500).json(err);
+        },
       (data) => {
         res.status(200).json(data);
       }
@@ -59,9 +63,10 @@ module.exports = (express) => {
   router.post('/users', (req, res) => {
       // Dirty data from user save as payload
     const payload = req.body;
-    user.add(payload, (err) => {
-      res.status(500).json(err);
-    },
+    user.add(payload,
+      (err) => {
+        res.status(500).json(err);
+      },
       (data) => {
         res.status(200).json(data);
       }
