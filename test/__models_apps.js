@@ -5,20 +5,6 @@ const App = require('../src/models/app');
 describe('App Model', () => {
   let testApps;
 
-  // Test for all Apps
-  it('should GET All apps', (done) => {
-    App.all(
-      (err) => {
-        throw new Error(err);
-      },
-      (apps) => {
-        this.testApps = apps;
-        expect(this.testApps.length).to.be.above(0);
-        done();
-      }
-    );
-  });
-
   // Add an App
   it('should Add a new App', (done) => {
     // Generate a fake App
@@ -42,6 +28,20 @@ describe('App Model', () => {
       done();
     }
   );
+  });
+
+  // Test for all Apps
+  it('should GET All apps', (done) => {
+    App.all(
+      (err) => {
+        throw new Error(err);
+      },
+      (apps) => {
+        this.testApps = apps;
+        expect(this.testApps.length).to.be.above(0);
+        done();
+      }
+    );
   });
 
   // Find an App

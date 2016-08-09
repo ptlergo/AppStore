@@ -6,19 +6,6 @@ describe('User Model', () => {
   let testUsers;
   let tempUser;
 
-  // Test for all Apps
-  it('should GET All users', (done) => {
-    User.all(
-      (err) => {
-        throw new Error(err);
-      },
-      (users) => {
-        this.testUsers = users;
-        expect(this.testUsers.length).to.be.above(0);
-        done();
-      }
-    );
-  });
 
   // Add a User
   it('should Add a new User', (done) => {
@@ -41,6 +28,20 @@ describe('User Model', () => {
       done();
     }
   );
+  });
+
+  // Test for all Apps
+  it('should GET All users', (done) => {
+    User.all(
+      (err) => {
+        throw new Error(err);
+      },
+      (users) => {
+        this.testUsers = users;
+        expect(this.testUsers.length).to.be.above(0);
+        done();
+      }
+    );
   });
 
   // Find an App
