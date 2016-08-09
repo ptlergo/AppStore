@@ -25,6 +25,7 @@ describe('Art Assets Model', () => {
       title: faker.random.number(),
       srcLink: faker.image.imageUrl(),
     };
+
     ArtAsset.add(fakeArtAsset,
       (err) => {
         throw new Error(err);

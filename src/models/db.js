@@ -99,7 +99,7 @@ App.hasMany(User, {
 
 // Table join for an app that will have multiple art assets
 App.hasMany(ArtAsset, {
-  foreignKey: 'appId',
+  foreignKey: 'appArtId',
 });
 
 // Define extensiveable Art table
