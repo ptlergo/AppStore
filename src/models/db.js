@@ -55,7 +55,7 @@ const App = connection.define('app', {
   },
   description: {
     type: Sequelize.STRING,
-    defaultValue: 'description of app',
+    defaultValue: 'default app description',
   },
   releaseDate: {
     type: Sequelize.STRING,
