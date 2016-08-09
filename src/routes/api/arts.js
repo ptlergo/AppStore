@@ -1,29 +1,29 @@
 module.exports = (express) => {
   const router = express.Router();
 
-  // Route all art assets
+  // Route READ all art assets
   router.get('/artassets', (req, res) => {
-    res.json([
-      {
-        id: 1,
-        title: 'art1',
-        srcLink: 'http://i.imgur.com/5e5Ihb6.jpg',
-      },
-      {
-        id: 2,
-        title: 'art2',
-        srcLink: 'http://i.imgur.com/QQ3O6PO.jpg',
-      },
-    ]);
+
   });
 
-  // Route single art asset
+  // Route CREATE an art assets
+  router.post('/artassets', (req, res) => {
+
+  });
+
+  // Route READ a single art asset
   router.get('/artassets/:id', (req, res) => {
-    res.json({
-      id: 1,
-      title: 'art1',
-      srcLink: 'http://i.imgur.com/5e5Ihb6.jpg',
-    });
+
+  });
+
+  // Route UPDATE single art asset
+  router.post('/artassets/:id', (req, res) => {
+
+  });
+
+  // Route DELETE single art asset
+  router.delete('/artassets/:id', (req, res) => {
+
   });
 
   return router;

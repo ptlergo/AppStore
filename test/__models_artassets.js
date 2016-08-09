@@ -31,6 +31,8 @@ describe('Art Assets Model', () => {
       },
       (artasset) => {
         this.tempArtAsset = artasset.dataValues;
+        expect(artasset.title).to.be.equal(fakeArtAsset.title);
+        expect(artasset.srcLink).to.be.equal(fakeArtAsset.srcLink);
         done();
       }
     );
