@@ -68,9 +68,28 @@ const App = connection.define('app', {
   },
 });// End of App table
 
-// Art asset table
+// Define extensiveable Art asset table
 const ArtAsset = connection.define('artasset', {
-  
+  title: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      len: {
+        args: [2, 255],
+        msg: 'Enter an art title with at least 2 characters but less than 255',
+      },
+    },
+  },
+  srcLink: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      len: {
+        args: [2, 255],
+        msg: 'Enter an art title with at least 2 characters but less than 255',
+      },
+    },
+  },
 });// End of Artasset table
 
 // Table join for a user that will have multiple apps
