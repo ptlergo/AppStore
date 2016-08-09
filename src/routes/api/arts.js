@@ -62,7 +62,17 @@ module.exports = (express) => {
 
   // Route DELETE single art asset
   router.delete('/artassets/:id', (req, res) => {
-
+    const artInfo = req.body;
+    artInfo.id = req.params.id;
+    // Find one art asset to remove
+    ArtAsset.remove(artInfo,
+      (err) => {
+        res.status(500).json(err);
+      },
+      (data) => {
+        res.status(200).json(data);
+      }
+    );
   });
 
   return router;
