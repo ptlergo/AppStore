@@ -6,12 +6,13 @@ module.exports = (express) => {
   router.post('/apps', (req, res) => {
       // Dirty data from user save as payload
     const payload = req.body;
-    app.add(payload, (err) => {
-      res.status(500).json(err);
-    },
-    (data) => {
-      res.status(200).json(data);
-    }
+    app.add(payload,
+      (err) => {
+        res.status(500).json(err);
+      },
+      (data) => {
+        res.status(200).json(data);
+      }
     );
   });
 
@@ -20,9 +21,10 @@ module.exports = (express) => {
     const appInfo = req.body;
     appInfo.id = req.params.id;
 
-    app.one(appInfo, (err) => {
-      res.status(500).json(err);
-    },
+    app.one(appInfo,
+      (err) => {
+        res.status(500).json(err);
+      },
       (data) => {
         res.status(200).json(data);
       }
@@ -34,9 +36,10 @@ module.exports = (express) => {
     const appInfo = req.body;
     appInfo.id = req.params.appid;
 
-    app.one(appInfo, (err) => {
-      res.status(500).json(err);
-    },
+    app.one(appInfo,
+      (err) => {
+        res.status(500).json(err);
+      },
       (data) => {
         res.status(200).json(data);
       }
@@ -45,9 +48,10 @@ module.exports = (express) => {
 
   // READ all apps
   router.get('/apps', (req, res) => {
-    app.all((err) => {
-      res.status(500).json(err);
-    },
+    app.all(
+      (err) => {
+        res.status(500).json(err);
+      },
       (data) => {
         res.status(200).json(data);
       }
@@ -59,9 +63,10 @@ module.exports = (express) => {
     const appInfo = req.body;
     appInfo.id = req.params.id;
 
-    app.update(appInfo, (err) => {
-      res.status(500).json(err);
-    },
+    app.update(appInfo,
+      (err) => {
+        res.status(500).json(err);
+      },
       (data) => {
         res.status(200).json(data);
       }
@@ -73,9 +78,10 @@ module.exports = (express) => {
     const appInfo = req.body;
     appInfo.id = req.params.id;
 
-    app.remove(appInfo, (err) => {
-      res.status(500).json(err);
-    },
+    app.remove(appInfo,
+      (err) => {
+        res.status(500).json(err);
+      },
       (data) => {
         res.status(200).json(data);
       }
