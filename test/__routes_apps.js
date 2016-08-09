@@ -1,20 +1,44 @@
 const expect = require('chai').expect;
 const assert = require('chai').assert;
 const request = require('supertest');
+const faker = require('faker');
+const App = require('../src/models/app');
 
 // Unit Test for APP Routes
 describe('App Routes', () => {
   let server;
   let app;
+  let testApp = {};
 
   // Open server at each stub
-  beforeEach(() => {
+  beforeEach((done) => {
     server = require('../src/server');
+    // Create an app with temp. details
+    const fakeApp = {
+      title: faker.name.title(),
+      description: faker.company.catchPhraseDescriptor(),
+      releaseDate: faker.phone.phoneNumber(),
+    };
+    // Add fake app data into database
+    App.add(fakeApp,
+      (err) => {
+        throw new Error(err);
+      },
+      (data) => {
+        testApp = data;
+        done();
+      }
+    );
   });
 
   // Close server after each stub done
-  afterEach(() => {
+  afterEach((done) => {
     server.close();
+
+    App.remove(testApp,
+      (err) => {
+      }
+  );
   });
 
   // Test route of all apps
