@@ -68,6 +68,11 @@ const App = connection.define('app', {
   },
 });// End of App table
 
+// Art asset table
+const ArtAsset = connection.define('artasset', {
+  
+});// End of Artasset table
+
 // Table join for a user that will have multiple apps
 App.hasMany(User, {
   foreignKey: 'appId',
