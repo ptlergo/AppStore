@@ -19,8 +19,8 @@ npm i -g mocha
 
 | HTTP VERB | URL | DESCRIPTION | SAMPLE RESPONSE |
 |---|---|---|---|
-|GET|/api/v1/apps|Get all apps|[{ id: 1, title: "app1", description: "first app", releaseDate: "2016-08-04T16:52:49+00:00", }, { id: 2, title: "app2", description: "2nd app", releaseDate: "2016-08-04T16:52:49+00:00", }]|
-|GET|/api/v1/apps/:id|Get a single app|{ id: 1, title: "app1", description: "first app", releaseDate: "2016-08-04T16:52:49+00:00" }|
+|GET|/api/v1/apps|Get all apps|[{"id":2,"title":"Direct Research Producer","description":"logistical","releaseDate":"(899) 823-0205","createdAt":"2016-08-09T23:47:48.000Z","updatedAt":"2016-08-09T23:51:17.000Z","appId":2},{"id":3,"title":"Central Research Technician","description":"optimizing","releaseDate":"(044) 770-8148","createdAt":"2016-08-09T23:47:52.000Z","updatedAt":"2016-08-09T23:47:52.000Z","appId":null},{"id":4,"title":"Forward Markets Planner","description":"neutral","releaseDate":"(502) 984-9532","createdAt":"2016-08-09T23:47:55.000Z","updatedAt":"2016-08-09T23:53:34.000Z","appId":2},{"id":5,"title":"Senior Response Analyst","description":"web-enabled","releaseDate":"129.959.8257","createdAt":"2016-08-09T23:47:58.000Z","updatedAt":"2016-08-09T23:47:59.000Z","appId":null},{"id":6,"title":"Regional Interactions Orchestrator","description":"background","releaseDate":"1-302-109-3446 x869","createdAt":"2016-08-09T23:48:03.000Z","updatedAt":"2016-08-09T23:48:03.000Z","appId":null}]|
+|GET|/api/v1/apps/:id|Get a single app|{"id":2,"title":"Direct Research Producer","description":"logistical","releaseDate":"(899) 823-0205","createdAt":"2016-08-09T23:47:48.000Z","updatedAt":"2016-08-09T23:51:17.000Z","appId":2,"artassets":[{"id":0,"title":"24031","srcLink":"http://lorempixel.com/640/480","createdAt":"2016-08-09T23:46:28.000Z","updatedAt":"2016-08-09T23:50:16.000Z","appArtId":2}]}|
 |GET|/api/v1/users/:id/apps|Get all apps from a single user|[{"id":2,"title":"Direct Research Producer","description":"logistical","releaseDate":"(899) 823-0205","createdAt":"2016-08-09T23:47:48.000Z","updatedAt":"2016-08-09T23:51:17.000Z","appId":2,"artassets":[{"id":0,"title":"24031","srcLink":"http://lorempixel.com/640/480","createdAt":"2016-08-09T23:46:28.000Z","updatedAt":"2016-08-09T23:50:16.000Z","appArtId":2}]},{"id":4,"title":"Forward Markets Planner","description":"neutral","releaseDate":"(502) 984-9532","createdAt":"2016-08-09T23:47:55.000Z","updatedAt":"2016-08-09T23:53:34.000Z","appId":2,"artassets":[]}]|
 |POST|/api/v1/apps/|Create an app|1|
 |POST|/api/v1/apps/:id|Update an app|1|
@@ -40,8 +40,8 @@ npm i -g mocha
 
 | HTTP VERB | URL | DESCRIPTION | SAMPLE RESPONSE |
 |---|---|---|---|
-|GET|/api/v1/artassets/|Get all art assets|[{ id: 1, title: "art1", srcLink: "http://i.imgur.com/5e5Ihb6.jpg", }, { id: 2, title: "art2", srcLink: "http://i.imgur.com/QQ3O6PO.jpg", }]|
-|GET|/api/v1/artassets/:id|Get a single art asset|{ id: 1, title: "art1", srcLink: "http://i.imgur.com/5e5Ihb6.jpg", }|
+|GET|/api/v1/artassets/|Get all art assets|[{"id":0,"title":"24031","srcLink":"http://lorempixel.com/640/480","createdAt":"2016-08-09T23:46:28.000Z","updatedAt":"2016-08-09T23:50:16.000Z","appArtId":2},{"id":2,"title":"10416","srcLink":"http://lorempixel.com/640/480","createdAt":"2016-08-09T23:47:49.000Z","updatedAt":"2016-08-09T23:47:49.000Z","appArtId":null},{"id":3,"title":"1107","srcLink":"http://lorempixel.com/640/480","createdAt":"2016-08-09T23:47:52.000Z","updatedAt":"2016-08-09T23:47:52.000Z","appArtId":null},{"id":4,"title":"86668","srcLink":"http://lorempixel.com/640/480","createdAt":"2016-08-09T23:47:55.000Z","updatedAt":"2016-08-09T23:47:55.000Z","appArtId":null},{"id":5,"title":"11670","srcLink":"http://lorempixel.com/640/480","createdAt":"2016-08-09T23:47:59.000Z","updatedAt":"2016-08-09T23:47:59.000Z","appArtId":null}]|
+|GET|/api/v1/artassets/:id|Get a single art asset|{"id":2,"title":"10416","srcLink":"http://lorempixel.com/640/480","createdAt":"2016-08-09T23:47:49.000Z","updatedAt":"2016-08-09T23:47:49.000Z","appArtId":null}|
 |POST|/api/v1/artassets/|Create an art asset|1|
 |POST|/api/v1/artassets/:id|Update an art asset|1|
 |DELETE|/api/v1/artassets/:id|Delete an art asset|1|
