@@ -5,7 +5,7 @@ const ArtAsset = require('../src/models/artasset');
 
 describe('Art Assets Model', () => {
   let testArtAsset;
-  let tempArtAsset;
+
   // Test to find all art assets
   it('should Read all art assets', (done) => {
     ArtAsset.all(
@@ -42,14 +42,14 @@ describe('Art Assets Model', () => {
 
   // Test to find one art asset
   it('should Find a single art asset', (done) => {
-    const targetArtAsset = this.tempArtAsset[0];
+    const targetArtAsset = this.testArtAsset[0];
 
     ArtAsset.one(targetArtAsset,
       (err) => {
         throw new Error(err);
       },
       (artasset) => {
-        expect(1).to.be.equal(1);
+        expect(artasset.title).to.be.equal(targetArtAsset.title);
         done();
       }
     );

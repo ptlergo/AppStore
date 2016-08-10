@@ -36,7 +36,6 @@ module.exports = (express) => {
   router.get('/users/:id/apps', (req, res) => {
     const appInfo = req.body;
     appInfo.id = req.params.id;
-    console.log('user id is', appInfo);
 
     user.one(appInfo,
       (err) => {
