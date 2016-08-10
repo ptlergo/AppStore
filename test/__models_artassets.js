@@ -5,6 +5,7 @@ const ArtAsset = require('../src/models/artasset');
 
 describe('Art Assets Model', () => {
   let testArtAsset;
+  let tempArtAsset;
 
   // Test to find all art assets
   it('should Read all art assets', (done) => {
@@ -58,9 +59,11 @@ describe('Art Assets Model', () => {
 
   // Test to update an art asset
   it('should UPDATE an art asset', (done) => {
-    const targetArtAsset = this.testArtAsset[0];
+    // Load existing art asset object
+    const updateArtAsset = this.tempArtAsset;
+    console.log(updateArtAsset);
 
-    ArtAsset.update(targetArtAsset,
+    ArtAsset.update(updateArtAsset,
       (err) => {
         throw new Error(err);
       },

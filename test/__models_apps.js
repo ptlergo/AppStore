@@ -4,6 +4,7 @@ const App = require('../src/models/app');
 
 describe('App Model', () => {
   let testApps;
+  let tempApp;
 
   // Test to add an App
   it('should Add a new App', (done) => {
