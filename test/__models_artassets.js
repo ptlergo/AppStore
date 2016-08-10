@@ -80,6 +80,19 @@ describe('Art Assets Model', () => {
   });
   // Test to delete an art asset
   it('should DELETE an art asset', (done) => {
-    done();
+    // Load in existing art asset info to delete
+    const removeArtAsset = this.tempArtAsset;
+    removeArtAsset.force = true;
+
+    ArtAsset.remove(removeArtAsset,
+      (err) => {
+        throw new Error(err);
+      },
+      (response) => {
+        // If successfully removed a 1 should be returned
+        expect(response).to.be.equal(1);
+        done();
+      }
+    );
   });
-});// END of descirbe
+});// END of Art Asset descirbe
