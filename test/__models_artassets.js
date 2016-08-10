@@ -50,6 +50,7 @@ describe('Art Assets Model', () => {
       },
       (artasset) => {
         expect(artasset.title).to.be.equal(targetArtAsset.title);
+        expect(artasset.srcLink).to.be.equal(targetArtAsset.srcLink);
         done();
       }
     );
@@ -57,7 +58,16 @@ describe('Art Assets Model', () => {
 
   // Test to update an art asset
   it('should UPDATE an art asset', (done) => {
-    done();
+    const targetArtAsset = this.testArtAsset[0];
+
+    ArtAsset.update(targetArtAsset,
+      (err) => {
+        throw new Error(err);
+      },
+      (artasset) => {
+        done();
+      }
+    );
   });
   // Test to delete an art asset
   it('should DELETE an art asset', (done) => {
