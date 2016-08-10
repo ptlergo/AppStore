@@ -65,7 +65,7 @@ describe('App Model', () => {
 
   // Test to update an App
   it('should Update an App', (done) => {
-    // Load in exisiting app info
+    // Load in exisiting faked app object saved from 'Add' stub
     const updateApp = this.tempApp;
     // Generate a new app info
     updateApp.title = faker.name.title();

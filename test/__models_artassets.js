@@ -59,9 +59,8 @@ describe('Art Assets Model', () => {
 
   // Test to update an art asset
   it('should UPDATE an art asset', (done) => {
-    // Load existing art asset object
+    // Load existing faked art asset object from 'Add' stub
     const updateArtAsset = this.tempArtAsset;
-    console.log(updateArtAsset);
 
     ArtAsset.update(updateArtAsset,
       (err) => {

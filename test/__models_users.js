@@ -47,13 +47,13 @@ describe('User Model', () => {
   // Test to find a user
   it('should Find a User', (done) => {
     const targetUser = this.testUsers[0];
-    // Call app model for finding an app in database
+    // Call user model for finding an user in database
     User.one(targetUser,
       (err) => {
         throw new Error(err);
       },
       (user) => {
-        // App.title returned from model should match app.title supplied
+        // user.title returned from model should match user.title supplied
         expect(user.name).to.be.equal(targetUser.name);
         expect(user.age).to.be.equal(targetUser.age);
         expect(user.appId).to.be.equal(targetUser.appId);
@@ -64,12 +64,12 @@ describe('User Model', () => {
 
   // Test to update a user
   it('should Update a User', (done) => {
-    // Load in exisiting app info
+    // Load in exisiting faked user object from 'Add' stub
     const updateUser = this.tempUser;
     // Generate a new user object name and age
     updateUser.name = faker.name.findName();
     updateUser.age = faker.random.number();
-    // Call app model for updating
+    // Call user model for updating
     User.update(updateUser,
       (err) => {
         throw new Error(err);
@@ -77,7 +77,7 @@ describe('User Model', () => {
       (user) => {
         // Save the returned data for later use in tests
         this.tempUser = user;
-        // Expect the app in database to match the updated app info
+        // Expect the user in database to match the updated user info
         expect(user.name).to.be.equal(updateUser.name);
         expect(user.age).to.be.equal(updateUser.age);
         done();
@@ -91,7 +91,7 @@ describe('User Model', () => {
     const removeUser = this.tempUser;
     removeUser.force = true;
 
-    // Call app model for deleteing
+    // Call user model for deleteing
     User.remove(removeUser,
       (err) => {
         throw new Error(err);
