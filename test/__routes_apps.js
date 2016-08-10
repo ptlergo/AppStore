@@ -40,8 +40,7 @@ describe('App Routes', () => {
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect((res) => {
-        const userApps = res.body;
-        assert.isArray(userApps.users);
+
       })
       .end(done);
   });
