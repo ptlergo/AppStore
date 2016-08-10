@@ -6,8 +6,8 @@ const ArtAsset = require('../src/models/artasset');
 describe('Art Assets Model', () => {
   let testArtAsset;
   let tempArtAsset;
-  // Test for all art assets
-  it('should GET all art assets', (done) => {
+  // Test to find all art assets
+  it('should Read all art assets', (done) => {
     ArtAsset.all(
       (err) => {
         throw new Error(err);
@@ -19,6 +19,7 @@ describe('Art Assets Model', () => {
     );
   });
 
+  // Test to add an art asset
   it('should Add an art assets', (done) => {
     // Generate fake art assets
     const fakeArtAsset = {
@@ -39,14 +40,25 @@ describe('Art Assets Model', () => {
     );
   });
 
-  it('should GET a single art asset', (done) => {
+  // Test to find one art asset
+  it('should Find a single art asset', (done) => {
+    const targetArtAsset = this.tempArtAsset[1];
+
+    ArtAsset.one(targetArtAsset,
+      (err) => {
+        throw new Error(err);
+      },
+      (artasset) => {
+        expect(artasset.title).to.be.equal(targetArtAsset.title);
+      }
+    );
     done();
   });
-
+  // Test to update an art asset
   it('should UPDATE an art asset', (done) => {
     done();
   });
-
+  // Test to delete an art asset
   it('should DELETE an art asset', (done) => {
     done();
   });

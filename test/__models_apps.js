@@ -5,7 +5,7 @@ const App = require('../src/models/app');
 describe('App Model', () => {
   let testApps;
 
-  // Add an App
+  // Test to add an App
   it('should Add a new App', (done) => {
     // Generate a fake App
     const fakeApp = {
@@ -30,8 +30,8 @@ describe('App Model', () => {
   );
   });
 
-  // Test for all Apps
-  it('should GET All apps', (done) => {
+  // Test to find all Apps
+  it('should Read All apps', (done) => {
     App.all(
       (err) => {
         throw new Error(err);
@@ -44,9 +44,8 @@ describe('App Model', () => {
     );
   });
 
-  // Find an App
+  // Test to find an App
   it('should Find an App', (done) => {
-    // Generate a fake App with a random title
     const targetApp = this.testApps[0];
     // Call app model for finding an app in database
     App.one(targetApp,
@@ -63,7 +62,7 @@ describe('App Model', () => {
     );
   });
 
-  // Update an App
+  // Test to update an App
   it('should Update an App', (done) => {
     // Load in exisiting app info
     const updateApp = this.tempApp;
@@ -88,7 +87,7 @@ describe('App Model', () => {
     );
   });
 
-  // Remove an App
+  // Test to remove an App
   it('should Remove an App', (done) => {
     // Load in existing app info
     const removeApp = this.tempApp;

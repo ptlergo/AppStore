@@ -7,7 +7,7 @@ describe('User Model', () => {
   let tempUser;
 
 
-  // Add a User
+  // Test to add a user
   it('should Add a new User', (done) => {
     // Generate a fake User
     const fakeUser = {
@@ -30,7 +30,7 @@ describe('User Model', () => {
   );
   });
 
-  // Test for all Apps
+  // Test for all users
   it('should GET All users', (done) => {
     User.all(
       (err) => {
@@ -44,9 +44,8 @@ describe('User Model', () => {
     );
   });
 
-  // Find an App
+  // Test to find a user
   it('should Find a User', (done) => {
-    // Generate a fake user with a random name
     const targetUser = this.testUsers[0];
     // Call app model for finding an app in database
     User.one(targetUser,
@@ -63,11 +62,11 @@ describe('User Model', () => {
     );
   });
 
-  // Update a User
+  // Test to update a user
   it('should Update a User', (done) => {
     // Load in exisiting app info
     const updateUser = this.tempUser;
-    // Generate a new user info
+    // Generate a new user object name and age
     updateUser.name = faker.name.findName();
     updateUser.age = faker.random.number();
     // Call app model for updating
@@ -86,7 +85,7 @@ describe('User Model', () => {
     );
   });
 
-  // Remove an App
+  // Test to remove a user
   it('should Remove a User', (done) => {
     // Load in existing user info
     const removeUser = this.tempUser;
@@ -104,4 +103,4 @@ describe('User Model', () => {
       }
     );
   });
-});// END of App Model describe
+});// END of User Model describe
