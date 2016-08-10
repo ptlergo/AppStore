@@ -69,7 +69,13 @@ node src/server.js
 ```
 
 ##RUN UNIT TESTS
-*run unit tests to test API functions*
+*Run unit tests to test API functions*
 ```
 mocha
+```
+
+##USAGE
+*Turn debug on*
+```
+DEBUG=true node src/server.js
 ```
