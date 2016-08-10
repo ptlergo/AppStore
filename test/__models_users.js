@@ -16,18 +16,18 @@ describe('User Model', () => {
     };
     // Call user model for adding
     User.add(fakeUser,
-    (err) => {
-      throw new Error(err);
-    },
-    (user) => {
-      // Save the returned data for later use in test
-      this.tempUser = user.dataValues;
-      // Expect the user in database to match the fakeuser initially provided
-      expect(user.name).to.be.equal(fakeUser.name);
-      expect(user.age).to.be.equal(fakeUser.age);
-      done();
-    }
-  );
+      (err) => {
+        throw new Error(err);
+      },
+      (user) => {
+        // Save the returned data for later use in test
+        this.tempUser = user.dataValues;
+        // Expect the user in database to match the fakeuser initially provided
+        expect(user.name).to.be.equal(fakeUser.name);
+        expect(user.age).to.be.equal(fakeUser.age);
+        done();
+      }
+    );
   });
 
   // Test for all users

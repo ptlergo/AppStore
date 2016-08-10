@@ -15,19 +15,19 @@ describe('App Model', () => {
     };
     // Call app model for adding
     App.add(fakeApp,
-    (err) => {
-      throw new Error(err);
-    },
-    (app) => {
-      // Save the returned data for later use in test
-      this.tempApp = app.dataValues;
-      // Expect the app in database to match the fakeApp initially provided
-      expect(app.title).to.be.equal(fakeApp.title);
-      expect(app.description).to.be.equal(fakeApp.description);
-      expect(app.releaseDate).to.be.equal(fakeApp.releaseDate);
-      done();
-    }
-  );
+      (err) => {
+        throw new Error(err);
+      },
+      (app) => {
+        // Save the returned data for later use in test
+        this.tempApp = app.dataValues;
+        // Expect the app in database to match the fakeApp initially provided
+        expect(app.title).to.be.equal(fakeApp.title);
+        expect(app.description).to.be.equal(fakeApp.description);
+        expect(app.releaseDate).to.be.equal(fakeApp.releaseDate);
+        done();
+      }
+    );
   });
 
   // Test to find all Apps
