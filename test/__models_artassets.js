@@ -61,12 +61,19 @@ describe('Art Assets Model', () => {
   it('should UPDATE an art asset', (done) => {
     // Load existing faked art asset object from 'Add' stub
     const updateArtAsset = this.tempArtAsset;
+    // Generate new art asset data to test
+    updateArtAsset.title = faker.random.number();
+    updateArtAsset.srcLink = faker.image.imageUrl();
 
     ArtAsset.update(updateArtAsset,
       (err) => {
         throw new Error(err);
       },
       (artasset) => {
+        // update tempArtAsset with updated attributes
+        this.tempArtAsset = artasset;
+        expect(artasset.title).to.be.equal(updateArtAsset.title);
+        expect(artasset.srcLink).to.be.equal(updateArtAsset.srcLink);
         done();
       }
     );
