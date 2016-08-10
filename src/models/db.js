@@ -93,7 +93,7 @@ const ArtAsset = connection.define('artasset', {
 });// End of Artasset table
 
 // Table join for an app that will have multiple users
-App.hasMany(User, {
+User.hasMany(App, {
   foreignKey: 'appId',
 });
 

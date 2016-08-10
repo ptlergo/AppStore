@@ -1,4 +1,5 @@
 const app = require('../../models/app');
+const user = require('../../models/user');
 
 module.exports = (express) => {
   const router = express.Router();
@@ -32,16 +33,17 @@ module.exports = (express) => {
   });
 
   // READ app of specific user 'id'
-  router.get('/users/:appid/apps', (req, res) => {
+  router.get('/users/:id/apps', (req, res) => {
     const appInfo = req.body;
-    appInfo.id = req.params.appid;
+    appInfo.id = req.params.id;
+    console.log('user id is', appInfo);
 
-    app.one(appInfo,
+    user.one(appInfo,
       (err) => {
         res.status(500).json(err);
       },
       (data) => {
-        res.status(200).json(data);
+        res.status(200).json(data.apps);
       }
     );
   });
