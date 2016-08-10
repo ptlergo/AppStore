@@ -30,8 +30,8 @@ npm i -g mocha
 
 | HTTP VERB | URL | DESCRIPTION | SAMPLE RESPONSE |
 |---|---|---|---|
-|GET|/api/v1/users|Get all users|[{ id: 1, name: "user1", age: "18"}, { id: 2, name: "user2", age: "50", }]|
-|GET|/api/v1/users/:id|Get a single user|{ id: 1, name: "user1", age: "18", }|
+|GET|/api/v1/users|Get all users|[[{"id":2,"name":"Xavier Greenholt","age":26290,"createdAt":"2016-08-09T23:47:49.000Z","updatedAt":"2016-08-09T23:47:49.000Z"},{"id":3,"name":"Patsy Witting","age":92096,"createdAt":"2016-08-09T23:47:52.000Z","updatedAt":"2016-08-09T23:47:52.000Z"},{"id":4,"name":"Kylie Smitham","age":71034,"createdAt":"2016-08-09T23:47:55.000Z","updatedAt":"2016-08-09T23:47:55.000Z"},{"id":5,"name":"Zora Nienow","age":97830,"createdAt":"2016-08-09T23:47:59.000Z","updatedAt":"2016-08-09T23:47:59.000Z"},{"id":6,"name":"Ambrose Green","age":31495,"createdAt":"2016-08-09T23:48:04.000Z","updatedAt":"2016-08-09T23:48:04.000Z"}]|
+|GET|/api/v1/users/:id|Get a single user|{"id":2,"name":"Xavier Greenholt","age":26290,"createdAt":"2016-08-09T23:47:49.000Z","updatedAt":"2016-08-09T23:47:49.000Z","apps":[{"id":2,"title":"Direct Research Producer","description":"logistical","releaseDate":"(899) 823-0205","createdAt":"2016-08-09T23:47:48.000Z","updatedAt":"2016-08-09T23:51:17.000Z","appId":2,"artassets":[{"id":0,"title":"24031","srcLink":"http://lorempixel.com/640/480","createdAt":"2016-08-09T23:46:28.000Z","updatedAt":"2016-08-09T23:50:16.000Z","appArtId":2}]},{"id":4,"title":"Forward Markets Planner","description":"neutral","releaseDate":"(502) 984-9532","createdAt":"2016-08-09T23:47:55.000Z","updatedAt":"2016-08-09T23:53:34.000Z","appId":2,"artassets":[]}]}|
 |POST|/api/v1/users/|Create a user|1|
 |POST|/api/v1/users/:id|Update a user|1|
 |DELETE|/api/v1/users/:id|Delete a user|1|
