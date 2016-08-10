@@ -21,7 +21,7 @@ npm i -g mocha
 |---|---|---|---|
 |GET|/api/v1/apps|Get all apps|[{ id: 1, title: "app1", description: "first app", releaseDate: "2016-08-04T16:52:49+00:00", }, { id: 2, title: "app2", description: "2nd app", releaseDate: "2016-08-04T16:52:49+00:00", }]|
 |GET|/api/v1/apps/:id|Get a single app|{ id: 1, title: "app1", description: "first app", releaseDate: "2016-08-04T16:52:49+00:00" }|
-|GET|/api/v1/users/:appid/apps|Get all apps from a single user|{"id":1,"title":"Pat","description":"description of app","releaseDate":"july first","createdAt":"2016-08-08T03:23:25.000Z","updatedAt":"2016-08-08T03:23:25.000Z","users":[{"id":1,"name":"Pat","age":12,"createdAt":"2016-08-08T03:22:27.000Z","updatedAt":"2016-08-08T03:22:27.000Z","appId":1},{"id":2,"name":"Yuoo","age":16,"createdAt":"2016-08-08T03:24:32.000Z","updatedAt":"2016-08-08T03:24:32.000Z","appId":1}]}|
+|GET|/api/v1/users/:id/apps|Get all apps from a single user|[{"id":2,"title":"Direct Research Producer","description":"logistical","releaseDate":"(899) 823-0205","createdAt":"2016-08-09T23:47:48.000Z","updatedAt":"2016-08-09T23:51:17.000Z","appId":2,"artassets":[{"id":0,"title":"24031","srcLink":"http://lorempixel.com/640/480","createdAt":"2016-08-09T23:46:28.000Z","updatedAt":"2016-08-09T23:50:16.000Z","appArtId":2}]},{"id":4,"title":"Forward Markets Planner","description":"neutral","releaseDate":"(502) 984-9532","createdAt":"2016-08-09T23:47:55.000Z","updatedAt":"2016-08-09T23:53:34.000Z","appId":2,"artassets":[]}]|
 |POST|/api/v1/apps/|Create an app|1|
 |POST|/api/v1/apps/:id|Update an app|1|
 |DELETE|/api/v1/apps/:id|Delete an app|1|
