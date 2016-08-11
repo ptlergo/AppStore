@@ -1,9 +1,12 @@
 const expect = require('chai').expect;
-const Util = require('../src/lib/util');
+const util = require('../src/lib/util');
 
 describe('Util Tool', () => {
-  it('should output to console from debug method', (done) => {
-    expect(Util.debug).to.be.above(0);
+  it('should successfully use DEBUG mode', (done) => {
+    done();
+  });
+
+  it('should successfully grab 2 parameters in debug method', (done) => {
     done();
   });
 });// END of App Model describe
