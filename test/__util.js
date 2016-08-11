@@ -8,7 +8,9 @@ describe('Util Tool debug()', () => {
   });
 
   it('should successfully grab an object as the only parameter', (done) => {
-    const statement = util({ msg: 'Parameter 1 of tool', term: 'Parameter 1 of tool' });
+    const statement = util({ msg: 'testing', term: 'parameter' });
+    expect(statement).to.have.ownProperty('msg');
+    expect(statement).to.have.ownProperty('term');
     done();
   });
 

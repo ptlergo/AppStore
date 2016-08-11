@@ -1,3 +1,8 @@
 exports.debug = (obj) => {
-  console.log('UTIL TOOL MESSAGE: ', obj.msg, obj.term);
+  console.log(obj.msg + obj.term);
+
+  return {
+    msg: obj.msg,
+    term: obj.term,
+  };
 };
