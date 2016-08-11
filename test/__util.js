@@ -1,15 +1,14 @@
 const expect = require('chai').expect;
+const assert = require('chai').assert;
 const util = require('../src/lib/util').debug;
 
-describe('Util Tool', () => {
+describe('Util Tool debug()', () => {
   it('should successfully use DEBUG mode', (done) => {
     done();
   });
 
-  it('should successfully grab 2 parameters in debug method', (done) => {
-    const testObj = 'testing util string parameter';
-    const testObj2 = 3;
-    expect(util(testObj, testObj2)).to.not.be.arguments;
+  it('should successfully grab an object as the only parameter', (done) => {
+    const statement = util({ msg: 'Parameter 1 of tool', term: 'Parameter 1 of tool' });
     done();
   });
 
