@@ -1,4 +1,5 @@
 const db = require('./db');
+const util = require('../lib/util');
 
 // READ(all) all from database
 exports.all = (errorCallback, successCallBack) => {

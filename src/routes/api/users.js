@@ -1,4 +1,5 @@
 const user = require('../../models/user');
+const util = require('../../lib/util');
 
 module.exports = (express) => {
   const router = express.Router();

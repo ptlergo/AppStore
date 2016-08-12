@@ -1,4 +1,5 @@
 const db = require('./db');
+const util = require('../lib/util');
 
 // READ(all) all from database
 exports.all = (errorCallback, successCallBack) => {
@@ -25,6 +26,7 @@ exports.one = (id, errorCallback, successCallBack) => {
       nested: true,
     }],
   }).then(successCallBack).catch(errorCallback);
+  util.debug({ msg: 'ART ASSET MODEL: find art asset with id:', term: id.id });
 };// END of one
 
 // UPDATE single from database
