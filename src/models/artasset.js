@@ -41,6 +41,7 @@ exports.update = (obj, errorCallback, successCallBack) => {
   .then((existingData) => {
     existingData.updateAttributes(obj).then(successCallBack).catch(errorCallback);
   }).catch(errorCallback);
+  util.debug({ msg: 'ART ASSET MODEL: update art asset with id:', term: obj.id });
 };// END of update
 
 // DELETE(remove) single from database
