@@ -1,15 +1,18 @@
 const db = require('./db');
+const util = require('../lib/util');
 
 // READ(all) all from database
 exports.all = (errorCallback, successCallBack) => {
   // Use sequelize method findAll
   db.user.findAll().then(successCallBack).catch(errorCallback);
+  util.debug();
 };// END of all
 
 // CREATE(add) into database
 exports.add = (obj, errorCallbackorCallback, successCallBack) => {
   // Use sequelize method create
   db.user.create(obj).then(successCallBack).catch(errorCallbackorCallback);
+  util.debug({ msg: 'USER ADD MODEL: ', term: obj });
 };// END of add
 
 // READ(one) single from database
@@ -25,6 +28,7 @@ exports.one = (id, errorCallback, successCallBack) => {
       nested: true,
     }],
   }).then(successCallBack).catch(errorCallback);
+  util.debug({ msg: 'USER FIND ONE MODEL: ', term: id });
 };// END of one
 
 // UPDATE single from database
@@ -39,6 +43,7 @@ exports.update = (obj, errorCallback, successCallBack) => {
   .then((existingData) => {
     existingData.updateAttributes(obj).then(successCallBack).catch(errorCallback);
   }).catch(errorCallback);
+  util.debug({ msg: 'USER UPDATE MODEL: ', term: obj });
 };// END of update
 
 // DELETE(remove) single from database
@@ -49,4 +54,5 @@ exports.remove = (id, errorCallback, successCallBack) => {
       id: id.id,
     },
   }).then(successCallBack).catch(errorCallback);
+  util.debug({ msg: 'USER DELETE MODEL: ', term: id });
 };// END of remove

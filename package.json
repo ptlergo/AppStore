@@ -30,6 +30,7 @@
     "supertest": "2.0.0"
   },
   "devDependencies": {
+    "colors": "1.1.2",
     "eslint": "3.2.2",
     "eslint-config-airbnb": "10.0.0",
     "eslint-plugin-import": "1.12.0",
