@@ -5,12 +5,14 @@ const util = require('../lib/util');
 exports.all = (errorCallback, successCallBack) => {
   // Use sequelize method findAll
   db.artasset.findAll().then(successCallBack).catch(errorCallback);
+  util.debug({ msg: 'ART ASSET MODEL: find all art asset success:', term: successCallBack });
 };// END of all
 
 // CREATE(add) into database
 exports.add = (obj, errorCallbackorCallback, successCallBack) => {
   // Use sequelize method create
   db.artasset.create(obj).then(successCallBack).catch(errorCallbackorCallback);
+  util.debug({ msg: 'ART ASSET MODEL: add art asset with id:', term: obj.id });
 };// END of add
 
 // READ(one) single from database
@@ -52,4 +54,5 @@ exports.remove = (id, errorCallback, successCallBack) => {
       id: id.id,
     },
   }).then(successCallBack).catch(errorCallback);
+  util.debug({ msg: 'ART ASSET MODEL: delete art asset with id:', term: id });
 };// END of remove

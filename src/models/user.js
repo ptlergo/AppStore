@@ -5,13 +5,14 @@ const util = require('../lib/util');
 exports.all = (errorCallback, successCallBack) => {
   // Use sequelize method findAll
   db.user.findAll().then(successCallBack).catch(errorCallback);
+  util.debug({ msg: 'USER MODEL: find all users success:', term: successCallBack });
 };// END of all
 
 // CREATE(add) into database
 exports.add = (obj, errorCallbackorCallback, successCallBack) => {
   // Use sequelize method create
   db.user.create(obj).then(successCallBack).catch(errorCallbackorCallback);
-  util.debug({ msg: 'USER ADD MODEL: ', term: obj.id });
+  util.debug({ msg: 'USER MODEL: add user with id:', term: obj.id });
 };// END of add
 
 // READ(one) single from database
@@ -53,5 +54,5 @@ exports.remove = (id, errorCallback, successCallBack) => {
       id: id.id,
     },
   }).then(successCallBack).catch(errorCallback);
-  util.debug({ msg: 'USER DELETE MODEL: ', term: id });
+  util.debug({ msg: 'USER MODEL: delete user with id:', term: id });
 };// END of remove
