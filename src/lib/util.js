@@ -1,11 +1,11 @@
 const fs = require('fs');
-// Create file to write to
-const writableStream = fs.createWriteStream('./logs/log.log', { flag: 'a' });
 
+// Debug method
 exports.debug = (obj) => {
+  // Display tool only when DEBUG=true
   if (process.env.DEBUG) {
     // Write to log file
-    writableStream.write(`${obj.msg} ${obj.term}`);
+    fs.appendFile('./logs/log.log', `${obj.msg} ${obj.term} \n`, { flag: 'a' });
     // Write to console
     console.log(`${obj.msg} ${obj.term}`);
   }
