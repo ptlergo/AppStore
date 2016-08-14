@@ -14,9 +14,12 @@ exports.debug = (obj) => {
           throw err;
         }
       });
-
+      // Write to console
+    // Object.keys(obj).forEach((key) => {
+    //   console.log(obj[key]);
+    // });
     // Write to console
-    console.log(`${obj.msg} ${obj.term}`);
+    console.log(obj.msg + obj.term);
   }
   return {
     msg: obj.msg,

@@ -11,9 +11,11 @@ module.exports = (express) => {
     app.add(payload,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'CREATE APP ROUTE FAILED: ', term: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'CREATE APP ROUTE SUCCESS: ', term: data });
       }
     );
   });
@@ -26,9 +28,11 @@ module.exports = (express) => {
     app.one(appInfo,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'READ APP ROUTE FAIL: ', term: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'READ APP ROUTE SUCCESS: ', term: data.dataValues });
       }
     );
   });
