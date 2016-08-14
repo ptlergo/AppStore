@@ -79,3 +79,14 @@ mocha
 ```
 DEBUG=true node src/server.js
 ```
+
+*sample debug mode output of reading user '3' route*
+```
+USER MODEL: find user with id: 3
+READ ONE USER ROUTE SUCCESS:  { id: 3,
+  name: 'Patsy Witting',
+  age: 92096,
+  createdAt: 2016-08-09T23:47:52.000Z,
+  updatedAt: 2016-08-09T23:47:52.000Z,
+  apps: [] }
+```
