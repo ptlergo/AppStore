@@ -11,11 +11,11 @@ module.exports = (express) => {
     app.add(payload,
       (err) => {
         res.status(500).json(err);
-        util.debug({ msg: 'CREATE APP ROUTE FAILED: ', term: err });
+        util.debug({ msg: 'CREATE APP ROUTE FAILED: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
-        // util.debug({ msg: 'CREATE APP ROUTE SUCCESS: ', term: data.dataValues });
+        util.debug({ msg: 'CREATE APP ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
@@ -28,11 +28,11 @@ module.exports = (express) => {
     app.one(appInfo,
       (err) => {
         res.status(500).json(err);
-        util.debug({ msg: 'READ APP ROUTE FAIL: ', term: err });
+        util.debug({ msg: 'READ APP ROUTE FAIL: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
-        util.debug({ msg: 'READ APP ROUTE SUCCESS: ', term: data.dataValues });
+        util.debug({ msg: 'READ APP ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
@@ -45,9 +45,11 @@ module.exports = (express) => {
     user.one(appInfo,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'READ APP ROUTE FAIL: ', info: err });
       },
       (data) => {
         res.status(200).json(data.apps);
+        util.debug({ msg: 'READ APP ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
@@ -57,9 +59,11 @@ module.exports = (express) => {
     app.all(
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'READ APP ROUTE FAIL: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'READ APP ROUTE SUCCESS: ', info: data });
       }
     );
   });
@@ -72,9 +76,11 @@ module.exports = (express) => {
     app.update(appInfo,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'READ APP ROUTE FAIL: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'READ APP ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
@@ -87,9 +93,11 @@ module.exports = (express) => {
     app.remove(appInfo,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'READ APP ROUTE FAIL: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'READ APP ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
