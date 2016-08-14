@@ -8,9 +8,11 @@ module.exports = (express) => {
     user.all(
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'READ ALL USER ROUTE FAILED: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'READ ALL USER ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
@@ -23,9 +25,11 @@ module.exports = (express) => {
     user.one(userInfo,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'READ ONE USER ROUTE FAILED: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'READ ONE USER ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
@@ -38,9 +42,11 @@ module.exports = (express) => {
     user.remove(userInfo,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'READ ONE USER ROUTE FAILED: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'DELETE USER ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
@@ -53,9 +59,11 @@ module.exports = (express) => {
     user.update(userInfo,
         (err) => {
           res.status(500).json(err);
+          util.debug({ msg: 'UPDATE USER ROUTE FAILED: ', info: err });
         },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'UPDATE USER ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
@@ -67,13 +75,13 @@ module.exports = (express) => {
     user.add(payload,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'CREATE USER ROUTE FAILED: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'CREATE USER ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
-    // debug log
-    console.log(payload);
   });
 
   return router;

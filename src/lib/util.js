@@ -18,7 +18,7 @@ exports.debug = (obj) => {
   // DISPLAY only when DEBUG=true
   if (process.env.DEBUG) {
     // Write to log file
-    fs.appendFile('./logs/log.log', obj.info, { flag: 'a' },
+    fs.appendFile('./logs/log.log', statement, { flag: 'a' },
       (err) => { if (err) { throw err; } }
     );// END of appendFile
 
