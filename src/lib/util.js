@@ -13,7 +13,6 @@ colors.setTheme({
 exports.debug = (obj) => {
   const msg = obj.msg.help;
   const info = obj.info;
-  /* eslint prefer-template: 0 */
   const statement = obj.msg + obj.info + '\n';
 
   // DISPLAY only when DEBUG=true

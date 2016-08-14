@@ -4,6 +4,9 @@
 		"mocha": true
 	},
 	"extends": "airbnb",
+	"plugins": [
+		"react"
+	],
 	"globals": {
 		"describe": true,
 		"it": true,
@@ -11,8 +14,9 @@
 	},
 	"rules": {
 	"global-require": 0,
-	"no-console": 0,
+	"prefer-template": 0,
 	"new-cap": 0,
+	"no-console": 0,
 	"no-unused-vars": 0
 	}
 }
