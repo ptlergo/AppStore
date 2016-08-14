@@ -16,17 +16,12 @@ exports.debug = (obj) => {
   const term = obj.term;
   const statement = obj.msg + obj.term + '\n';
 
-  // Display only when DEBUG=true
+  // DISPLAY only when DEBUG=true
   if (process.env.DEBUG) {
     // Write to log file
-    fs.appendFile('./logs/log.log',
-    obj.term,
-      { flag: 'a' },
-      (err) => {
-        if (err) {
-          throw err;
-        }
-      });// END of appendFile
+    fs.appendFile('./logs/log.log', obj.term, { flag: 'a' },
+      (err) => { if (err) { throw err; } }
+    );// END of appendFile
 
     // Print debug to console stream
     console.log(msg, term);
