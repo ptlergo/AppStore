@@ -15,7 +15,7 @@ module.exports = (express) => {
       },
       (data) => {
         res.status(200).json(data);
-        util.debug({ msg: 'CREATE APP ROUTE SUCCESS: ', term: data });
+        // util.debug({ msg: 'CREATE APP ROUTE SUCCESS: ', term: data.dataValues });
       }
     );
   });
