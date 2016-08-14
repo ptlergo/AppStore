@@ -5,9 +5,9 @@ const util = require('../src/lib/util').debug;
 
 describe('Util Tool debug()', () => {
   it('should successfully grab an object as the only parameter', (done) => {
-    const statement = util({ msg: 'testing', term: 'parameter' });
+    const statement = util({ msg: 'testing', info: 'parameter' });
     expect(statement).to.have.ownProperty('msg');
-    expect(statement).to.have.ownProperty('term');
+    expect(statement).to.have.ownProperty('info');
     done();
   });
 

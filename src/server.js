@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 app.use('/', require('./routes')(express));
 
 const server = app.listen(port, () => {
-  util.debug({ msg: 'server active on ', term: port });
+  util.debug({ msg: 'server active on ', info: port });
 });
 
 module.exports = server;

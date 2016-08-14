@@ -5,14 +5,14 @@ const util = require('../lib/util');
 exports.all = (errorCallback, successCallBack) => {
   // Use sequelize method findAll
   db.user.findAll().then(successCallBack).catch(errorCallback);
-  util.debug({ msg: 'USER MODEL: find all users success:', term: successCallBack });
+  util.debug({ msg: 'USER MODEL: find all users success:', info: successCallBack });
 };// END of all
 
 // CREATE(add) into database
 exports.add = (obj, errorCallbackorCallback, successCallBack) => {
   // Use sequelize method create
   db.user.create(obj).then(successCallBack).catch(errorCallbackorCallback);
-  util.debug({ msg: 'USER MODEL: add user with id:', term: obj.id });
+  util.debug({ msg: 'USER MODEL: add user with id:', info: obj.id });
 };// END of add
 
 // READ(one) single from database
@@ -28,7 +28,7 @@ exports.one = (id, errorCallback, successCallBack) => {
       nested: true,
     }],
   }).then(successCallBack).catch(errorCallback);
-  util.debug({ msg: 'USER MODEL: find user with id:', term: id.id });
+  util.debug({ msg: 'USER MODEL: find user with id:', info: id.id });
 };// END of one
 
 // UPDATE single from database
@@ -43,7 +43,7 @@ exports.update = (obj, errorCallback, successCallBack) => {
   .then((existingData) => {
     existingData.updateAttributes(obj).then(successCallBack).catch(errorCallback);
   }).catch(errorCallback);
-  util.debug({ msg: 'USER MODEL: update user with id:', term: obj.id });
+  util.debug({ msg: 'USER MODEL: update user with id:', info: obj.id });
 };// END of update
 
 // DELETE(remove) single from database
@@ -54,5 +54,5 @@ exports.remove = (id, errorCallback, successCallBack) => {
       id: id.id,
     },
   }).then(successCallBack).catch(errorCallback);
-  util.debug({ msg: 'USER MODEL: delete user with id:', term: id });
+  util.debug({ msg: 'USER MODEL: delete user with id:', info: id });
 };// END of remove

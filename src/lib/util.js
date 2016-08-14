@@ -4,7 +4,6 @@ const colors = require('colors');
 // Theme colors for message types
 colors.setTheme({
   prompt: 'grey',
-  info: 'bgWhite',
   help: ['cyan', 'underline'],
   warn: 'yellow',
   error: 'red',
@@ -13,18 +12,18 @@ colors.setTheme({
 // Debug method
 exports.debug = (obj) => {
   const msg = obj.msg.help;
-  const term = obj.term;
-  const statement = obj.msg + obj.term + '\n';
+  const info = obj.info;
+  const statement = obj.msg + obj.info + '\n';
 
   // DISPLAY only when DEBUG=true
   if (process.env.DEBUG) {
     // Write to log file
-    fs.appendFile('./logs/log.log', obj.term, { flag: 'a' },
+    fs.appendFile('./logs/log.log', obj.info, { flag: 'a' },
       (err) => { if (err) { throw err; } }
     );// END of appendFile
 
     // Print debug to console stream
-    console.log(msg, term);
+    console.log(msg, info);
   }
 
   return obj;
