@@ -11,9 +11,11 @@ module.exports = (express) => {
     ArtAsset.add(payload,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'CREATE ART ASSET ROUTE FAILED: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'CREATE ART ASSET ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
@@ -24,9 +26,11 @@ module.exports = (express) => {
     ArtAsset.all(
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'READ ALL ART ASSET ROUTE FAILED: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'READ ALL ART ASSET ROUTE SUCCESS: ', info: data });
       }
     );
   });
@@ -39,9 +43,11 @@ module.exports = (express) => {
     ArtAsset.one(artInfo,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'READ ART ASSET ROUTE FAILED: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'READ ART ASSET ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
@@ -54,9 +60,11 @@ module.exports = (express) => {
     ArtAsset.update(artInfo,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'UPDATE ART ASSET ROUTE FAILED: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'UPDATE ART ASSET ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
@@ -69,9 +77,11 @@ module.exports = (express) => {
     ArtAsset.remove(artInfo,
       (err) => {
         res.status(500).json(err);
+        util.debug({ msg: 'DELETE ART ASSET ROUTE FAILED: ', info: err });
       },
       (data) => {
         res.status(200).json(data);
+        util.debug({ msg: 'DELETE ART ASSET ROUTE SUCCESS: ', info: data.dataValues });
       }
     );
   });
