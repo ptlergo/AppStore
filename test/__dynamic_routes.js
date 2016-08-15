@@ -104,24 +104,24 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
     // Artasset routes
     artassets: [
       {
-        route: '/api/v1/users',
+        route: '/api/v1/artassets',
         method: 'get',
-        desc: 'read all users',
+        desc: 'read all art assets',
       },
       {
-        route: '/api/v1/users/:id',
+        route: '/api/v1/artassets/:id',
         method: 'get',
-        desc: 'read one user',
+        desc: 'read one art asset',
       },
       {
-        route: '/api/v1/users/:id',
+        route: '/api/v1/artassets/:id',
         method: 'delete',
-        desc: 'delete one user',
+        desc: 'delete one art asset',
       },
       {
-        route: '/api/v1/users/:id',
+        route: '/api/v1/artassets/:id',
         method: 'post',
-        desc: 'update one user',
+        desc: 'update one art asset',
         fakeData: {
           name: faker.name.findName(),
           age: faker.random.number(),
@@ -153,26 +153,27 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
           .end(done);
         // util({ msg: 'this is being hit', info: route.route });
       });
-    } else if (route.method === 'post') {
-      it(`should ${route.desc}`, (done) => {
-        request(server)
-          .post(route.route)
-          .send(route.fakeData)
-          .expect(200)
-          .end(done);
-      });
-    } else {
-      it(`should ${route.desc}`, (done) => {
-        request(server)
-          .delete(route.route)
-          .expect(200)
-          .end(done);
-      });
     }
+    // } else if (route.method === 'post') {
+    //   it(`should ${route.desc}`, (done) => {
+    //     request(server)
+    //       .post(route.route)
+    //       .send(route.fakeData)
+    //       .expect(200)
+    //       .end(done);
+    //   });
+    // } else {
+    //   it(`should ${route.desc}`, (done) => {
+    //     request(server)
+    //       .delete(route.route)
+    //       .expect(200)
+    //       .end(done);
+    //   });
+    // }
   }
 
   // TODO: loop through object index instead of '.' notation for array.
   routesObj.users.forEach(checkMethod);
-  routesObj.apps.forEach(checkMethod);
-  routesObj.artassets.forEach(checkMethod);
+  // routesObj.apps.forEach(checkMethod);
+  // routesObj.artassets.forEach(checkMethod);
 });// END of describe
