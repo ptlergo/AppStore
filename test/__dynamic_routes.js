@@ -123,17 +123,17 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         method: 'post',
         desc: 'update one art asset',
         fakeData: {
-          name: faker.name.findName(),
-          age: faker.random.number(),
+          title: faker.random.number(),
+          srcLink: faker.image.imageUrl(),
         },
       },
       {
-        route: '/api/v1/users/',
+        route: '/api/v1/artassets/',
         method: 'post',
-        desc: 'create one user',
+        desc: 'create one art asset',
         fakeData: {
-          name: faker.name.findName(),
-          age: faker.random.number(),
+          title: faker.random.number(),
+          srcLink: faker.image.imageUrl(),
         },
       },
     ],
