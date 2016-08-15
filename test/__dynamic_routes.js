@@ -54,11 +54,47 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
     //   },
     // },
   ];
+  const obj = {
+    users: [
+      {
+        route: '/api/v1/users',
+        method: 'get',
+        desc: 'read all users',
+      },
+      {
+        route: '/api/v1/users/:id',
+        method: 'get',
+        desc: 'read one user',
+      },
+    ],
+    apps: [
+      {
+        route: '/api/v1/apps',
+        method: 'get',
+        desc: 'read all apps',
+      },
+      {
+        route: '/api/v1/apps/:id',
+        method: 'get',
+        desc: 'read one app',
+      },
+    ] };
+  // Functions to test methods
+  function getMethod(x) {
+    let s = console.log(x.users[0].route);
+    if (routesArray.method === 'get') {
+      s = console.log('working', routesArray.method);
+    }
+    return s;
+  }
+
+  Object.keys(obj).forEach((prop) => {
+    console.log(prop);
+  });
+
 
   it('should be working', (done) => {
-    request(server)
-    .get('/')
-    .expect(200)
-    .end(done);
+    getMethod(obj);
+    done();
   });
 });
