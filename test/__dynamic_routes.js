@@ -1,14 +1,17 @@
 const expect = require('chai').expect;
 const request = require('supertest');
 const faker = require('faker');
-const util = require('../src/lib/util');
+const util = require('../src/lib/util').debug;
 
+// FIXME: Run time errors
 describe('TESTING ROUTES DYNAMICALLY ', () => {
   let server;
 
   // Start server before stubs
-  beforeEach('open server', () => {
+  beforeEach('open server', (done) => {
     server = require('../src/server');
+
+    done();
   });
 
   // Close server after stubs
@@ -67,11 +70,11 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         method: 'get',
         desc: 'read one app',
       },
-      {
-        route: '/api/v1/users/:id/apps',
-        method: 'get',
-        desc: 'read all apps of one user',
-      },
+      // {
+      //   route: '/api/v1/users/:id/apps',
+      //   method: 'get',
+      //   desc: 'read all apps of one user',
+      // },
       {
         route: '/api/v1/apps/:id',
         method: 'delete',
@@ -144,19 +147,31 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
   function checkMethod(route) {
     if (route.method === 'get') {
       it(`should ${route.desc}`, (done) => {
-        done();
+        request(server)
+          .get(route.route)
+          .expect(200)
+          .end(done);
+        // util({ msg: 'this is being hit', info: route.route });
       });
     } else if (route.method === 'post') {
       it(`should ${route.desc}`, (done) => {
-        done();
+        request(server)
+          .post(route.route)
+          .send(route.fakeData)
+          .expect(200)
+          .end(done);
       });
     } else {
       it(`should ${route.desc}`, (done) => {
-        done();
+        request(server)
+          .delete(route.route)
+          .expect(200)
+          .end(done);
       });
     }
   }
 
+  // TODO: loop through object index instead of '.' notation for array.
   routesObj.users.forEach(checkMethod);
   routesObj.apps.forEach(checkMethod);
   routesObj.artassets.forEach(checkMethod);
