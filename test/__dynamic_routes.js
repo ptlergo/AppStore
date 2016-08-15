@@ -51,7 +51,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
 
 
   // Loop through Array
-  for (let i = 0; i <= routesArray; i++) {
+  for (let i = 0; i < routesArray.length; i++) {
     if (routesArray[i].method === 'get') {
       it(routesArray[i].desc, (done) => {
         request(server)
