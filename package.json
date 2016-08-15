@@ -1,6 +1,10 @@
 {
   "name": "appstore",
+<<<<<<< HEAD
   "version": "1.4.1",
+=======
+  "version": "1.5.0",
+>>>>>>> 07e5accaa18e8419a22cb141173c34db493d762a
   "description": "app store",
   "main": "src/server.js",
   "scripts": {

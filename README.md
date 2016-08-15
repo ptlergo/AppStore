@@ -68,12 +68,6 @@ DB_PORT=0000
 node src/server.js
 ```
 
-##RUN UNIT TESTS
-*Run unit tests to test API functions*
-```
-mocha
-```
-
 ##USAGE
 *Turn debug on*
 ```
@@ -89,4 +83,14 @@ READ ONE USER ROUTE SUCCESS:  { id: 3,
   createdAt: 2016-08-09T23:47:52.000Z,
   updatedAt: 2016-08-09T23:47:52.000Z,
   apps: [] }
+```
+
+##UNIT TESTING
+*Run unit tests to test API functions*
+```
+mocha
+```
+*Run unit tests with debug mode on*
+```
+DEBUG=true mocha
 ```
