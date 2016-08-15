@@ -90,3 +90,7 @@ READ ONE USER ROUTE SUCCESS:  { id: 3,
 ```
 mocha
 ```
+*Run unit tests with debug mode on*
+```
+DEBUG=true mocha
+```
