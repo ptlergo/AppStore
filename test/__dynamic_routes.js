@@ -139,17 +139,25 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
   /**
   * checkMethod() will look at the
   * method attribute in 'routesObj'
-  * @param {Object} route
+  * @param {Array} route
   */
   function checkMethod(route) {
-    console.log('look-->', route.method);
+    if (route.method === 'get') {
+      it(`should ${route.desc}`, (done) => {
+        done();
+      });
+    } else if (route.method === 'post') {
+      it(`should ${route.desc}`, (done) => {
+        done();
+      });
+    } else {
+      it(`should ${route.desc}`, (done) => {
+        done();
+      });
+    }
   }
 
   routesObj.users.forEach(checkMethod);
   routesObj.apps.forEach(checkMethod);
   routesObj.artassets.forEach(checkMethod);
-
-  it('should be working', (done) => {
-    done();
-  });
 });// END of describe
