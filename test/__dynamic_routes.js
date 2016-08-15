@@ -136,23 +136,18 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
     ],
   }; // END of routes object
 
-  // Functions to test each methods
-  function getMethod(x) {
-    console.log('look-->', x.method);
+  /**
+  * checkMethod() will look at the
+  * method attribute in 'routesObj'
+  * @param {Object} route
+  */
+  function checkMethod(route) {
+    console.log('look-->', route.method);
   }
 
-  routesObj.users.forEach(getMethod);
-
-  // Object.keys(routesObj).forEach(getMethod);
-
-  // // loop through function
-  // Object.keys(routesObj).forEach((prop) => {
-  //   if (prop === 'users') {
-  //     console.log('gotem', prop);
-  //   } else if (prop === 'apps') {
-  //     console.log('app s', prop);
-  //   } else { console.log('art a', prop); }
-  // });
+  routesObj.users.forEach(checkMethod);
+  routesObj.apps.forEach(checkMethod);
+  routesObj.artassets.forEach(checkMethod);
 
   it('should be working', (done) => {
     done();
