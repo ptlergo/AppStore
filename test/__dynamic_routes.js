@@ -138,19 +138,21 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
 
   // Functions to test each methods
   function getMethod(x) {
-    console.log('dfdsfdf', x.users[1].method);
+    console.log('look-->', x.method);
   }
 
-  // loop through function
-  Object.keys(routesObj).forEach((prop) => {
-    if (prop === 'users') {
-      console.log('gotem', prop);
-    } else if (prop === 'apps') {
-      console.log('app s', prop);
-    } else { console.log('art a', prop); }
-  });
-  getMethod(routesObj);
+  routesObj.users.forEach(getMethod);
 
+  // Object.keys(routesObj).forEach(getMethod);
+
+  // // loop through function
+  // Object.keys(routesObj).forEach((prop) => {
+  //   if (prop === 'users') {
+  //     console.log('gotem', prop);
+  //   } else if (prop === 'apps') {
+  //     console.log('app s', prop);
+  //   } else { console.log('art a', prop); }
+  // });
 
   it('should be working', (done) => {
     done();
