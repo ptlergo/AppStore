@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 
+// Array of all routes in API
 const routesArray = [
   {
     route: '/api/v1/users',
@@ -10,3 +11,9 @@ const routesArray = [
     method: 'get',
   },
 ];
+
+describe('TESTING ROUTES DYNAMICALLY ', () => {
+  it('should hit route ', (done) => {
+    done();
+  });
+});
