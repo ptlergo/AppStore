@@ -1,14 +1,19 @@
 const expect = require('chai').expect;
 const faker = require('faker');
 const User = require('../src/models/user');
+const util = require('../src/lib/util').debug;
+
 
 describe('User Model', () => {
+  util({ msg: 'Describe User Model: ', info: 'SUCCESS' });
   let testUsers;
   let tempUser;
 
 
   // Test to add a user
   it('should Add a new User', (done) => {
+    util({ msg: 'Add User stub: ', info: 'SUCCESS' });
+
     // Generate a fake User
     const fakeUser = {
       name: faker.name.findName(),
@@ -32,6 +37,8 @@ describe('User Model', () => {
 
   // Test for all users
   it('should GET All users', (done) => {
+    util({ msg: 'Get All Users stub: ', info: 'SUCCESS' });
+
     User.all(
       (err) => {
         throw new Error(err);
@@ -46,6 +53,8 @@ describe('User Model', () => {
 
   // Test to find a user
   it('should Find a User', (done) => {
+    util({ msg: 'Find A User stub: ', info: 'SUCCESS' });
+
     const targetUser = this.testUsers[0];
     // Call user model for finding an user in database
     User.one(targetUser,
@@ -64,6 +73,7 @@ describe('User Model', () => {
 
   // Test to update a user
   it('should Update a User', (done) => {
+    util({ msg: 'Update A User stub: ', info: 'SUCCESS' });
     // Load in exisiting faked user object from 'Add' stub
     const updateUser = this.tempUser;
     // Generate a new user object name and age
@@ -87,6 +97,7 @@ describe('User Model', () => {
 
   // Test to remove a user
   it('should Remove a User', (done) => {
+    util({ msg: 'Remove a User stub: ', info: 'SUCCESS' });
     // Load in existing user info
     const removeUser = this.tempUser;
     removeUser.force = true;
