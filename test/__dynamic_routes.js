@@ -3,7 +3,7 @@ const request = require('supertest');
 const faker = require('faker');
 const util = require('../src/lib/util').debug;
 
-// FIXME: Run time errors
+// FIXME: Run time errors: found issue in ':id' of route
 describe('TESTING ROUTES DYNAMICALLY ', () => {
   let server;
 
@@ -189,7 +189,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
     }
   }// END of checkMethod
 
-  // TODO: loop through object index instead of '.' notation for array.
+  // Object's arrays loop through checkMethod()
   routesObj.users.forEach(checkMethod);
   routesObj.apps.forEach(checkMethod);
   routesObj.artassets.forEach(checkMethod);
