@@ -159,23 +159,22 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
 
         util({ msg: 'route hit is: ', info: route.route });
       });
+    } else if (route.method === 'post') {
+      it(`should ${route.desc}`, (done) => {
+        request(server)
+          .post(route.route)
+          .send(route.fakeData)
+          .expect(200)
+          .end(done);
+      });
+    } else {
+      it(`should ${route.desc}`, (done) => {
+        request(server)
+          .delete(route.route)
+          .expect(200)
+          .end(done);
+      });
     }
-    // } else if (route.method === 'post') {
-    //   it(`should ${route.desc}`, (done) => {
-    //     request(server)
-    //       .post(route.route)
-    //       .send(route.fakeData)
-    //       .expect(200)
-    //       .end(done);
-    //   });
-    // } else {
-    //   it(`should ${route.desc}`, (done) => {
-    //     request(server)
-    //       .delete(route.route)
-    //       .expect(200)
-    //       .end(done);
-    //   });
-    // }
     return route;
   }
 
