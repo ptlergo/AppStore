@@ -1,13 +1,19 @@
 const expect = require('chai').expect;
 const faker = require('faker');
 const App = require('../src/models/app');
+const util = require('../src/lib/util').debug;
+
 
 describe('App Model', () => {
+  util({ msg: 'describe App Model: ', info: 'SUCCESS' });
+
   let testApps;
   let tempApp;
 
   // Test to add an App
   it('should Add a new App', (done) => {
+    util({ msg: 'Add App stub: ', info: 'SUCCESS' });
+
     // Generate a fake App
     const fakeApp = {
       title: faker.name.title(),
@@ -33,6 +39,8 @@ describe('App Model', () => {
 
   // Test to find all Apps
   it('should Read All apps', (done) => {
+    util({ msg: 'Read All Apps stub: ', info: 'SUCCESS' });
+
     App.all(
       (err) => {
         throw new Error(err);
@@ -47,6 +55,7 @@ describe('App Model', () => {
 
   // Test to find an App
   it('should Find an App', (done) => {
+    util({ msg: 'Find App stub: ', info: 'SUCCESS' });
     const targetApp = this.testApps[0];
     // Call app model for finding an app in database
     App.one(targetApp,
@@ -65,6 +74,7 @@ describe('App Model', () => {
 
   // Test to update an App
   it('should Update an App', (done) => {
+    util({ msg: 'Update App stub: ', info: 'SUCCESS' });
     // Load in exisiting faked app object saved from 'Add' stub
     const updateApp = this.tempApp;
     // Generate a new app info
@@ -90,6 +100,7 @@ describe('App Model', () => {
 
   // Test to remove an App
   it('should Remove an App', (done) => {
+    util({ msg: 'Remove App stub: ', info: 'SUCCESS' });
     // Load in existing app info
     const removeApp = this.tempApp;
     removeApp.force = true;

@@ -2,13 +2,18 @@ const expect = require('chai').expect;
 const assert = require('chai').assert;
 const faker = require('faker');
 const ArtAsset = require('../src/models/artasset');
+const util = require('../src/lib/util').debug;
+
 
 describe('Art Assets Model', () => {
+  util({ msg: 'Describe Art Asset Test: ', info: 'SUCCESS' });
+
   let testArtAsset;
   let tempArtAsset;
 
   // Test to find all art assets
   it('should Read all art assets', (done) => {
+    util({ msg: 'Read All Art Asst stub: ', info: 'SUCCESS' });
     ArtAsset.all(
       (err) => {
         throw new Error(err);
@@ -22,6 +27,7 @@ describe('Art Assets Model', () => {
 
   // Test to add an art asset
   it('should Add an art assets', (done) => {
+    util({ msg: 'Add Art Asset stub: ', info: 'SUCCESS' });
     // Generate fake art assets
     const fakeArtAsset = {
       title: faker.random.number(),
@@ -43,6 +49,7 @@ describe('Art Assets Model', () => {
 
   // Test to find one art asset
   it('should Find a single art asset', (done) => {
+    util({ msg: 'Find Art Asset stub: ', info: 'SUCCESS' });
     const targetArtAsset = this.testArtAsset[0];
 
     ArtAsset.one(targetArtAsset,
@@ -59,6 +66,7 @@ describe('Art Assets Model', () => {
 
   // Test to update an art asset
   it('should UPDATE an art asset', (done) => {
+    util({ msg: 'Update Art Asset stub: ', info: 'SUCCESS' });
     // Load existing faked art asset object from 'Add' stub
     const updateArtAsset = this.tempArtAsset;
     // Generate new art asset data to test
@@ -80,6 +88,7 @@ describe('Art Assets Model', () => {
   });
   // Test to delete an art asset
   it('should DELETE an art asset', (done) => {
+    util({ msg: 'Delete Art Asset stub: ', info: 'SUCCESS' });
     // Load in existing art asset info to delete
     const removeArtAsset = this.tempArtAsset;
     removeArtAsset.force = true;

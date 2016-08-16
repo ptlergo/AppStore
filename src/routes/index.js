@@ -1,9 +1,11 @@
 module.exports = (express) => {
   const router = express.Router();
+  const util = require('../lib/util');
 
   // Routes apps
   router.get('/', (req, res) => {
     res.json({ msg: 'home route' });
+    util({ msg: 'home route hit: ', info: 'SUCCESS' });
   });
 
   // Register individual route files
