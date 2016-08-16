@@ -30,7 +30,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         desc: 'read all users',
       },
       {
-        route: '/api/v1/users/1',
+        route: '/api/v1/users/:id',
         method: 'get',
         desc: 'read one user',
       },
@@ -40,7 +40,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         desc: 'delete one user',
       },
       {
-        route: '/api/v1/users/:id',
+        route: '/api/v1/users/2',
         method: 'post',
         desc: 'update one user',
         fakeData: {
@@ -70,18 +70,18 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         method: 'get',
         desc: 'read one app',
       },
-      {
-        route: '/api/v1/users/:id/apps',
-        method: 'get',
-        desc: 'read all apps of one user',
-      },
+      // {
+      //   route: '/api/v1/users/:id/apps',
+      //   method: 'get',
+      //   desc: 'read all apps of one user',
+      // },
       {
         route: '/api/v1/apps/:id',
         method: 'delete',
         desc: 'delete one app',
       },
       {
-        route: '/api/v1/apps/:id',
+        route: '/api/v1/apps/2',
         method: 'post',
         desc: 'update one app',
         fakeData: {
@@ -119,7 +119,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         desc: 'delete one art asset',
       },
       {
-        route: '/api/v1/artassets/:id',
+        route: '/api/v1/artassets/2',
         method: 'post',
         desc: 'update one art asset',
         fakeData: {
