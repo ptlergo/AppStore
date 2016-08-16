@@ -11,12 +11,16 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
   beforeEach('open server', (done) => {
     server = require('../src/server');
 
+    util({ msg: 'server open: ', info: 'SUCCESS' });
+
     done();
   });
 
   // Close server after stubs
   afterEach('close server', (done) => {
     server.close();
+    util({ msg: 'server close: ', info: 'SUCCESS' });
+
     done();
   });
 
@@ -157,7 +161,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
           if (err) throw err;
           done();
         });
-        util({ msg: 'route hit is: ', info: route.route });
+        util({ msg: 'GET route hit is: ', info: route.route });
       });
     } else if (route.method === 'post') {
       it(`should ${route.desc}`, (done) => {
@@ -169,6 +173,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
             if (err) throw err;
             done();
           });
+        util({ msg: 'POST route hit is: ', info: route.route });
       });
     } else {
       it(`should ${route.desc}`, (done) => {
@@ -179,6 +184,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
             if (err) throw err;
             done();
           });
+        util({ msg: 'DELETE route hit is: ', info: route.route });
       });
     }
   }// END of checkMethod
