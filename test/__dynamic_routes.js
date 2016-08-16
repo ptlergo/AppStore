@@ -114,12 +114,12 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         desc: 'read one art asset',
       },
       {
-        route: '/api/v1/artassets/:id',
+        route: '/api/v1/artassets/2',
         method: 'delete',
         desc: 'delete one art asset',
       },
       {
-        route: '/api/v1/artassets/2',
+        route: '/api/v1/artassets/3',
         method: 'post',
         desc: 'update one art asset',
         fakeData: {
