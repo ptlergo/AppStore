@@ -86,11 +86,13 @@ READ ONE USER ROUTE SUCCESS:  { id: 3,
 ```
 
 ##UNIT TESTING
-*Run unit tests to test API functions*
+*Run [Mocha](https://mochajs.org/) unit tests to test all API functions*
+*To pass unit tests, there must be a proper user, app, and art asset in database*
+*Run tests twice*
 ```
 npm test
 ```
 *Run unit tests with debug mode on*
 ```
-DEBUG=true mocha
+DEBUG=true npm test
 ```
