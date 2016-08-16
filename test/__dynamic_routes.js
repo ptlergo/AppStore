@@ -29,34 +29,34 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         method: 'get',
         desc: 'read all users',
       },
-      {
-        route: '/api/v1/users/:id',
-        method: 'get',
-        desc: 'read one user',
-      },
-      {
-        route: '/api/v1/users/:id',
-        method: 'delete',
-        desc: 'delete one user',
-      },
-      {
-        route: '/api/v1/users/:id',
-        method: 'post',
-        desc: 'update one user',
-        fakeData: {
-          name: faker.name.findName(),
-          age: faker.random.number(),
-        },
-      },
-      {
-        route: '/api/v1/users/',
-        method: 'post',
-        desc: 'create one user',
-        fakeData: {
-          name: faker.name.findName(),
-          age: faker.random.number(),
-        },
-      },
+      // {
+      //   route: '/api/v1/users/1',
+      //   method: 'get',
+      //   desc: 'read one user',
+      // },
+      // {
+      //   route: '/api/v1/users/:id',
+      //   method: 'delete',
+      //   desc: 'delete one user',
+      // },
+      // {
+      //   route: '/api/v1/users/:id',
+      //   method: 'post',
+      //   desc: 'update one user',
+      //   fakeData: {
+      //     name: faker.name.findName(),
+      //     age: faker.random.number(),
+      //   },
+      // },
+      // {
+      //   route: '/api/v1/users/',
+      //   method: 'post',
+      //   desc: 'create one user',
+      //   fakeData: {
+      //     name: faker.name.findName(),
+      //     age: faker.random.number(),
+      //   },
+      // },
     ],
     // App routes
     apps: [
@@ -148,10 +148,16 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
     if (route.method === 'get') {
       it(`should ${route.desc}`, (done) => {
         request(server)
-          .get(route.route)
-          .expect(200)
-          .end(done);
-        // util({ msg: 'this is being hit', info: route.route });
+        .get(route.route)
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end((err) => {
+          if (err) throw err;
+          done();
+        });
+
+        util({ msg: 'route hit is: ', info: route.route });
       });
     }
     // } else if (route.method === 'post') {
@@ -170,10 +176,11 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
     //       .end(done);
     //   });
     // }
+    return route;
   }
 
   // TODO: loop through object index instead of '.' notation for array.
   routesObj.users.forEach(checkMethod);
-  // routesObj.apps.forEach(checkMethod);
+  routesObj.apps.forEach(checkMethod);
   // routesObj.artassets.forEach(checkMethod);
 });// END of describe

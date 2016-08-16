@@ -12,7 +12,7 @@ module.exports = (express) => {
       },
       (data) => {
         res.status(200).json(data);
-        util.debug({ msg: 'READ ALL USER ROUTE SUCCESS: ', info: data.dataValues });
+        util.debug({ msg: 'READ ALL USER ROUTE SUCCESS: ', info: data });
       }
     );
   });
