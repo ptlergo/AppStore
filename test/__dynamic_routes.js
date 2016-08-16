@@ -158,7 +158,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         .expect('Content-Type', /json/)
         .expect(200)
         .end((err) => {
-          if (err) throw err;
+          if (err) util({ msg: 'GET route error: ', info: err });
           done();
         });
         util({ msg: 'GET route hit is: ', info: route.route });
@@ -170,7 +170,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
           .send(route.fakeData)
           .expect(200)
           .end((err) => {
-            if (err) throw err;
+            if (err) util({ msg: 'POST route error: ', info: err });
             done();
           });
         util({ msg: 'POST route hit is: ', info: route.route });
@@ -181,7 +181,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
           .delete(route.route)
           .expect(200)
           .end((err) => {
-            if (err) throw err;
+            if (err) util({ msg: 'DELETE route error: ', info: err });
             done();
           });
         util({ msg: 'DELETE route hit is: ', info: route.route });

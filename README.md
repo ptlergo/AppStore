@@ -88,7 +88,7 @@ READ ONE USER ROUTE SUCCESS:  { id: 3,
 ##UNIT TESTING
 *Run unit tests to test API functions*
 ```
-mocha
+npm test
 ```
 *Run unit tests with debug mode on*
 ```
