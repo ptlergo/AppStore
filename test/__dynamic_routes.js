@@ -70,11 +70,11 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         method: 'get',
         desc: 'read one app',
       },
-      // {
-      //   route: '/api/v1/users/:id/apps',
-      //   method: 'get',
-      //   desc: 'read all apps of one user',
-      // },
+      {
+        route: '/api/v1/users/2/apps',
+        method: 'get',
+        desc: 'read all apps of one user',
+      },
       {
         route: '/api/v1/apps/:id',
         method: 'delete',
@@ -98,6 +98,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
           title: faker.name.title(),
           description: faker.company.catchPhraseDescriptor(),
           releaseDate: faker.phone.phoneNumber(),
+          appId: 2,
         },
       },
     ],
