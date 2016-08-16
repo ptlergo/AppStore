@@ -29,34 +29,34 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         method: 'get',
         desc: 'read all users',
       },
-      // {
-      //   route: '/api/v1/users/1',
-      //   method: 'get',
-      //   desc: 'read one user',
-      // },
-      // {
-      //   route: '/api/v1/users/:id',
-      //   method: 'delete',
-      //   desc: 'delete one user',
-      // },
-      // {
-      //   route: '/api/v1/users/:id',
-      //   method: 'post',
-      //   desc: 'update one user',
-      //   fakeData: {
-      //     name: faker.name.findName(),
-      //     age: faker.random.number(),
-      //   },
-      // },
-      // {
-      //   route: '/api/v1/users/',
-      //   method: 'post',
-      //   desc: 'create one user',
-      //   fakeData: {
-      //     name: faker.name.findName(),
-      //     age: faker.random.number(),
-      //   },
-      // },
+      {
+        route: '/api/v1/users/1',
+        method: 'get',
+        desc: 'read one user',
+      },
+      {
+        route: '/api/v1/users/:id',
+        method: 'delete',
+        desc: 'delete one user',
+      },
+      {
+        route: '/api/v1/users/:id',
+        method: 'post',
+        desc: 'update one user',
+        fakeData: {
+          name: faker.name.findName(),
+          age: faker.random.number(),
+        },
+      },
+      {
+        route: '/api/v1/users/',
+        method: 'post',
+        desc: 'create one user',
+        fakeData: {
+          name: faker.name.findName(),
+          age: faker.random.number(),
+        },
+      },
     ],
     // App routes
     apps: [
@@ -70,11 +70,11 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
         method: 'get',
         desc: 'read one app',
       },
-      // {
-      //   route: '/api/v1/users/:id/apps',
-      //   method: 'get',
-      //   desc: 'read all apps of one user',
-      // },
+      {
+        route: '/api/v1/users/:id/apps',
+        method: 'get',
+        desc: 'read all apps of one user',
+      },
       {
         route: '/api/v1/apps/:id',
         method: 'delete',
@@ -182,5 +182,5 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
   // TODO: loop through object index instead of '.' notation for array.
   routesObj.users.forEach(checkMethod);
   routesObj.apps.forEach(checkMethod);
-  // routesObj.artassets.forEach(checkMethod);
+  routesObj.artassets.forEach(checkMethod);
 });// END of describe
