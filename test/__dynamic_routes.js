@@ -156,7 +156,6 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
           if (err) throw err;
           done();
         });
-
         util({ msg: 'route hit is: ', info: route.route });
       });
     } else if (route.method === 'post') {
@@ -165,18 +164,23 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
           .post(route.route)
           .send(route.fakeData)
           .expect(200)
-          .end(done);
+          .end((err) => {
+            if (err) throw err;
+            done();
+          });
       });
     } else {
       it(`should ${route.desc}`, (done) => {
         request(server)
           .delete(route.route)
           .expect(200)
-          .end(done);
+          .end((err) => {
+            if (err) throw err;
+            done();
+          });
       });
     }
-    return route;
-  }
+  }// END of checkMethod
 
   // TODO: loop through object index instead of '.' notation for array.
   routesObj.users.forEach(checkMethod);
