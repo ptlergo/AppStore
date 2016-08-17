@@ -2,20 +2,20 @@
 App Store API using RESTful architecture.
 
 ##INSTALL
-*Install all package dependencies*
+Install all package dependencies
 ```
 npm install
 ```
 
-*install all command line tools*
+install all command line tools
 ```
 npm i -g mocha
 ```
 
 ##ENDPOINTS
-*All Users, and Apps routes.*
+All Users, Apps, and Art Assets routes.
 
-###Routes for apps
+###App Routes
 
 | HTTP VERB | URL | DESCRIPTION | SAMPLE RESPONSE |
 |---|---|---|---|
@@ -26,7 +26,7 @@ npm i -g mocha
 |POST|/api/v1/apps/:id|Update an app|1|
 |DELETE|/api/v1/apps/:id|Delete an app|1|
 
-###Routes for users
+###Users Routes
 
 | HTTP VERB | URL | DESCRIPTION | SAMPLE RESPONSE |
 |---|---|---|---|
@@ -36,7 +36,7 @@ npm i -g mocha
 |POST|/api/v1/users/:id|Update a user|1|
 |DELETE|/api/v1/users/:id|Delete a user|1|
 
-###Routes for art assets
+###Art Assets Routes
 
 | HTTP VERB | URL | DESCRIPTION | SAMPLE RESPONSE |
 |---|---|---|---|
@@ -47,10 +47,12 @@ npm i -g mocha
 |DELETE|/api/v1/artassets/:id|Delete an art asset|1|
 
 ##DATABASE
+mysql is our database and must be running
 ```
 mysql.server start
 ```
-*Sample Environmental Variables in .env*
+Configure .env file for database
+*Sample Environment Variables in .env file*
 ```
 DB_NAME=DatabaseSample
 DB_USER=user
@@ -62,14 +64,14 @@ DB_PORT=0000
 ```
 
 ##RUN SERVER
-*Default port is '3000' [http://localhost:3000](http://localhost:3000)*
+Default port is '3000' [http://localhost:3000](http://localhost:3000)
 
 ```
 node src/server.js
 ```
 
 ##USAGE
-*Turn debug on*
+Turn debug on
 ```
 DEBUG=true node src/server.js
 ```
@@ -86,8 +88,7 @@ READ ONE USER ROUTE SUCCESS:  { id: 3,
 ```
 
 ##UNIT TESTING
-*Run [Mocha](https://mochajs.org/) unit tests to test all API functions*
-*To pass unit tests, there must be a proper user, app, and art asset in database*
+Run [Mocha](https://mochajs.org/) unit tests to test all API functions
 *Run tests twice*
 ```
 npm test
