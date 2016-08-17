@@ -89,7 +89,8 @@ READ ONE USER ROUTE SUCCESS:  { id: 3,
 
 ##UNIT TESTING
 Run [Mocha](https://mochajs.org/) unit tests to test all API functions
-*Run tests twice*
+
+*there must be at least one proper user, app, and art asset object in database*
 ```
 npm test
 ```
