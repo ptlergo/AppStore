@@ -1,6 +1,6 @@
 {
   "name": "appstore",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "app store",
   "main": "src/server.js",
   "scripts": {
@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/ptlergo/AppStore#readme",
   "dependencies": {
+    "async": "2.0.1",
     "body-parser": "1.15.2",
     "chai": "3.5.0",
+    "colors": "1.1.2",
     "dotenv": "2.0.0",
     "express": "4.14.0",
     "faker": "3.1.0",
@@ -27,8 +29,7 @@
     "mysql": "2.11.1",
     "sequelize": "3.23.6",
     "sinon": "1.17.5",
-    "supertest": "2.0.0",
-    "colors": "1.1.2"
+    "supertest": "2.0.0"
   },
   "devDependencies": {
     "eslint": "3.2.2",
