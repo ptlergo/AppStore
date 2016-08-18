@@ -1,5 +1,6 @@
 const fs = require('fs');
 const colors = require('colors');
+const logSymbols = require('log-symbols');
 
 // Theme colors for message types
 colors.setTheme({
@@ -24,7 +25,13 @@ exports.debug = (obj) => {
     );// END of appendFile
 
     // Print debug to console stream
-    console.log(msg, info);
+    console.log(msg, '\n', info);
+    console.log('\n');
+    console.log(logSymbols.success, 'finished successfully!');
+    console.log(logSymbols.info, 'finished heres info!');
+    console.log(logSymbols.warning, 'finished but a warning!');
+    console.log(logSymbols.error, 'finished with errors!');
+
   }
 
   return obj;
