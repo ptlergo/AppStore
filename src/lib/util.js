@@ -23,15 +23,17 @@ exports.debug = (obj) => {
     fs.appendFile('./logs/log.log', statement, { flag: 'a' },
       (err) => { if (err) { throw err; } }
     );// END of appendFile
-
+    if (obj === null) {
+      console.log(logSymbols.error, 'ERROR!');
+    } else {
+      console.log('\n', logSymbols.success, msg, '\n', info);
+    }
     // Print debug to console stream
-    console.log(msg, '\n', info);
     console.log('\n');
-    console.log(logSymbols.success, 'finished successfully!');
-    console.log(logSymbols.info, 'finished heres info!');
-    console.log(logSymbols.warning, 'finished but a warning!');
-    console.log(logSymbols.error, 'finished with errors!');
-
+    // console.log(logSymbols.success, 'finished successfully!');
+    // console.log(logSymbols.info, 'finished heres info!');
+    // console.log(logSymbols.warning, 'finished but a warning!');
+    // console.log(logSymbols.error, 'finished with errors!');
   }
 
   return obj;
