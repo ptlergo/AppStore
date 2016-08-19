@@ -31,7 +31,7 @@ exports.debug = (obj) => {
       (err) => { if (err) { throw err; } }
     );// END of appendFile
 
-    if (obj.info === 'err') {
+    if (obj.info === 'err' || obj.info === 'undefined') {
       throw console.log(logSymbols.fail, 'ERROR!');
     }
     // Display formatted debug log
