@@ -1,5 +1,5 @@
 const db = require('./db');
-const util = require('../lib/util');
+const util = require('lincoln-logs');
 
 // READ(all) all from database
 exports.all = (errorCallback, successCallBack) => {

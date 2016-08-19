@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const request = require('supertest');
 const faker = require('faker');
-const util = require('../src/lib/util').debug;
+const util = require('lincoln-logs').debug;
 
 // Test all routes
 describe('TESTING ROUTES DYNAMICALLY ', () => {

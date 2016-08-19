@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const faker = require('faker');
 const App = require('../src/models/app');
-const util = require('../src/lib/util').debug;
+const util = require('lincoln-logs').debug;
 
 
 describe('App Model', () => {

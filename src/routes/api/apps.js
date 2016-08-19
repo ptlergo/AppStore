@@ -1,6 +1,6 @@
 const app = require('../../models/app');
 const user = require('../../models/user');
-const util = require('../../lib/util');
+const util = require('lincoln-logs');
 
 module.exports = (express) => {
   const router = express.Router();

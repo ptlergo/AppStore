@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const assert = require('chai').assert;
 const faker = require('faker');
 const ArtAsset = require('../src/models/artasset');
-const util = require('../src/lib/util').debug;
+const util = require('lincoln-logs').debug;
 
 
 describe('Art Assets Model', () => {

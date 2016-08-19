@@ -1,5 +1,5 @@
 const ArtAsset = require('../../models/artasset');
-const util = require('../../lib/util');
+const util = require('lincoln-logs');
 
 module.exports = (express) => {
   const router = express.Router();
