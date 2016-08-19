@@ -3,7 +3,7 @@ const request = require('supertest');
 const faker = require('faker');
 const util = require('../src/lib/util').debug;
 
-// FIXME: Run time errors: found issue in ':id' of route. use async waterfall npm
+// Test all routes
 describe('TESTING ROUTES DYNAMICALLY ', () => {
   let server;
 
