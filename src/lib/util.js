@@ -5,17 +5,18 @@ const logSymbols = require('log-symbols');
 // Theme colors for message types
 colors.setTheme({
   prompt: 'grey',
-  help: ['cyan', 'underline'],
+  help: 'cyan',
   warn: 'yellow',
   error: 'red',
 });
 
 // Debug method
 exports.debug = (obj) => {
-  const msg = obj.msg.help;
+  const msg = '[ ' + obj.msg + ']';
   const info = obj.info;
   /* eslint prefer-template: 0 */
   const statement = obj.msg + obj.info + '\n';
+  const tStamp = ' [current time] '.prompt;
 
   // DISPLAY only when DEBUG=true
   if (process.env.DEBUG) {
@@ -26,7 +27,7 @@ exports.debug = (obj) => {
     if (obj === null) {
       console.log(logSymbols.error, 'ERROR!');
     } else {
-      console.log('\n', logSymbols.success, msg, '\n', info);
+      console.log('\n', logSymbols.success, tStamp, msg.help, '\n', info);
     }
     // Print debug to console stream
     console.log('\n');
