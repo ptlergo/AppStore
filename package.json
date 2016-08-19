@@ -25,19 +25,19 @@
     "sequelize": "3.23.6"
   },
   "devDependencies": {
+    "async": "2.0.1",
+    "chai": "3.5.0",
+    "colors": "1.1.2",
+    "dotenv": "2.0.0",
     "eslint": "3.2.2",
     "eslint-config-airbnb": "10.0.0",
     "eslint-plugin-import": "1.12.0",
     "eslint-plugin-jsx-a11y": "2.0.1",
     "eslint-plugin-react": "6.0.0",
-    "sinon": "1.17.5",
-    "async": "2.0.1",
-    "supertest": "2.0.0",
     "faker": "3.1.0",
-    "chai": "3.5.0",
-    "colors": "1.1.2",
-    "dotenv": "2.0.0",
+    "lincoln-logs": "1.0.1",
     "log-symbols": "1.0.2",
-    "lincoln-logs": "1.0.0"
+    "sinon": "1.17.5",
+    "supertest": "2.0.0"
   }
 }
