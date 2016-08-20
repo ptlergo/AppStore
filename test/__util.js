@@ -1,6 +1,8 @@
 const expect = require('chai').expect;
 const assert = require('chai').assert;
 const sinon = require('sinon');
+
+const callback = sinon.spy();
 const util = require('../src/lib/util').debug;
 
 describe('Util Tool debug()', () => {
