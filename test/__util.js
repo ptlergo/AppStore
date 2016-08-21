@@ -2,12 +2,18 @@ const expect = require('chai').expect;
 const assert = require('chai').assert;
 const sinon = require('sinon');
 
-const callback = sinon.spy();
-const util = require('../src/lib/util').debug;
+const spy = sinon.spy();
+const util = require('../src/lib/util');
+
+const statement = util.debug({ msg: 'testing', info: 'parameter' });
 
 describe('Util Tool debug()', () => {
+  it('should successfully call callAPI', (done) => {
+    spy(util, 'callAPI');
+    done();
+  });
+
   it('should successfully grab an object as the only parameter', (done) => {
-    const statement = util({ msg: 'testing', info: 'parameter' });
     expect(statement).to.have.ownProperty('msg');
     expect(statement).to.have.ownProperty('info');
     done();
