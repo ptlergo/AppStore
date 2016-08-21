@@ -25,13 +25,17 @@ describe('Util Tool', () => {
     done();
   });
 
-  it('should successfully grab an object as the only parameter', (done) => {
+  it('should successfully grab parameter object and check its keys (msg: , info: )', (done) => {
     expect(util.debug(testObj)).to.have.ownProperty('msg');
     expect(util.debug(testObj)).to.have.ownProperty('info');
     done();
   });
 
   it('should successfully output to logs folder', (done) => {
+    done();
+  });
+
+  it('should successfully return an object', (done) => {
     done();
   });
 });// END of Util Tool describe
