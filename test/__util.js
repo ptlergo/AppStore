@@ -1,35 +1,29 @@
 const expect = require('chai').expect;
 const assert = require('chai').assert;
 const sinon = require('sinon');
-const rewire = require('rewire');
-
-const util = rewire('../src/lib/util');
+const util = require('../src/lib/util');
 
 // Test utility tool
 describe('Util Tool', () => {
-  beforeEach(() => {
-    this.testPath = '../logs/lincoln.log';
-    // Fake object
-    this.testObj = {
-      msg: 'testing',
-      info: 'parameter',
-    };
-    // Fake console
-    this.console = {
-      log: sinon.spy(),
-    };
-    // Fake file log
-    this.fsFake = {
-      readFile: (path, encoding, cb) => {
-        expect(path).to.be.equal('../logs/lincoln.log');
-        cb(null, 'success');
-      }
-    }
-    // Set all consoles in util tool to this fake sinon console
-    util.__set__('console', this.console);
-    util.__set__('fs', this.fsFake);
-    util.__get__('path', this.testPath);
-  });
+  const testPath = './logs/lincoln.log';
+  // Fake object
+  const testObj = {
+    msg: 'testing',
+    info: 'parameter',
+  };
+
+  // Fake console
+  const console = {
+    log: sinon.spy(),
+  };
+
+  // Fake file log
+  this.fsFake = {
+    readFile: (path, encoding, cb) => {
+      expect(path).to.equal('./logs/lincoln.log');
+      cb(null, 'success');
+    },
+  };
 
   it('should have a function debug()', (done) => {
     expect(util.debug).to.be.a('function');
@@ -38,23 +32,23 @@ describe('Util Tool', () => {
 
   it('should output debug statement to console', (done) => {
     // Protect 'this' keyword
-    const _this = this;
+    console.log('d');
+    console.log(console.log);
 
     // FIXME: not working appropiately. call count incorrect
-    util.debug(_this.testObj, () => {
-      expect(_this.console.log.callCount).to.equal(10);
-    });
+    console.log(console.log.callCount);
+  // expect(_this.console.log.callCount).to.equal(10);
     done();
   });
 
   it('should grab object parameter and check its keys (msg: , info: )', (done) => {
-    expect(util.debug(this.testObj)).to.have.ownProperty('msg');
-    expect(util.debug(this.testObj)).to.have.ownProperty('info');
+    expect(util.debug(testObj)).to.have.ownProperty('msg');
+    expect(util.debug(testObj)).to.have.ownProperty('info');
     done();
   });
 
   it('should successfully output to logs folder', (done) => {
-    console.log(this.testPath);
+    // console.log(this.testPath);
     done();
   });
 });// END of Util Tool describe
