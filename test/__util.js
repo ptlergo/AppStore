@@ -2,7 +2,8 @@ const expect = require('chai').expect;
 const assert = require('chai').assert;
 const sinon = require('sinon');
 const rewire = require('rewire');
-const util = require('../src/lib/util');
+
+const util = rewire('../src/lib/util');
 
 // Test utility tool
 describe('Util Tool', () => {
@@ -16,6 +17,8 @@ describe('Util Tool', () => {
     this.console = {
       log: sinon.spy(),
     };
+
+    util.__set__('console', this.console);
   });
 
   it('should have a function debug()', (done) => {
@@ -26,10 +29,11 @@ describe('Util Tool', () => {
   it('should output debug statement to console', (done) => {
     // Protect 'this' keyword
     const _this = this;
+
     util.debug(_this.testObj, () => {
       expect(_this.console.log.callCount).to.equal(1);
-      done();
     });
+    done();
   });
 
   it('should grab object parameter and check its keys (msg: , info: )', (done) => {
