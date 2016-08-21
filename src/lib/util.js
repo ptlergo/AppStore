@@ -3,8 +3,6 @@ const fs = require('fs');
 const colors = require('colors');
 const logSymbols = require('log-symbols');
 
-const filePath = './logs/lincoln.log';
-
 // Theme colors for message types
 colors.setTheme({
   prompt: 'grey',
@@ -21,6 +19,7 @@ const printTime = '[ ' + timeIso + ' ]';
 
 // Debug method
 exports.debug = (obj) => {
+  const filePath = './logs/lincoln.log';
   const msg = '[ ' + obj.msg + ']';
   const info = obj.info;
   const success = 'finished successfully';

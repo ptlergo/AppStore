@@ -36,7 +36,6 @@
     "chai": "3.5.0",
     "colors": "1.1.2",
     "dotenv": "2.0.0",
-    "log-symbols": "1.0.2",
-    "rewire": "2.5.2"
-  }
+    "log-symbols": "1.0.2"
+    }
 }
