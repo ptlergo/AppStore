@@ -3,6 +3,8 @@ const fs = require('fs');
 const colors = require('colors');
 const logSymbols = require('log-symbols');
 
+const filePath = './logs/lincoln.log';
+
 // Theme colors for message types
 colors.setTheme({
   prompt: 'grey',
@@ -27,7 +29,7 @@ exports.debug = (obj) => {
   // DISPLAY only when DEBUG=true
   if (process.env.DEBUG) {
     // Write to log file
-    fs.appendFile('./logs/log.log', statement, { flag: 'a' },
+    fs.appendFile(filePath, statement, { flag: 'a' },
       (err) => { if (err) { throw err; } }
     );// END of appendFile
 
