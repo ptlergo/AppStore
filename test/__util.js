@@ -23,11 +23,16 @@ describe('Util Tool', () => {
     done();
   });
 
-  it('should successfully call debug', (done) => {
-    done();
+  it('should output debug statement to console', (done) => {
+    // Protect 'this' keyword
+    const _this = this;
+    util.debug(_this.testObj, () => {
+      expect(_this.console.log.callCount).to.equal(1);
+      done();
+    });
   });
 
-  it('should successfully grab parameter object and check its keys (msg: , info: )', (done) => {
+  it('should grab object parameter and check its keys (msg: , info: )', (done) => {
     expect(util.debug(this.testObj)).to.have.ownProperty('msg');
     expect(util.debug(this.testObj)).to.have.ownProperty('info');
     done();
