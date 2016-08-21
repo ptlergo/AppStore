@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const assert = require('chai').assert;
 const sinon = require('sinon');
-
+const rewire = require('rewire');
 const util = require('../src/lib/util');
 
 // Test utility tool

@@ -23,7 +23,6 @@
     "mocha": "3.0.0",
     "mysql": "2.11.1",
     "sequelize": "3.23.6"
-
   },
   "devDependencies": {
     "eslint": "3.2.2",
@@ -37,6 +36,7 @@
     "chai": "3.5.0",
     "colors": "1.1.2",
     "dotenv": "2.0.0",
-    "log-symbols": "1.0.2"
+    "log-symbols": "1.0.2",
+    "rewire": "2.5.2"
   }
 }
