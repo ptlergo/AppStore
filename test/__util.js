@@ -4,19 +4,15 @@ const sinon = require('sinon');
 
 const util = require('../src/lib/util');
 
-// Test object with utility tools acceptable parameters
-const testObj = {
-  msg: 'testing',
-  info: 'parameter',
-};
-
 // Test utility tool
 describe('Util Tool', () => {
   beforeEach(() => {
+    // Fake object
     this.testObj = {
       msg: 'testing',
       info: 'parameter',
     };
+    // Fake console
     this.console = {
       log: sinon.spy(),
     };
@@ -32,8 +28,8 @@ describe('Util Tool', () => {
   });
 
   it('should successfully grab parameter object and check its keys (msg: , info: )', (done) => {
-    expect(util.debug(testObj)).to.have.ownProperty('msg');
-    expect(util.debug(testObj)).to.have.ownProperty('info');
+    expect(util.debug(this.testObj)).to.have.ownProperty('msg');
+    expect(util.debug(this.testObj)).to.have.ownProperty('info');
     done();
   });
 
