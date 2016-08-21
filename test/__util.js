@@ -1,7 +1,5 @@
 const expect = require('chai').expect;
-const assert = require('chai').assert;
 const util = require('../src/lib/util');
-const fs = require('fs');
 
 // Test utility tool
 describe('Util Tool', () => {
