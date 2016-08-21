@@ -2,7 +2,6 @@ const expect = require('chai').expect;
 const assert = require('chai').assert;
 const sinon = require('sinon');
 
-const spy = sinon.spy();
 const util = require('../src/lib/util');
 
 // Test object with utility tools acceptable parameters
@@ -13,15 +12,22 @@ const testObj = {
 
 // Test utility tool
 describe('Util Tool', () => {
+  beforeEach(() => {
+    this.testObj = {
+      msg: 'testing',
+      info: 'parameter',
+    };
+    this.console = {
+      log: sinon.spy(),
+    };
+  });
+
   it('should have a function debug()', (done) => {
     expect(util.debug).to.be.a('function');
     done();
   });
 
   it('should successfully call debug', (done) => {
-    console.log(spy(util, 'debug'));
-    util.debug(testObj);
-    expect(util.debug.calledOnce).to.be.true;
     done();
   });
 
@@ -32,10 +38,6 @@ describe('Util Tool', () => {
   });
 
   it('should successfully output to logs folder', (done) => {
-    done();
-  });
-
-  it('should successfully return an object', (done) => {
     done();
   });
 });// END of Util Tool describe
