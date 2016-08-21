@@ -8,6 +8,7 @@ const util = rewire('../src/lib/util');
 // Test utility tool
 describe('Util Tool', () => {
   beforeEach(() => {
+    this.testPath = '../logs/lincoln.log';
     // Fake object
     this.testObj = {
       msg: 'testing',
@@ -17,8 +18,17 @@ describe('Util Tool', () => {
     this.console = {
       log: sinon.spy(),
     };
+    // Fake file log
+    this.fsFake = {
+      readFile: (path, encoding, cb) => {
+        expect(path).to.be.equal('../logs/lincoln.log');
+        cb(null, 'success');
+      }
+    }
     // Set all consoles in util tool to this fake sinon console
     util.__set__('console', this.console);
+    util.__set__('fs', this.fsFake);
+    util.__get__('path', this.testPath);
   });
 
   it('should have a function debug()', (done) => {
@@ -44,6 +54,7 @@ describe('Util Tool', () => {
   });
 
   it('should successfully output to logs folder', (done) => {
+    console.log(this.testPath);
     done();
   });
 });// END of Util Tool describe
