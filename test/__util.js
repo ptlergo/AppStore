@@ -17,7 +17,7 @@ describe('Util Tool', () => {
     this.console = {
       log: sinon.spy(),
     };
-
+    // Set all consoles in util tool to this fake sinon console
     util.__set__('console', this.console);
   });
 
@@ -30,8 +30,9 @@ describe('Util Tool', () => {
     // Protect 'this' keyword
     const _this = this;
 
+    // FIXME: not working appropiately. call count incorrect
     util.debug(_this.testObj, () => {
-      expect(_this.console.log.callCount).to.equal(1);
+      expect(_this.console.log.callCount).to.equal(10);
     });
     done();
   });
