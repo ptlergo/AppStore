@@ -1,5 +1,5 @@
 #App Store
-App Store API using RESTful architecture.
+App Store API using RESTful architecture
 
 ##INSTALL
 Install all package dependencies
