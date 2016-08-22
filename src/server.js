@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const util = require('lincoln-logs');
 require('localenvironment');
 
-
 const app = express();
 
 // Using body-parser grab data from POST
