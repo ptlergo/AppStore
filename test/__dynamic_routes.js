@@ -24,7 +24,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
     done();
   });
 
-  // Array of all routes in API
+  // Array of routes in API
   const routesObj = {
     // User routes
     users: [
