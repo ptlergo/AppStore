@@ -1,3 +1,4 @@
+[ ![Codeship Status for ptlergo/AppStore](https://codeship.com/projects/dcb4c540-4a48-0134-cac2-7683f1944f86/status?branch=master)](https://codeship.com/projects/169629)
 #App Store
 App Store API using RESTful architecture
 
