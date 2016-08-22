@@ -2,14 +2,14 @@
   "name": "appstore",
   "version": "1.8.0",
   "description": "app store",
+  "engines": {
+    "node": "6.2.0",
+    "npm": "3.8.9"
+  },
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
     "test": "mocha --reporter nyan"
-  },
-  "engines": {
-    "node": "6.2.0",
-    "npm": "3.8.9"
   },
   "repository": {
     "type": "git",
