@@ -1,6 +1,6 @@
 module.exports = (express) => {
   const router = express.Router();
-  const util = require('lincoln-logs');
+  const util = require('lincoln-logs').debug;
 
   // Routes apps
   router.get('/', (req, res) => {
