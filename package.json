@@ -1,6 +1,6 @@
 {
   "name": "appstore",
-  "version": "1.8.1",
+  "version": "1.7.1",
   "description": "app store",
   "engines": {
     "node": "6.2.0",
