@@ -197,8 +197,17 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
 
   // FIXME: use async into checkMethod()
   async.series([
+    function funcOne(callback) {
+      callback(null, 'RESULT OF FUNCTION ONE');
+    },
+    function funcTwo(callback) {
+      callback(null, 'RESULT OF FUNCTION TWO');
+    },
+    function funcThree(callback) {
+      callback(null, 'RESULT OF FUNCTION THREE');
+    },
   ], (err, result) => {
     if (err) throw err;
-    util({ msg: 'async series function: ', info: 'async.series success' });
+    util({ msg: 'async series function: ', info: result });
   });
 });// END of describe
