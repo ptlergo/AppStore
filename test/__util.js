@@ -1,17 +1,24 @@
 const expect = require('chai').expect;
-const assert = require('chai').assert;
-const sinon = require('sinon');
-const util = require('../src/lib/util').debug;
+const util = require('../src/lib/util');
 
-describe('Util Tool debug()', () => {
-  it('should successfully grab an object as the only parameter', (done) => {
-    const statement = util({ msg: 'testing', info: 'parameter' });
-    expect(statement).to.have.ownProperty('msg');
-    expect(statement).to.have.ownProperty('info');
+// Test utility tool
+describe('Util Tool', () => {
+  const testPath = './logs/lincoln.log';
+
+  // Fake object
+  const testObj = {
+    msg: 'testing',
+    info: 'parameter',
+  };
+
+  it('should have a function debug()', (done) => {
+    expect(util.debug).to.be.a('function');
     done();
   });
 
-  it('should successfully output to logs folder', (done) => {
+  it('should grab object parameter and check its keys (msg: , info: )', (done) => {
+    expect(util.debug(testObj)).to.have.ownProperty('msg');
+    expect(util.debug(testObj)).to.have.ownProperty('info');
     done();
   });
 });// END of Util Tool describe
