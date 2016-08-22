@@ -191,30 +191,12 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
   }// END of checkMethod
 
   // FIXME: use async into checkMethod()
-  async.waterfall([
-    /**
-    * syncCheckMethod() will execute the checkMethod()
-    * in order instead of asynchronous
-    * @param {Object} callback
-    */
-    function syncCheckMethod(callback) {
-      routesObj.users.forEach(checkMethod, (err, res) => {
-        if (err) {
-          callback(err, null);
-          return;
-        }
-        const fin = res.users[0].method;
-        callback(null, fin);
-      });
-    },
-    function other(fin, callback) {
-      const value = fin;
-      callback(null, value);
-    },
+  async.series([
+    routesObj.users.forEach(checkMethod),
+    routesObj.apps.forEach(checkMethod),
+    routesObj.artassets.forEach(checkMethod),
   ], (err, result) => {
+    if (err) throw err;
+    util.debug({ msg: 'async series function: ', info: async.series });
   });
-
-  // Object's arrays loop through checkMethod()
-  routesObj.apps.forEach(checkMethod);
-  routesObj.artassets.forEach(checkMethod);
 });// END of describe
