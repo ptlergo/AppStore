@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const util = require('lincoln-logs');
+require('localenvironment');
+
 
 const app = express();
 
