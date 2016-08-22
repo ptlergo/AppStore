@@ -1,6 +1,6 @@
 {
   "name": "appstore",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "app store",
   "main": "src/server.js",
   "scripts": {
@@ -35,9 +35,10 @@
     "eslint-plugin-jsx-a11y": "2.0.1",
     "eslint-plugin-react": "6.0.0",
     "faker": "3.1.0",
-    "lincoln-logs": "1.0.1",
-    "log-symbols": "1.0.2",
-    "sinon": "1.17.5",
-    "supertest": "2.0.0"
+    "lincoln-logs": "1.0.2",
+    "supertest": "2.0.0",
+    "chai": "3.5.0",
+    "dotenv": "2.0.0",
+    "faker": "3.1.0"
   }
 }

@@ -3,7 +3,8 @@ const request = require('supertest');
 const faker = require('faker');
 const util = require('lincoln-logs').debug;
 
-// Test all routes
+
+// Test API Routes
 describe('TESTING ROUTES DYNAMICALLY ', () => {
   let server;
 
@@ -189,7 +190,7 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
     }
   }// END of checkMethod
 
-  // Object's arrays loop through checkMethod()
+  // Pass route arrays into checkMethod()
   routesObj.users.forEach(checkMethod);
   routesObj.apps.forEach(checkMethod);
   routesObj.artassets.forEach(checkMethod);
