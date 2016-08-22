@@ -192,11 +192,8 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
 
   // FIXME: use async into checkMethod()
   async.series([
-    routesObj.users.forEach(checkMethod),
-    routesObj.apps.forEach(checkMethod),
-    routesObj.artassets.forEach(checkMethod),
   ], (err, result) => {
     if (err) throw err;
-    util.debug({ msg: 'async series function: ', info: async.series });
+    util({ msg: 'async series function: ', info: 'async.series success' });
   });
 });// END of describe
