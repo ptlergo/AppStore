@@ -9,7 +9,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "test": "mocha --reporter nyan"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
