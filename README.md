@@ -76,6 +76,20 @@ Turn debug on
 DEBUG=true node src/server.js
 ```
 
+###lincoln-logs debug tool
+A utility tool to help code debugging.
+```javascript
+const util = require('lincoln-logs');
+```
+
+tool accepts an object with two keys 'msg', 'info'.
+```javascript
+util.debug({ msg: 'debug message', info: value });
+```
+
+- msg must be STRING
+- info can be STRING, OBJECT, VARIABLE, or ARRAY
+
 *sample debug mode output of reading user '3' route*
 ```
 USER MODEL: find user with id: 3
