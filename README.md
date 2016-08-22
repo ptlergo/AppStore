@@ -82,15 +82,34 @@ Turn debug mode on
 DEBUG=true node src/server.js
 ```
 
+###[lincoln-logs](https://github.com/ptlergo/lincoln-logs) debug tool
+require the tool in file to use
+```javascript
+const util = require('lincoln-logs');
+```
+
+[lincoln-logs](https://github.com/ptlergo/lincoln-logs) accepts an object with two keys: 'msg', 'info'.
+```javascript
+util.debug({ msg: 'debug message', info: value });
+```
+
 *sample debug mode output of reading user '3' route*
 ```
-USER MODEL: find user with id: 3
-READ ONE USER ROUTE SUCCESS:  { id: 3,
-  name: 'Patsy Witting',
-  age: 92096,
-  createdAt: 2016-08-09T23:47:52.000Z,
-  updatedAt: 2016-08-09T23:47:52.000Z,
-  apps: [] }
+[ 2016-08-22T17:39:52.594Z ]
+[ USER MODEL: find user with id:]
+ 3
+[  ✔ finished successfully ✔  ]
+
+
+[ 2016-08-22T17:39:52.594Z ]
+[ READ ONE USER ROUTE SUCCESS: ]
+ { id: 3,
+ name: 'Patsy Witting',
+ age: 92096,
+ createdAt: 2016-08-09T23:47:52.000Z,
+ updatedAt: 2016-08-09T23:47:52.000Z,
+ apps: [] }
+[  ✔ finished successfully ✔  ]
 ```
 
 ##UNIT TESTING
