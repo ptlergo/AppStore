@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize');
 
-require('localenvironment');
 if (!process.env.DB_HOST) require('dotenv').config();
 // Call constructor function to create new object
 const connection = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
