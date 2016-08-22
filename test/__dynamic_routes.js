@@ -1,9 +1,10 @@
 const expect = require('chai').expect;
 const request = require('supertest');
 const faker = require('faker');
+const async = require('async');
 const util = require('../src/lib/util').debug;
 
-// FIXME: Run time errors: found issue in ':id' of route. use async waterfall npm
+// Test API Routes
 describe('TESTING ROUTES DYNAMICALLY ', () => {
   let server;
 
