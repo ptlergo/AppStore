@@ -190,24 +190,8 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
     }
   }// END of checkMethod
 
-  // FIXME: add using async.series
+  // Pass route arrays into checkMethod()
   routesObj.users.forEach(checkMethod);
   routesObj.apps.forEach(checkMethod);
   routesObj.artassets.forEach(checkMethod);
-
-  // FIXME: use async into checkMethod()
-  async.series([
-    function funcOne(callback) {
-      callback(null, 'RESULT OF FUNCTION ONE');
-    },
-    function funcTwo(callback) {
-      callback(null, 'RESULT OF FUNCTION TWO');
-    },
-    function funcThree(callback) {
-      callback(null, 'RESULT OF FUNCTION THREE');
-    },
-  ], (err, result) => {
-    if (err) throw err;
-    util({ msg: 'async series function: ', info: result });
-  });
 });// END of describe
