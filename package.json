@@ -37,7 +37,6 @@
     "faker": "3.1.0",
     "lincoln-logs": "1.0.1",
     "log-symbols": "1.0.2",
-    "sinon": "1.17.5",
     "supertest": "2.0.0"
   }
 }
