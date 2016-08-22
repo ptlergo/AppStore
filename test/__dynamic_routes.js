@@ -190,6 +190,11 @@ describe('TESTING ROUTES DYNAMICALLY ', () => {
     }
   }// END of checkMethod
 
+  // FIXME: use async into checkMethod()
+  async.waterfall([], (err, result) => {
+
+  });
+
   // Object's arrays loop through checkMethod()
   routesObj.users.forEach(checkMethod);
   routesObj.apps.forEach(checkMethod);
