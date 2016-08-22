@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+require('dotenv').config();
 
 require('localenvironment');
 // Call constructor function to create new object

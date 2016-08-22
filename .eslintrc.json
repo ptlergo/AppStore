@@ -14,6 +14,8 @@
 	},
 	"rules": {
 	"global-require": 0,
+	"no-global-assign": 0,
+	"no-unsafe-negation": 0,
 	"prefer-template": 0,
 	"new-cap": 0,
 	"no-console": 0,
