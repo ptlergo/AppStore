@@ -104,7 +104,22 @@ npm test
 ```
 DEBUG=true npm test
 ```
+##WORKFLOW
+setup feature branch
+1. create a branch
+```
+git checkout <branchname> -b
+```
 
+2. pull and merge master branch to new branch. Fix any merge conflicts
+```
+git pull origin master
+```
+
+3. Push to new branch to update with code from master
+```
+git push origin <branchname>
+```
 ##DEPLOYMENT
 Run server forever using pm2
 ```
