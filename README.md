@@ -7,9 +7,14 @@ Install all package dependencies
 npm install
 ```
 
-install all command line tools
+install mocha globally
 ```
 npm i -g mocha
+```
+
+install pm2 globally
+```
+npm i -g pm2
 ```
 
 ##ENDPOINTS
@@ -100,3 +105,7 @@ DEBUG=true npm test
 ```
 
 ##DEPLOYMENT
+Run server forever using pm2
+```
+pm2 start src/server.js
+```
