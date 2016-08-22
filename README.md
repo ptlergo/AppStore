@@ -98,3 +98,5 @@ npm test
 ```
 DEBUG=true npm test
 ```
+
+##DEPLOYMENT
