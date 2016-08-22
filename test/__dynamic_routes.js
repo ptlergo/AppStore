@@ -1,7 +1,6 @@
 const expect = require('chai').expect;
 const request = require('supertest');
 const faker = require('faker');
-const async = require('async');
 const util = require('../src/lib/util').debug;
 
 // Test API Routes
