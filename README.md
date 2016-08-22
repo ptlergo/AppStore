@@ -71,7 +71,7 @@ node src/server.js
 ```
 
 ##USAGE
-Turn debug on
+Turn debug mode on
 ```
 DEBUG=true node src/server.js
 ```
