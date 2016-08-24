@@ -144,3 +144,6 @@ git pull origin master
 ```
 git push origin <branchname>
 ```
+
+##GULP TASKS
+commands built with gulp to expedite development process
