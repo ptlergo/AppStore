@@ -13,6 +13,11 @@ install mocha globally
 npm i -g mocha
 ```
 
+install gulp globally
+```
+npm i -g gulp
+```
+
 ##ENDPOINTS
 All Users, Apps, and Art Assets routes.
 
