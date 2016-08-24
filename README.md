@@ -13,11 +13,6 @@ install mocha globally
 npm i -g mocha
 ```
 
-install pm2 globally
-```
-npm i -g pm2
-```
-
 ##ENDPOINTS
 All Users, Apps, and Art Assets routes.
 
@@ -138,9 +133,4 @@ git pull origin master
 3. Push to new branch to update with code from master
 ```
 git push origin <branchname>
-```
-##DEPLOYMENT
-Run server forever using pm2
-```
-pm2 start src/server.js
 ```
