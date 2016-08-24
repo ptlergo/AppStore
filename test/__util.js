@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 const util = require('../src/lib/util');
+const sinon = require('sinon');
 
 // Test utility tool
 describe('Util Tool', () => {
