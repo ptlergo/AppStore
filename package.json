@@ -23,13 +23,15 @@
   "homepage": "https://github.com/ptlergo/AppStore#readme",
   "dependencies": {
     "body-parser": "1.15.2",
+    "dotenv": "2.0.0",
     "express": "4.14.0",
+    "lincoln-logs": "^1.0.2",
+    "localenvironment": "1.0.2",
     "mocha": "3.0.0",
     "mysql": "2.11.1",
-    "localenvironment": "1.0.2",
-    "dotenv": "2.0.0",
-    "lincoln-logs": "^1.0.2",
-    "sequelize": "3.23.6"
+    "gulp": "3.9.1",
+    "sequelize": "3.23.6",
+    "yargs": "5.0.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
@@ -40,7 +42,6 @@
     "eslint-plugin-jsx-a11y": "2.0.1",
     "eslint-plugin-react": "6.0.0",
     "faker": "3.1.0",
-    "gulp": "3.9.1",
     "gulp-git": "1.11.0",
     "supertest": "2.0.0"
   }

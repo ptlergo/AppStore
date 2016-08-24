@@ -18,6 +18,11 @@ install gulp globally
 npm i -g gulp
 ```
 
+install yargs globally
+```
+npm i -g yargs
+```
+
 ##ENDPOINTS
 All Users, Apps, and Art Assets routes.
 
