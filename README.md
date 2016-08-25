@@ -119,18 +119,30 @@ npm test
 DEBUG=true npm test
 ```
 ##WORKFLOW
-setup feature branch
+Follow these workflow steps to submit a new feature to my API
 1. create a branch
 ```
 git checkout <branchname> -b
 ```
 
-2. pull and merge master branch to new branch. Fix any merge conflicts
+2. pull and merge 'master' branch to your new branch. Fix any merge conflicts
 ```
 git pull origin master
 ```
 
-3. Push to new branch to update with code from master
+3. tag the version as either major, minor, or patch
+```
+git tag -a -m 'this is a minor update' v0.1.0
+```
+
+4. Push your merged feature into the new branch
 ```
 git push origin <branchname>
 ```
+
+5. when done push to 'release' branch to submit through heroku pipeline
+```
+git push origin release
+```
+
+##DEPLOYMENT
