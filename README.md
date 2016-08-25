@@ -140,9 +140,11 @@ git tag -a -m 'this is a minor update' v0.1.0
 git push origin <branchname>
 ```
 
-5. when done push to 'release' branch to submit through heroku pipeline
+5. when done push to 'release' branch to submit through [heroku](https://devcenter.heroku.com/articles/deploying-nodejs) pipeline
 ```
 git push origin release
 ```
 
 ##DEPLOYMENT
+To deploy the App Store API using [heroku](https://devcenter.heroku.com/articles/deploying-nodejs) follow these listed steps
+1.
