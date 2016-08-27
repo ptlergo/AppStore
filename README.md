@@ -15,7 +15,7 @@ npm i -g mocha
 
 install gulp globally
 ```
-npm i -g gulp-cli
+npm i -g gulp
 ```
 
 ##ENDPOINTS
@@ -151,6 +151,11 @@ git push origin release
 ```
 ##GULP TASKS
 Tasks to expedite developer's workflow
+###Unit Testing
+Unit tests can also be run with gulp.
+```
+gulp
+```
 
 ###Version Bumping
 increment the project's semantic version by running the command line bellow.
