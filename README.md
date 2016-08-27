@@ -153,9 +153,19 @@ git push origin release
 Tasks to expedite developer's workflow
 
 ###Version Bumping
-increment the project's semantic version by running the command line bellow
+increment the project's semantic version by running the command line bellow.
+
+version bump the patch
 ```
 gulp bump
+```
+version bump the minor
+```
+gulp minor
+```
+version bump the major
+```
+gulp major
 ```
 
 ##DEPLOYMENT
