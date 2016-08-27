@@ -16,14 +16,14 @@ gulp.task('bump', () => {
 });
 
 // Minor bump
-gulp.task('bump', () => {
+gulp.task('minor', () => {
   gulp.src('./package.json')
   .pipe(bump({ type: 'minor' }))
   .pipe(gulp.dest('./'));
 });
 
 // Major bump
-gulp.task('bump', () => {
+gulp.task('major', () => {
   gulp.src('./package.json')
   .pipe(bump({ type: 'major' }))
   .pipe(gulp.dest('./'));
