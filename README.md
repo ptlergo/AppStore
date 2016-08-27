@@ -13,6 +13,11 @@ install mocha globally
 npm i -g mocha
 ```
 
+install gulp globally
+```
+npm i -g gulp-cli
+```
+
 ##ENDPOINTS
 All Users, Apps, and Art Assets routes.
 
@@ -143,6 +148,14 @@ git push origin <branchname>
 5. when done push to 'release' branch to submit through [heroku](https://devcenter.heroku.com/articles/deploying-nodejs) pipeline
 ```
 git push origin release
+```
+##GULP TASKS
+Tasks to expedite developer's workflow
+
+###Version Bumping
+increment the project's semantic version by running the command line bellow
+```
+gulp bump
 ```
 
 ##DEPLOYMENT

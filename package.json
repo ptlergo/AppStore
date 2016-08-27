@@ -1,6 +1,6 @@
 {
   "name": "appstore",
-  "version": "1.11.0",
+  "version": "1.10.0",
   "description": "app store",
   "engines": {
     "node": "6.2.0",
@@ -29,7 +29,9 @@
     "localenvironment": "1.0.2",
     "dotenv": "2.0.0",
     "lincoln-logs": "^1.0.2",
-    "sequelize": "3.23.6"
+    "sequelize": "3.23.6",
+    "gulp": "3.9.1",
+    "gulp-mocha": "3.0.1"
   },
   "devDependencies": {
     "chai": "3.5.0",
@@ -40,7 +42,6 @@
     "eslint-plugin-jsx-a11y": "2.0.1",
     "eslint-plugin-react": "6.0.0",
     "faker": "3.1.0",
-    "gulp": "3.9.1",
     "supertest": "2.0.0"
   }
 }
