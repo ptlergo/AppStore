@@ -16,4 +16,9 @@ gulp.task('bump', () => {
 });
 
 // Minor bump
+gulp.task('bump', () => {
+  gulp.src('./package.json')
+  .pipe(bump({ type: 'minor' }))
+  .pipe(gulp.dest('./'));
+});
 // Major bump
