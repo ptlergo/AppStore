@@ -147,4 +147,7 @@ git push origin release
 
 ##DEPLOYMENT
 To deploy the App Store API using [heroku](https://devcenter.heroku.com/articles/deploying-nodejs) follow these listed steps
-1.
+1. Run unit test
+2. Commit the good changes
+3. Push to release branch
+4. Check the app's url for successful deployment.
