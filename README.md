@@ -2,7 +2,7 @@
 # App Store
 App Store API using RESTful architecture
 
-##INSTALL
+## INSTALL
 Install all package dependencies
 ```
 npm install
