@@ -18,10 +18,10 @@ install gulp globally
 npm i -g gulp
 ```
 
-##ENDPOINTS
+## ENDPOINTS
 All Users, Apps, and Art Assets routes.
 
-###App Routes
+### App Routes
 
 | HTTP VERB | URL | DESCRIPTION | SAMPLE RESPONSE |
 |---|---|---|---|
@@ -32,7 +32,7 @@ All Users, Apps, and Art Assets routes.
 |POST|/api/v1/apps/:id|Update an app|1|
 |DELETE|/api/v1/apps/:id|Delete an app|1|
 
-###Users Routes
+### Users Routes
 
 | HTTP VERB | URL | DESCRIPTION | SAMPLE RESPONSE |
 |---|---|---|---|
@@ -42,7 +42,7 @@ All Users, Apps, and Art Assets routes.
 |POST|/api/v1/users/:id|Update a user|1|
 |DELETE|/api/v1/users/:id|Delete a user|1|
 
-###Art Assets Routes
+### Art Assets Routes
 
 | HTTP VERB | URL | DESCRIPTION | SAMPLE RESPONSE |
 |---|---|---|---|
@@ -52,7 +52,7 @@ All Users, Apps, and Art Assets routes.
 |POST|/api/v1/artassets/:id|Update an art asset|1|
 |DELETE|/api/v1/artassets/:id|Delete an art asset|1|
 
-##DATABASE
+## DATABASE
 mysql is our database and must be running
 ```
 mysql.server start
@@ -69,20 +69,20 @@ DB_PORT=0000
 
 ```
 
-##RUN SERVER
+## RUN SERVER
 Default port is '3000' [http://localhost:3000](http://localhost:3000)
 
 ```
 node src/server.js
 ```
 
-##USAGE
+## USAGE
 Turn debug mode on
 ```
 DEBUG=true node src/server.js
 ```
 
-###[lincoln-logs](https://github.com/ptlergo/lincoln-logs) debug tool
+### [lincoln-logs](https://github.com/ptlergo/lincoln-logs) debug tool
 require the tool in file to use
 ```javascript
 const util = require('lincoln-logs');
@@ -112,7 +112,7 @@ util.debug({ msg: 'debug message', info: value });
 [  ✔ finished successfully ✔  ]
 ```
 
-##UNIT TESTING
+## UNIT TESTING
 Run [Mocha](https://mochajs.org/) unit tests to test all API functions
 
 *there must be at least one proper user, app, and art asset object in database*
@@ -123,7 +123,7 @@ npm test
 ```
 DEBUG=true npm test
 ```
-##WORKFLOW
+## WORKFLOW
 Follow these workflow steps to submit a new feature to my API
 1. create a branch
 ```
@@ -149,15 +149,15 @@ git push origin <branchname>
 ```
 git push origin release
 ```
-##GULP TASKS
+## GULP TASKS
 Tasks to expedite developer's workflow
-###Unit Testing
+### Unit Testing
 Unit tests can also be run with gulp.
 ```
 gulp
 ```
 
-###Version Bumping
+### Version Bumping
 increment the project's semantic version by running the command line bellow.
 
 version bump the patch
@@ -173,6 +173,6 @@ version bump the major
 gulp major
 ```
 
-##DEPLOYMENT
+## DEPLOYMENT
 To deploy the App Store API using [heroku](https://devcenter.heroku.com/articles/deploying-nodejs) follow these listed steps
 1.
